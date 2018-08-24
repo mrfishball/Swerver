@@ -11,7 +11,6 @@
 		842A82AA212F9B9D0051A27B /* SwerverCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A82A9212F9B9D0051A27B /* SwerverCore.swift */; };
 		846C640B213076F7007D1634 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846C640A213076F7007D1634 /* Info.plist */; };
 		84844AA321306F050099DAB3 /* SwerverCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84844AA121306F050099DAB3 /* SwerverCoreTests.swift */; };
-		OBJ_18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_25 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +78,7 @@
 				84844AA021306F050099DAB3 /* SwerverCoreTests */,
 			);
 			name = Tests;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 		OBJ_11 /* Products */ = {
 			isa = PBXGroup;
@@ -232,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_18 /* main.swift in Sources */,
 				842A82AA212F9B9D0051A27B /* SwerverCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
