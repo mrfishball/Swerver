@@ -1,4 +1,4 @@
 language: objective-c
-xcode_project: Swerver.xcodeproj
-xcode_scheme: SwerverTests
-xcode_destination: platform=iOS Simulator,OS=10.10,name=iPad Pro (9.7-inch)
+osx_image: xcode9.4
+script:
+    - xcodebuild clean test -project Swerver.xcodeproj -scheme Swerver -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
