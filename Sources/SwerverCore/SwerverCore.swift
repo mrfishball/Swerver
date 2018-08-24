@@ -1,8 +1,8 @@
 import Foundation
 
-public final class SwerverCore {
+class SwerverCore {
     
-    public func run() throws {
-        print("Hello World")
+    func greeting() -> String {
+        return "Hello World"
     }
 }
