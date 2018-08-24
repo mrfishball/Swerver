@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84A4EA7D212F8EF900D93F75 /* Swerver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4EA7C212F8EF900D93F75 /* Swerver.swift */; };
+		842A82AA212F9B9D0051A27B /* SwerverCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A82A9212F9B9D0051A27B /* SwerverCore.swift */; };
 		OBJ_18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_25 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84A4EA7C212F8EF900D93F75 /* Swerver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swerver.swift; sourceTree = "<group>"; };
+		842A82A9212F9B9D0051A27B /* SwerverCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverCore.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		"Swerver::Swerver::Product" /* Swerver */ = {isa = PBXFileReference; lastKnownFileType = text; path = Swerver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,12 +30,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84A4EA7B212F8EB300D93F75 /* SwerverCore */ = {
+		842A82A8212F9B800051A27B /* SwerverCore */ = {
 			isa = PBXGroup;
 			children = (
-				84A4EA7C212F8EF900D93F75 /* Swerver.swift */,
+				842A82A9212F9B9D0051A27B /* SwerverCore.swift */,
 			);
-			path = SwerverCore;
+			name = SwerverCore;
+			path = Sources/SwerverCore;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Tests */ = {
@@ -67,7 +68,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				84A4EA7B212F8EB300D93F75 /* SwerverCore */,
+				842A82A8212F9B800051A27B /* SwerverCore */,
 				OBJ_8 /* Swerver */,
 			);
 			name = Sources;
@@ -146,8 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				84A4EA7D212F8EF900D93F75 /* Swerver.swift in Sources */,
 				OBJ_18 /* main.swift in Sources */,
+				842A82AA212F9B9D0051A27B /* SwerverCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
