@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: Swerver.xcodeproj
-xcode_scheme: SwerverCoreTests
-xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
+xcode_scheme: SwerverTests
+xcode_destination: platform=iOS Simulator,OS=10.10,name=iPad Pro (9.7-inch)
