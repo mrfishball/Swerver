@@ -1,26 +1,25 @@
 import XCTest
-import Socket
 @testable import Swerver
 
 final class SwerverTests: XCTestCase {
     
-    let greeting = SwerverCore()
+    let server = EchoServer(port: 1337)
     
-    func testGreeting() {
+    func testPortNumber() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(greeting.greeting(), "Hello World!")
+        XCTAssertEqual(server.port, 1337)
     }
     
-    func testBye() {
-        XCTAssertEqual(greeting.bye(), "Goodbye, see you next time!")
+    func testContinueRunning() {
+        XCTAssertTrue(server.continueRunning)
     }
     
     
 
 
     static var allTests = [
-        ("testGreeting", testGreeting), ("testBye", testBye)
+        ("testPortNumber", testPortNumber), ("testContinueRunning", testContinueRunning)
     ]
 }

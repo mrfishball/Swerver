@@ -1,5 +1,4 @@
-import Foundation
+let tool = EchoServer(port: 1337)
 
-let tool = SwerverCore()
-
-print(tool.greeting())
+print(tool.port)
+print(tool.continueRunning)
