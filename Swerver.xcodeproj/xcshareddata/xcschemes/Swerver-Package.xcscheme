@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "Swerver::SwerverTests"
-               BuildableName = "SwerverCoreTests.xctest"
+               BuildableName = "SwerverTests.xctest"
                BlueprintName = "SwerverTests"
                ReferencedContainer = "container:Swerver.xcodeproj">
             </BuildableReference>

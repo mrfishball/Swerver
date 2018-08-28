@@ -18,7 +18,8 @@ let package = Package(
             name: "Swerver",
             dependencies: [
                 "Socket"
-            ]),
+            ],
+            path: "Sources/SwerverCore"),
         .testTarget(
             name: "SwerverTests",
             dependencies: ["Swerver"]),
