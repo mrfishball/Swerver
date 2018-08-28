@@ -14,7 +14,7 @@ final class SwerverTests: XCTestCase {
     }
     
     func testBye() {
-        XCTAssertEqual(greeting.bye(), "Bye!")
+        XCTAssertEqual(greeting.bye(), "Goodbye, see you next time!")
     }
     
     
