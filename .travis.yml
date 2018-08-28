@@ -7,10 +7,4 @@ before_script:
 - gem install xcpretty
 script:
 - swift package generate-xcodeproj
-- set -o pipefail && xcodebuild -scheme Swerver-Package clean build test | xcpretty
-
-
-# install: swift package update
-# script:
-#     - swift build
-#     - swift test
+- set -o pipefail && xcodebuild clean build test | xcpretty
