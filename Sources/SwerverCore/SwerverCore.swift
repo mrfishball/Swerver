@@ -1,7 +1,8 @@
 import Foundation
+import Socket
 
-class Swerver {
-    
+class SwerverCore {
+
     func greeting() -> String {
         return "Hello World!"
     }
