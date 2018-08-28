@@ -4,6 +4,6 @@ xcode_project: Swerver.xcodeproj
 xcode_scheme: Swerver-Package
 xcode_sdk: macosx10.13
 script:
-    - xcodebuild clean test
+    - xcodebuild clean test -scheme Swerver-Package
 # before_install:
 #   git clone https://github.com/IBM-Swift/BlueSocket.git
