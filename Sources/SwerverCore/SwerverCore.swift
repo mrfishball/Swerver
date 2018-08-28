@@ -4,6 +4,6 @@ import Socket
 class SwerverCore {
 
     func greeting() -> String {
-        return "Hello World"
+        return "Hello World!"
     }
 }
