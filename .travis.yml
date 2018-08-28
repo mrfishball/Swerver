@@ -3,5 +3,5 @@ osx_image: xcode9.4
 xcode_project: Swerver.xcodeproj
 xcode_scheme: Swerver-Package
 xcode_sdk: macosx10.13
-# script:
-#     - xcodebuild clean test -project Swerver.xcodeproj -scheme Swerver-Package -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+script:
+    - xcodebuild clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
