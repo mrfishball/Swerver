@@ -12,9 +12,15 @@ final class SwerverTests: XCTestCase {
         // results.
         XCTAssertEqual(greeting.greeting(), "Hello World!")
     }
+    
+    func testBye() {
+        XCTAssertEqual(greeting.bye(), "Bye!")
+    }
+    
+    
 
 
     static var allTests = [
-        ("testExample", testGreeting),
+        ("testGreeting", testGreeting), ("testBye", testBye)
     ]
 }
