@@ -4,4 +4,6 @@ xcode_project: Swerver.xcodeproj
 xcode_scheme: Swerver-Package
 xcode_sdk: macosx10.13
 script:
-    - xcodebuild clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+    - xcodebuild clean
+before_install:
+  git clone https://github.com/IBM-Swift/BlueSocket.git
