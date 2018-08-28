@@ -1,6 +1,5 @@
-//struct Swerver {
-//    var text = "Hello, World!"
-//}
+import Foundation
+
 class Swerver {
     
     func greeting() -> String {
