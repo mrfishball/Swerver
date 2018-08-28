@@ -1,4 +1,7 @@
 language: objective-c
 osx_image: xcode9.4
-script:
-    - xcodebuild clean test -project Swerver.xcodeproj -scheme Swerver-Package -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+xcode_project: Swerver.xcodeproj
+xcode_scheme: Swerver-Package
+xcode_sdk: macOS
+# script:
+#     - xcodebuild clean test -project Swerver.xcodeproj -scheme Swerver-Package -destination "platform=macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
