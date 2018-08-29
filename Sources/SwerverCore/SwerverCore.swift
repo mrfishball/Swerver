@@ -1,17 +1,17 @@
 import Socket
 
-class EchoServer {
+public class EchoServer {
     
-    static let quitCommand: String = "QUIT"
-    static let shutdownCommand: String = "SHUTDOWN"
-    static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
+    public static let quitCommand: String = "QUIT"
+    public static let shutdownCommand: String = "SHUTDOWN"
+    public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
-    let port: Int
-    var listenSocket: Socket? = nil
-    var continueRunning = true
-    var connectedSockets = [Int32: Socket]()
+    public let port: Int
+    public var listenSocket: Socket? = nil
+    public var continueRunning = true
+    public var connectedSockets = [Int32: Socket]()
     
-    init(port: Int) {
+    public init(port: Int) {
         self.port = port
     }
     

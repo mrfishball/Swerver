@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		84383DB121359FB300F52570 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84383DB021359FB300F52570 /* main.swift */; };
-		845C15952135E3CF0046671C /* SwerverCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SwerverCore.swift */; };
 		OBJ_30 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Socket.swift */; };
 		OBJ_31 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* SocketProtocols.swift */; };
 		OBJ_32 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SocketUtils.swift */; };
@@ -41,19 +40,19 @@
 			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84383DA621359DCD00F52570 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Swerver::Swerver";
-			remoteInfo = Swerver;
-		};
 		84383DA821359DCE00F52570 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Swerver::SwerverTests";
 			remoteInfo = SwerverTests;
+		};
+		84BC892E2136E69A00DBD3D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Swerver::Swerver";
+			remoteInfo = Swerver;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -234,6 +233,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				84BC892F2136E69A00DBD3D2 /* PBXTargetDependency */,
 			);
 			name = main;
 			productName = main;
@@ -297,7 +297,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_70 /* PBXTargetDependency */,
 			);
 			name = SwerverTests;
 			productName = SwerverTests;
@@ -361,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845C15952135E3CF0046671C /* SwerverCore.swift in Sources */,
 				84383DB121359FB300F52570 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +410,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84BC892F2136E69A00DBD3D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Swerver::Swerver" /* Swerver */;
+			targetProxy = 84BC892E2136E69A00DBD3D2 /* PBXContainerItemProxy */;
+		};
 		OBJ_48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
@@ -421,11 +424,6 @@
 			isa = PBXTargetDependency;
 			target = "Swerver::SwerverTests" /* SwerverTests */;
 			targetProxy = 84383DA821359DCE00F52570 /* PBXContainerItemProxy */;
-		};
-		OBJ_70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Swerver::Swerver" /* Swerver */;
-			targetProxy = 84383DA621359DCD00F52570 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
