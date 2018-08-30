@@ -4,7 +4,6 @@ import Socket
 
 public class EchoServer {
     
-    public static let quitCommand: String = "QUIT"
     public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
     public let port: Int
@@ -35,8 +34,6 @@ public class EchoServer {
         var readData: Data? = Data(capacity: EchoServer.bufferSize)
         
         do {
-            try socket.write(from: "Hi!, type 'QUIT' to end session and stop the server.\n")
-            
             repeat {
                 let bytesData = try socket.read(into: &readData!)
                 
@@ -47,19 +44,16 @@ public class EchoServer {
                         break
                     }
                     print(request)
-                    print("Repsonse: 200 OK\n")
+                    let responseHeader: String = "HTTP/1.1 200 OK\n"
                     
-                    if request.hasPrefix(EchoServer.quitCommand) {
-                        keepRunning = false
-                    }
-                    let reply = "Server says: \n\(request)\n"
-                    try socket.write(from: "\n\(reply)")
-                    
+                    try socket.write(from: responseHeader)
+                    keepRunning = false
                 }
                 if bytesData == 0 {
                     keepRunning = false
                     break
                 }
+                readData!.count = 0
 
             } while keepRunning
         }
