@@ -2,7 +2,7 @@ import Foundation
 import Socket
 
 
-public class EchoServer {
+public class Swerver {
     
     public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
@@ -31,7 +31,7 @@ public class EchoServer {
     private func newConnection(socket: Socket) {
         
         var keepRunning = true
-        var readData: Data? = Data(capacity: EchoServer.bufferSize)
+        var readData: Data? = Data(capacity: Swerver.bufferSize)
         
         do {
             repeat {

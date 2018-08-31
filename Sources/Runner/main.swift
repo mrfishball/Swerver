@@ -1,6 +1,6 @@
 let port = 5050
-let server = EchoServer(port: port)
-print("Echo Server")
+let server = Swerver(port: port)
+print("Dummy Server")
 print("Connect with a browser by enter the URL 'localhost:\(port)'")
 print("Connect with a command line window by entering 'telnet localhost \(port)'")
 
