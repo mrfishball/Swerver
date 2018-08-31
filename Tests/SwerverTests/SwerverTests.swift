@@ -3,7 +3,7 @@ import XCTest
 
 final class SwerverTests: XCTestCase {
     
-    let server = EchoServer(port: 1337)
+    let server = Swerver(port: 1337)
     
     func testPortNumber() {
         XCTAssertEqual(server.port, 1337)
