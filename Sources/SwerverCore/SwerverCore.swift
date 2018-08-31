@@ -59,7 +59,7 @@ public class EchoServer {
         }
         catch let error {
             guard let socketError = error as? Socket.Error else {
-                print("Unexpected error occured...")
+                print("Unexpected error occurred...")
                 return
             }
             if self.continueListening {
