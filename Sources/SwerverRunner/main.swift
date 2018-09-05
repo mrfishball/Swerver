@@ -1,3 +1,5 @@
+import Swerver
+
 let port = 5050
 let server = Swerver(port: port)
 print("Dummy Server")

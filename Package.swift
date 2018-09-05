@@ -16,6 +16,10 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "Swerver_Runner",
+        dependencies: ["Swerver"],
+        path: "Sources/SwerverRunner"),
+        .target(
             name: "Swerver",
             dependencies: [
                 "Socket", "SwiftyBeaver"

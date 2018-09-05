@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Swerver::Swerver"
-               BuildableName = "Swerver.framework"
-               BlueprintName = "Swerver"
+               BlueprintIdentifier = "Swerver::Swerver_Runner"
+               BuildableName = "Swerver_Runner"
+               BlueprintName = "Swerver_Runner"
                ReferencedContainer = "container:Swerver.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,6 +45,20 @@
                BlueprintIdentifier = "Socket::Socket"
                BuildableName = "Socket.framework"
                BlueprintName = "Socket"
+               ReferencedContainer = "container:Swerver.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Swerver::Swerver"
+               BuildableName = "Swerver.framework"
+               BlueprintName = "Swerver"
                ReferencedContainer = "container:Swerver.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
