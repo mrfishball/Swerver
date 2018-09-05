@@ -6,17 +6,12 @@ A HTTP Server in Swift.
 
 ## Prerequisites
 
-Latest non-beta version of Xcode
+- Swift 4 or above
 
-Any modern web browser
-
-Homebrew (For command line only)
-
-Telnet (For command line only)
+- Any modern web browser
 
 
-
-## Set Up (For local development and testing)
+## Set Up (For development and testing)
 
 Clone or fork this repo:
 
@@ -24,14 +19,13 @@ Clone or fork this repo:
 $ git clone https://github.com/mrfishball/Swerver.git
 ```
 
-In the root of the project directory, run:
+To be able to open and edit in Xcode, in the root of the project directory, run:
 
 ```sh
-$ swift package resolve
+$ swift package generate-xcodeproj
 ```
 ## Compiling and testing
 
-Compile and test the project in Xcode is highly recommended. After building in Xcode, right click on the 'main' executable created inside the 'Products' directory and select 'Show in Finder'
 
 To build using the Swift Package Manager, run:
 
@@ -45,9 +39,15 @@ And to test, run:
 $ swift test
 ```
 
+Finally to run:
+
+```sh
+$ swift run
+```
+
 ## Usage
 
-Following the instructions in the terminal window in Xcode when running the server.
+Following the instructions in the terminal after running the server.
 
 ## Author
 
