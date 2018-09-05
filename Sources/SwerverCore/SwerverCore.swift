@@ -1,5 +1,6 @@
 import Foundation
 import Socket
+import SwiftyBeaver
 
 
 public class Swerver {
@@ -9,6 +10,9 @@ public class Swerver {
     public let port: Int
     public var listenSocket: Socket? = nil
     public var continueListening = true
+    
+    let logger = SwiftyBeaver.self
+    
     
     public init(port: Int) {
         self.port = port

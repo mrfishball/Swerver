@@ -12,12 +12,13 @@ let package = Package(
     ],
     dependencies: [
     .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "1.0.8"),
+    .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", from: "1.5.1"),
     ],
     targets: [
         .target(
             name: "Swerver",
             dependencies: [
-                "Socket"
+                "Socket", "SwiftyBeaver"
             ],
             path: "Sources/SwerverCore"),
         .testTarget(
