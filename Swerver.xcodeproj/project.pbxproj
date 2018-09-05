@@ -43,72 +43,72 @@
 		OBJ_63 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
 		OBJ_64 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
 		OBJ_73 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_84 /* SwerverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SwerverTests.swift */; };
-		OBJ_85 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
+		OBJ_85 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_87 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
 		OBJ_88 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
 		OBJ_89 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
+		OBJ_97 /* SwerverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SwerverTests.swift */; };
+		OBJ_98 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84FF6A912140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6A9A21402589004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
+			remoteInfo = SwiftyBeaver;
+		};
+		84FF6A9B21402589004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Socket::Socket";
+			remoteInfo = Socket;
+		};
+		84FF6A9C21402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Swerver::Swerver";
 			remoteInfo = Swerver;
 		};
-		84FF6A922140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6A9D21402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
 			remoteInfo = SwiftyBeaver;
 		};
-		84FF6A932140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6A9E21402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84FF6A942140231A004ADFF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
-			remoteInfo = SwiftyBeaver;
-		};
-		84FF6A952140231A004ADFF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Socket::Socket";
-			remoteInfo = Socket;
-		};
-		84FF6A962140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6A9F21402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Swerver::Swerver";
 			remoteInfo = Swerver;
 		};
-		84FF6A972140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AA021402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
 			remoteInfo = SwiftyBeaver;
 		};
-		84FF6A982140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AA121402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84FF6A992140231A004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AA221402589004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -140,8 +140,8 @@
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::Swerver::Product" /* Swerver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swerver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Swerver::SwerverRunner::Product" /* SwerverRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwerverRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::SwerverTests::Product" /* SwerverTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwerverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Swerver::Swerver_Runner::Product" /* Swerver_Runner */ = {isa = PBXFileReference; lastKnownFileType = text; path = Swerver_Runner; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -270,11 +270,11 @@
 		OBJ_35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				"Swerver::SwerverTests::Product" /* SwerverTests.xctest */,
 				"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */,
-				"Swerver::Swerver_Runner::Product" /* Swerver_Runner */,
 				"Socket::Socket::Product" /* Socket.framework */,
 				"Swerver::Swerver::Product" /* Swerver.framework */,
-				"Swerver::SwerverTests::Product" /* SwerverTests.xctest */,
+				"Swerver::SwerverRunner::Product" /* SwerverRunner */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -294,18 +294,18 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* Swerver_Runner */,
+				OBJ_8 /* SwerverRunner */,
 				OBJ_10 /* Swerver */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* Swerver_Runner */ = {
+		OBJ_8 /* SwerverRunner */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* main.swift */,
 			);
-			name = Swerver_Runner;
+			name = SwerverRunner;
 			path = Sources/SwerverRunner;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -360,11 +360,11 @@
 			productReference = "Swerver::Swerver::Product" /* Swerver.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"Swerver::SwerverTests" /* SwerverTests */ = {
+		"Swerver::SwerverRunner" /* SwerverRunner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "SwerverTests" */;
+			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "SwerverRunner" */;
 			buildPhases = (
-				OBJ_83 /* Sources */,
+				OBJ_84 /* Sources */,
 				OBJ_86 /* Frameworks */,
 			);
 			buildRules = (
@@ -374,16 +374,16 @@
 				OBJ_91 /* PBXTargetDependency */,
 				OBJ_92 /* PBXTargetDependency */,
 			);
-			name = SwerverTests;
-			productName = SwerverTests;
-			productReference = "Swerver::SwerverTests::Product" /* SwerverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = SwerverRunner;
+			productName = SwerverRunner;
+			productReference = "Swerver::SwerverRunner::Product" /* SwerverRunner */;
+			productType = "com.apple.product-type.tool";
 		};
-		"Swerver::Swerver_Runner" /* Swerver_Runner */ = {
+		"Swerver::SwerverTests" /* SwerverTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_94 /* Build configuration list for PBXNativeTarget "Swerver_Runner" */;
+			buildConfigurationList = OBJ_93 /* Build configuration list for PBXNativeTarget "SwerverTests" */;
 			buildPhases = (
-				OBJ_97 /* Sources */,
+				OBJ_96 /* Sources */,
 				OBJ_99 /* Frameworks */,
 			);
 			buildRules = (
@@ -393,10 +393,10 @@
 				OBJ_104 /* PBXTargetDependency */,
 				OBJ_105 /* PBXTargetDependency */,
 			);
-			name = Swerver_Runner;
-			productName = Swerver_Runner;
-			productReference = "Swerver::Swerver_Runner::Product" /* Swerver_Runner */;
-			productType = "com.apple.product-type.tool";
+			name = SwerverTests;
+			productName = SwerverTests;
+			productReference = "Swerver::SwerverTests::Product" /* SwerverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		"Swerver::SwiftPMPackageDescription" /* SwerverPackageDescription */ = {
 			isa = PBXNativeTarget;
@@ -467,8 +467,8 @@
 				"Swerver::Swerver" /* Swerver */,
 				"Swerver::SwiftPMPackageDescription" /* SwerverPackageDescription */,
 				"Swerver::SwerverPackageTests::ProductTarget" /* SwerverPackageTests */,
+				"Swerver::SwerverRunner" /* SwerverRunner */,
 				"Swerver::SwerverTests" /* SwerverTests */,
-				"Swerver::Swerver_Runner" /* Swerver_Runner */,
 				"SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */,
 				"SwiftyBeaver::SwiftPMPackageDescription" /* SwiftyBeaverPackageDescription */,
 			);
@@ -535,20 +535,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_83 /* Sources */ = {
+		OBJ_84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_84 /* SwerverTests.swift in Sources */,
-				OBJ_85 /* XCTestManifests.swift in Sources */,
+				OBJ_85 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_97 /* Sources */ = {
+		OBJ_96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_98 /* main.swift in Sources */,
+				OBJ_97 /* SwerverTests.swift in Sources */,
+				OBJ_98 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,47 +558,47 @@
 		OBJ_103 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Swerver::Swerver" /* Swerver */;
-			targetProxy = 84FF6A912140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9F21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_104 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6A942140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AA021402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_105 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6A952140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AA121402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6A922140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9A21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6A932140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9B21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Swerver::SwerverTests" /* SwerverTests */;
-			targetProxy = 84FF6A992140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AA221402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Swerver::Swerver" /* Swerver */;
-			targetProxy = 84FF6A962140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9C21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6A972140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9D21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 		OBJ_92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6A982140231A004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6A9E21402589004ADFF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -849,81 +849,81 @@
 			};
 			name = Release;
 		};
-		OBJ_81 /* Debug */ = {
+		OBJ_82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverTests;
+				TARGET_NAME = SwerverRunner;
 			};
 			name = Debug;
 		};
-		OBJ_82 /* Release */ = {
+		OBJ_83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverTests;
+				TARGET_NAME = SwerverRunner;
 			};
 			name = Release;
 		};
-		OBJ_95 /* Debug */ = {
+		OBJ_94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Runner_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Swerver_Runner;
+				TARGET_NAME = SwerverTests;
 			};
 			name = Debug;
 		};
-		OBJ_96 /* Release */ = {
+		OBJ_95 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Runner_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Swerver_Runner;
+				TARGET_NAME = SwerverTests;
 			};
 			name = Release;
 		};
@@ -1002,20 +1002,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_80 /* Build configuration list for PBXNativeTarget "SwerverTests" */ = {
+		OBJ_81 /* Build configuration list for PBXNativeTarget "SwerverRunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_81 /* Debug */,
-				OBJ_82 /* Release */,
+				OBJ_82 /* Debug */,
+				OBJ_83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_94 /* Build configuration list for PBXNativeTarget "Swerver_Runner" */ = {
+		OBJ_93 /* Build configuration list for PBXNativeTarget "SwerverTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_95 /* Debug */,
-				OBJ_96 /* Release */,
+				OBJ_94 /* Debug */,
+				OBJ_95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

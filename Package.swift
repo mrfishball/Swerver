@@ -16,7 +16,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Swerver_Runner",
+            name: "SwerverRunner",
         dependencies: ["Swerver"],
         path: "Sources/SwerverRunner"),
         .target(
