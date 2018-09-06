@@ -5,6 +5,7 @@ import SwiftyBeaver
 
 public class Swerver {
     
+    public static let quitCommand: String = "QUIT"
     public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
     public let port: Int
@@ -12,10 +13,11 @@ public class Swerver {
     public var continueListening = true
     
     let logger = SwiftyBeaver.self
-    
+    let console = ConsoleDestination()
     
     public init(port: Int) {
         self.port = port
+        logger.addDestination(console)
     }
     
     public func start() throws {
@@ -23,10 +25,10 @@ public class Swerver {
         
         listenSocket = socket
         try socket.listen(on: port)
-        print("Listening on port: \(socket.listeningPort)\n")
+        logger.info("Listening on port: \(socket.listeningPort)\n")
         repeat {
             let connectedSocket = try socket.acceptClientConnection()
-            print("Connection from: \(connectedSocket.remoteHostname)\n")
+            logger.info("Connection from: \(connectedSocket.remoteHostname)\n")
             newConnection(socket: connectedSocket)
             
         } while continueListening
@@ -34,7 +36,7 @@ public class Swerver {
     
     private func newConnection(socket: Socket) {
         
-        var keepRunning = true
+        var keepConnectionAlive = true
         var readData: Data? = Data(capacity: Swerver.bufferSize)
         
         do {
@@ -43,31 +45,47 @@ public class Swerver {
                 
                 if bytesData > 0 {
                     guard let request = String(data: readData!, encoding: .utf8) else {
-                        print("Error decoding response...")
+                        logger.error("Error decoding response...")
                         readData!.count = 0
                         break
                     }
-                    print(request)
+                    if request.hasPrefix(Swerver.quitCommand) {
+                        logger.warning("Shutting down swerver...")
+                        keepConnectionAlive = false
+                    }
+                    logger.debug(request)
                     let responseHeader: String = "HTTP/1.1 200 OK\n"
+                    let responseContentType: String = "Content-Type: text/html\n\n"
+                    let responseBody: String = """
+                    <html>
+                    <body>
+                    <b>Welcome to the dummy Swerver!</b>
+                    </body>
+                    </html
+                    """
                     
-                    try socket.write(from: responseHeader)
-                    keepRunning = false
+                    try socket.write(from: responseHeader + responseContentType + responseBody)
+                    keepConnectionAlive = false
                 }
                 if bytesData == 0 {
-                    keepRunning = false
-                    break
+                    logger.debug("bytesData is 0")
+                    keepConnectionAlive = false
                 }
                 readData!.count = 0
 
-            } while keepRunning
+                logger.debug("Keep alive - \(keepConnectionAlive)")
+            } while keepConnectionAlive
+            
+            logger.debug("Socket: \(socket.remoteHostname):\(socket.remotePort) closed...")
+            socket.close()
         }
         catch let error {
             guard let socketError = error as? Socket.Error else {
-                print("Unexpected error occurred...")
+                logger.error("Unexpected error occurred...")
                 return
             }
             if self.continueListening {
-                print("Error: \(socketError.description)")
+                logger.error("Error: \(socketError.description)")
             }
         }
     }

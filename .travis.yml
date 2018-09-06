@@ -6,3 +6,11 @@ before_script:
 script:
 - swift package generate-xcodeproj
 - set -o pipefail && xcodebuild -scheme Swerver-Package clean build test | xcpretty
+after_success:
+- docker --version
+- pip install --user awscli
+- export PATH=$PATH:$HOME/.local/bin
+- eval $(aws ecr get-login --no-include-email --region us-west-2)
+- docker build -t $APP_NAME .
+- docker tag $APP_NAME:latest $AWS_ECR_ACCOUNT.dkr.ecr.us-west-2.amazonaws.com/$APP_NAME:latest
+- docker push $AWS_ECR_ACCOUNT.dkr.ecr.us-west-2.amazonaws.com/$APP_NAME:latest
