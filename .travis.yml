@@ -1,21 +1,34 @@
 sudo: required
 
-services:
-- docker
-
-language: swift
-os: osx
+os:
+- linux
+- osx
+language: generic
+dist: trusty
+services: docker
 osx_image: xcode9.4
-before_script:
-- gem install xcpretty
+install:
+- eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+#script:
+#- swift build
+
+#language: swift
+#os: linux
+#before_script:
+#- gem install xcpretty
 script:
 - swift package generate-xcodeproj
-- set -o pipefail && xcodebuild -scheme Swerver-Package clean build test | xcpretty
+- swift package clean
+- swift build
+- swift test
+#- set -o pipefail && xcodebuild -scheme Swerver-Package clean build test | xcpretty
 after_success:
 - docker --version
-- pip install awscli
+- pip install --upgrade pip
+- pip install --user awscli
 - export PATH=$PATH:$HOME/.local/bin
-- eval $(aws ecr get-login --no-include-email --region us-west-2)
+- eval $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 - docker build -t $APP_NAME .
 - docker tag $APP_NAME:latest $AWS_ECR_ACCOUNT.dkr.ecr.us-west-2.amazonaws.com/$APP_NAME:latest
-- docker push $AWS_ECR_ACCOUNT.dkr.ecr.us-west-2.amazonaws.com/$APP_NAME:latest
+- docker push $AWS_ECR_ACCOUNT.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APP_NAME:latest
+- aws ecs update-service --cluster $AWS_ECS_CLUSTER --service $AWS_ECS_SERVICE --force-new-deployment

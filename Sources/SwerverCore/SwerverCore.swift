@@ -37,6 +37,9 @@ public class Swerver {
     private func newConnection(socket: Socket) {
         
         var keepConnectionAlive = true
+        let responseHeader: String = "HTTP/1.1 200 OK\n"
+        let responseContentType: String = "Content-Type: text/html\n\n"
+        var responseBody: String = ""
         var readData: Data? = Data(capacity: Swerver.bufferSize)
         
         do {
@@ -49,20 +52,27 @@ public class Swerver {
                         readData!.count = 0
                         break
                     }
+                    logger.debug(request)
                     if request.hasPrefix(Swerver.quitCommand) {
                         logger.warning("Shutting down swerver...")
                         keepConnectionAlive = false
+                    } else if request.hasPrefix("GET /connie") {
+                        responseBody = """
+                        <html>
+                        <body>
+                        <b>I love you babe!!! I'll be home soon! <33 VERSION 2</b>
+                        </body>
+                        </html>
+                        """
+                    } else {
+                        responseBody = """
+                        <html>
+                        <body>
+                        <b>Welcome to the dummy Swerver!</b>
+                        </body>
+                        </html>
+                        """
                     }
-                    logger.debug(request)
-                    let responseHeader: String = "HTTP/1.1 200 OK\n"
-                    let responseContentType: String = "Content-Type: text/html\n\n"
-                    let responseBody: String = """
-                    <html>
-                    <body>
-                    <b>Welcome to the dummy Swerver!</b>
-                    </body>
-                    </html
-                    """
                     
                     try socket.write(from: responseHeader + responseContentType + responseBody)
                     keepConnectionAlive = false
