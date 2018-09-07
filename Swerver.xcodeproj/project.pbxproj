@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"Swerver::SwerverPackageTests::ProductTarget" /* SwerverPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_75 /* Build configuration list for PBXAggregateTarget "SwerverPackageTests" */;
+			buildConfigurationList = OBJ_277 /* Build configuration list for PBXAggregateTarget "SwerverPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_78 /* PBXTargetDependency */,
+				OBJ_280 /* PBXTargetDependency */,
 			);
 			name = SwerverPackageTests;
 			productName = SwerverPackageTests;
@@ -21,125 +21,314 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_100 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
-		OBJ_101 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
-		OBJ_102 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_110 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* AES256CBC.swift */; };
-		OBJ_111 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Base64.swift */; };
-		OBJ_112 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* BaseDestination.swift */; };
-		OBJ_113 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ConsoleDestination.swift */; };
-		OBJ_114 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Extensions.swift */; };
-		OBJ_115 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* FileDestination.swift */; };
-		OBJ_116 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Filter.swift */; };
-		OBJ_117 /* GoogleCloudDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* GoogleCloudDestination.swift */; };
-		OBJ_118 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* SBPlatformDestination.swift */; };
-		OBJ_119 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SwiftyBeaver.swift */; };
-		OBJ_126 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Package.swift */; };
-		OBJ_46 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Socket.swift */; };
-		OBJ_47 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SocketProtocols.swift */; };
-		OBJ_48 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SocketUtils.swift */; };
-		OBJ_55 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Package.swift */; };
-		OBJ_61 /* SwerverCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SwerverCore.swift */; };
-		OBJ_63 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
-		OBJ_64 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_73 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_85 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
-		OBJ_87 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
-		OBJ_88 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
-		OBJ_89 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_97 /* SwerverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SwerverTests.swift */; };
-		OBJ_98 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
+		OBJ_141 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* AdapterProtocols.swift */; };
+		OBJ_142 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* AssertionDispatcher.swift */; };
+		OBJ_143 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* AssertionRecorder.swift */; };
+		OBJ_144 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* NMBExpectation.swift */; };
+		OBJ_145 /* NMBObjCMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* NMBObjCMatcher.swift */; };
+		OBJ_146 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* NimbleEnvironment.swift */; };
+		OBJ_147 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* NimbleXCTestHandler.swift */; };
+		OBJ_148 /* ExceptionCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* ExceptionCapture.swift */; };
+		OBJ_149 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* DSL+Wait.swift */; };
+		OBJ_150 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* DSL.swift */; };
+		OBJ_151 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* Expectation.swift */; };
+		OBJ_152 /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* ExpectationMessage.swift */; };
+		OBJ_153 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* Expression.swift */; };
+		OBJ_154 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* FailureMessage.swift */; };
+		OBJ_155 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* AllPass.swift */; };
+		OBJ_156 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* Async.swift */; };
+		OBJ_157 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* BeAKindOf.swift */; };
+		OBJ_158 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* BeAnInstanceOf.swift */; };
+		OBJ_159 /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* BeCloseTo.swift */; };
+		OBJ_160 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* BeEmpty.swift */; };
+		OBJ_161 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* BeGreaterThan.swift */; };
+		OBJ_162 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* BeGreaterThanOrEqualTo.swift */; };
+		OBJ_163 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* BeIdenticalTo.swift */; };
+		OBJ_164 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* BeLessThan.swift */; };
+		OBJ_165 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* BeLessThanOrEqual.swift */; };
+		OBJ_166 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* BeLogical.swift */; };
+		OBJ_167 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* BeNil.swift */; };
+		OBJ_168 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* BeVoid.swift */; };
+		OBJ_169 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* BeginWith.swift */; };
+		OBJ_170 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* Contain.swift */; };
+		OBJ_171 /* ContainElementSatisfying.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* ContainElementSatisfying.swift */; };
+		OBJ_172 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* EndWith.swift */; };
+		OBJ_173 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* Equal.swift */; };
+		OBJ_174 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* HaveCount.swift */; };
+		OBJ_175 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* Match.swift */; };
+		OBJ_176 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* MatchError.swift */; };
+		OBJ_177 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* MatcherFunc.swift */; };
+		OBJ_178 /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* MatcherProtocols.swift */; };
+		OBJ_179 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* PostNotification.swift */; };
+		OBJ_180 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* Predicate.swift */; };
+		OBJ_181 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* RaisesException.swift */; };
+		OBJ_182 /* SatisfyAllOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* SatisfyAllOf.swift */; };
+		OBJ_183 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* SatisfyAnyOf.swift */; };
+		OBJ_184 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* ThrowAssertion.swift */; };
+		OBJ_185 /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* ThrowError.swift */; };
+		OBJ_186 /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* ToSucceed.swift */; };
+		OBJ_187 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* Await.swift */; };
+		OBJ_188 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* Errors.swift */; };
+		OBJ_189 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* Functional.swift */; };
+		OBJ_190 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* SourceLocation.swift */; };
+		OBJ_191 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* Stringers.swift */; };
+		OBJ_198 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* Package.swift */; };
+		OBJ_204 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Behavior.swift */; };
+		OBJ_205 /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Callsite.swift */; };
+		OBJ_206 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Configuration.swift */; };
+		OBJ_207 /* QuickConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* QuickConfiguration.swift */; };
+		OBJ_208 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DSL.swift */; };
+		OBJ_209 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* World+DSL.swift */; };
+		OBJ_210 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* ErrorUtility.swift */; };
+		OBJ_211 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Example.swift */; };
+		OBJ_212 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* ExampleGroup.swift */; };
+		OBJ_213 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* ExampleMetadata.swift */; };
+		OBJ_214 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Filter.swift */; };
+		OBJ_215 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Closures.swift */; };
+		OBJ_216 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* ExampleHooks.swift */; };
+		OBJ_217 /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* HooksPhase.swift */; };
+		OBJ_218 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* SuiteHooks.swift */; };
+		OBJ_219 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* NSBundle+CurrentTestBundle.swift */; };
+		OBJ_220 /* NSString+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* NSString+C99ExtendedIdentifier.swift */; };
+		OBJ_221 /* QuickMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* QuickMain.swift */; };
+		OBJ_222 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* QuickSelectedTestSuiteBuilder.swift */; };
+		OBJ_223 /* QuickSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* QuickSpec.swift */; };
+		OBJ_224 /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* QuickTestSuite.swift */; };
+		OBJ_225 /* URL+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* URL+FileName.swift */; };
+		OBJ_226 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* World.swift */; };
+		OBJ_228 /* QuickSpecBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */; };
+		OBJ_236 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* Package.swift */; };
+		OBJ_241 /* QuickSpecBase.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* QuickSpecBase.m */; };
+		OBJ_248 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_123 /* Socket.swift */; };
+		OBJ_249 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_124 /* SocketProtocols.swift */; };
+		OBJ_250 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_125 /* SocketUtils.swift */; };
+		OBJ_257 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_126 /* Package.swift */; };
+		OBJ_263 /* SwerverCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SwerverCore.swift */; };
+		OBJ_265 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
+		OBJ_266 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
+		OBJ_275 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_287 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
+		OBJ_289 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
+		OBJ_290 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
+		OBJ_291 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
+		OBJ_299 /* SwerverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SwerverTests.swift */; };
+		OBJ_300 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
+		OBJ_302 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Nimble::Nimble::Product" /* Nimble.framework */; };
+		OBJ_303 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Quick::Quick::Product" /* Quick.framework */; };
+		OBJ_304 /* QuickSpecBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */; };
+		OBJ_305 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
+		OBJ_306 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
+		OBJ_307 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
+		OBJ_318 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* AES256CBC.swift */; };
+		OBJ_319 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* Base64.swift */; };
+		OBJ_320 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* BaseDestination.swift */; };
+		OBJ_321 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* ConsoleDestination.swift */; };
+		OBJ_322 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* Extensions.swift */; };
+		OBJ_323 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* FileDestination.swift */; };
+		OBJ_324 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_117 /* Filter.swift */; };
+		OBJ_325 /* GoogleCloudDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* GoogleCloudDestination.swift */; };
+		OBJ_326 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_119 /* SBPlatformDestination.swift */; };
+		OBJ_327 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_120 /* SwiftyBeaver.swift */; };
+		OBJ_334 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84FF6A9A21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AB7214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = SwiftyBeaver::SwiftyBeaver;
+			remoteGlobalIDString = "Quick::QuickSpecBase";
+			remoteInfo = QuickSpecBase;
+		};
+		84FF6AB8214222D2004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
 			remoteInfo = SwiftyBeaver;
 		};
-		84FF6A9B21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AB9214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Socket::Socket;
+			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84FF6A9C21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6ABA214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Swerver::Swerver;
+			remoteGlobalIDString = "Swerver::Swerver";
 			remoteInfo = Swerver;
 		};
-		84FF6A9D21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6ABB214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = SwiftyBeaver::SwiftyBeaver;
+			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
 			remoteInfo = SwiftyBeaver;
 		};
-		84FF6A9E21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6ABC214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Socket::Socket;
+			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84FF6A9F21402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6ABD214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Swerver::Swerver;
+			remoteGlobalIDString = "Nimble::Nimble";
+			remoteInfo = Nimble;
+		};
+		84FF6ABE214222D2004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Quick::Quick";
+			remoteInfo = Quick;
+		};
+		84FF6ABF214222D2004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Quick::QuickSpecBase";
+			remoteInfo = QuickSpecBase;
+		};
+		84FF6AC0214222D2004ADFF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Swerver::Swerver";
 			remoteInfo = Swerver;
 		};
-		84FF6AA021402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AC1214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = SwiftyBeaver::SwiftyBeaver;
+			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
 			remoteInfo = SwiftyBeaver;
 		};
-		84FF6AA121402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AC2214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Socket::Socket;
+			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		84FF6AA221402589004ADFF0 /* PBXContainerItemProxy */ = {
+		84FF6AC3214222D3004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = Swerver::SwerverTests;
+			remoteGlobalIDString = "Swerver::SwerverTests";
 			remoteInfo = SwerverTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		58603B34A858C7E87DDD248C /* Dockerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dockerfile; sourceTree = "<group>"; };
-		58603C728756ABEB52F6C341 /* .dockerignore */ = {isa = PBXFileReference; lastKnownFileType = file.dockerignore; path = .dockerignore; sourceTree = "<group>"; };
+		"Nimble::Nimble::Product" /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_100 /* ThrowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowError.swift; sourceTree = "<group>"; };
+		OBJ_101 /* ToSucceed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToSucceed.swift; sourceTree = "<group>"; };
+		OBJ_103 /* Await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Await.swift; sourceTree = "<group>"; };
+		OBJ_104 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		OBJ_105 /* Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functional.swift; sourceTree = "<group>"; };
+		OBJ_106 /* SourceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceLocation.swift; sourceTree = "<group>"; };
+		OBJ_107 /* Stringers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stringers.swift; sourceTree = "<group>"; };
+		OBJ_108 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/Nimble.git-1225162792785459507/Package.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* SwerverCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverCore.swift; sourceTree = "<group>"; };
+		OBJ_110 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/SwiftyBeaver.git--1637639271898239920/Package.swift"; sourceTree = "<group>"; };
+		OBJ_111 /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
+		OBJ_112 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
+		OBJ_113 /* BaseDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
+		OBJ_114 /* ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
+		OBJ_115 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		OBJ_116 /* FileDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
+		OBJ_117 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		OBJ_118 /* GoogleCloudDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudDestination.swift; sourceTree = "<group>"; };
+		OBJ_119 /* SBPlatformDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBPlatformDestination.swift; sourceTree = "<group>"; };
+		OBJ_120 /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
+		OBJ_123 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		OBJ_124 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
+		OBJ_125 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
+		OBJ_126 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/BlueSocket.git-3162807777605905816/Package.swift"; sourceTree = "<group>"; };
 		OBJ_14 /* SwerverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverTests.swift; sourceTree = "<group>"; };
 		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_18 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/SwiftyBeaver.git--1637639271898239920/Package.swift"; sourceTree = "<group>"; };
-		OBJ_19 /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
-		OBJ_20 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
-		OBJ_21 /* BaseDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
-		OBJ_22 /* ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
-		OBJ_23 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		OBJ_24 /* FileDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
-		OBJ_25 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		OBJ_26 /* GoogleCloudDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudDestination.swift; sourceTree = "<group>"; };
-		OBJ_27 /* SBPlatformDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBPlatformDestination.swift; sourceTree = "<group>"; };
-		OBJ_28 /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
-		OBJ_31 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		OBJ_32 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
-		OBJ_33 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
-		OBJ_34 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/BlueSocket.git-3162807777605905816/Package.swift"; sourceTree = "<group>"; };
+		OBJ_19 /* QuickSpecBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickSpecBase.m; sourceTree = "<group>"; };
+		OBJ_21 /* QuickSpecBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickSpecBase.h; sourceTree = "<group>"; };
+		OBJ_22 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/admin/Desktop/Swerver/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap; sourceTree = "<group>"; };
+		OBJ_24 /* Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behavior.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Callsite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callsite.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		OBJ_28 /* QuickConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickConfiguration.swift; sourceTree = "<group>"; };
+		OBJ_30 /* DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL.swift; sourceTree = "<group>"; };
+		OBJ_31 /* World+DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "World+DSL.swift"; sourceTree = "<group>"; };
+		OBJ_32 /* ErrorUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtility.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		OBJ_34 /* ExampleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleGroup.swift; sourceTree = "<group>"; };
+		OBJ_35 /* ExampleMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMetadata.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		OBJ_38 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		OBJ_39 /* ExampleHooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleHooks.swift; sourceTree = "<group>"; };
+		OBJ_40 /* HooksPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HooksPhase.swift; sourceTree = "<group>"; };
+		OBJ_41 /* SuiteHooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuiteHooks.swift; sourceTree = "<group>"; };
+		OBJ_42 /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
+		OBJ_43 /* NSString+C99ExtendedIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+C99ExtendedIdentifier.swift"; sourceTree = "<group>"; };
+		OBJ_44 /* QuickMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMain.swift; sourceTree = "<group>"; };
+		OBJ_45 /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
+		OBJ_46 /* QuickSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSpec.swift; sourceTree = "<group>"; };
+		OBJ_47 /* QuickTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTestSuite.swift; sourceTree = "<group>"; };
+		OBJ_48 /* URL+FileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FileName.swift"; sourceTree = "<group>"; };
+		OBJ_49 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		OBJ_50 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/Quick.git-2733117082000052066/Package.swift"; sourceTree = "<group>"; };
+		OBJ_54 /* AdapterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterProtocols.swift; sourceTree = "<group>"; };
+		OBJ_55 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionDispatcher.swift; sourceTree = "<group>"; };
+		OBJ_56 /* AssertionRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionRecorder.swift; sourceTree = "<group>"; };
+		OBJ_57 /* NMBExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMBExpectation.swift; sourceTree = "<group>"; };
+		OBJ_58 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMBObjCMatcher.swift; sourceTree = "<group>"; };
+		OBJ_59 /* NimbleEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleEnvironment.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		OBJ_62 /* ExceptionCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionCapture.swift; sourceTree = "<group>"; };
+		OBJ_63 /* DSL+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSL+Wait.swift"; sourceTree = "<group>"; };
+		OBJ_64 /* DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL.swift; sourceTree = "<group>"; };
+		OBJ_65 /* Expectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
+		OBJ_66 /* ExpectationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectationMessage.swift; sourceTree = "<group>"; };
+		OBJ_67 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		OBJ_68 /* FailureMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureMessage.swift; sourceTree = "<group>"; };
+		OBJ_70 /* AllPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPass.swift; sourceTree = "<group>"; };
+		OBJ_71 /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		OBJ_72 /* BeAKindOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeAKindOf.swift; sourceTree = "<group>"; };
+		OBJ_73 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeAnInstanceOf.swift; sourceTree = "<group>"; };
+		OBJ_74 /* BeCloseTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeCloseTo.swift; sourceTree = "<group>"; };
+		OBJ_75 /* BeEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeEmpty.swift; sourceTree = "<group>"; };
+		OBJ_76 /* BeGreaterThan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeGreaterThan.swift; sourceTree = "<group>"; };
+		OBJ_77 /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
+		OBJ_78 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeIdenticalTo.swift; sourceTree = "<group>"; };
+		OBJ_79 /* BeLessThan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeLessThan.swift; sourceTree = "<group>"; };
+		OBJ_80 /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeLessThanOrEqual.swift; sourceTree = "<group>"; };
+		OBJ_81 /* BeLogical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeLogical.swift; sourceTree = "<group>"; };
+		OBJ_82 /* BeNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeNil.swift; sourceTree = "<group>"; };
+		OBJ_83 /* BeVoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeVoid.swift; sourceTree = "<group>"; };
+		OBJ_84 /* BeginWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginWith.swift; sourceTree = "<group>"; };
+		OBJ_85 /* Contain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contain.swift; sourceTree = "<group>"; };
+		OBJ_86 /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainElementSatisfying.swift; sourceTree = "<group>"; };
+		OBJ_87 /* EndWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndWith.swift; sourceTree = "<group>"; };
+		OBJ_88 /* Equal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
+		OBJ_89 /* HaveCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCount.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_90 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		OBJ_91 /* MatchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchError.swift; sourceTree = "<group>"; };
+		OBJ_92 /* MatcherFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatcherFunc.swift; sourceTree = "<group>"; };
+		OBJ_93 /* MatcherProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatcherProtocols.swift; sourceTree = "<group>"; };
+		OBJ_94 /* PostNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNotification.swift; sourceTree = "<group>"; };
+		OBJ_95 /* Predicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
+		OBJ_96 /* RaisesException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisesException.swift; sourceTree = "<group>"; };
+		OBJ_97 /* SatisfyAllOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatisfyAllOf.swift; sourceTree = "<group>"; };
+		OBJ_98 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatisfyAnyOf.swift; sourceTree = "<group>"; };
+		OBJ_99 /* ThrowAssertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAssertion.swift; sourceTree = "<group>"; };
+		"Quick::Quick::Product" /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuickSpecBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::Swerver::Product" /* Swerver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swerver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::SwerverRunner::Product" /* SwerverRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwerverRunner; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,46 +337,71 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_120 /* Frameworks */ = {
+		OBJ_192 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_49 /* Frameworks */ = {
+		OBJ_227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_228 /* QuickSpecBase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_242 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_62 /* Frameworks */ = {
+		OBJ_251 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_63 /* SwiftyBeaver.framework in Frameworks */,
-				OBJ_64 /* Socket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_86 /* Frameworks */ = {
+		OBJ_264 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_87 /* Swerver.framework in Frameworks */,
-				OBJ_88 /* SwiftyBeaver.framework in Frameworks */,
-				OBJ_89 /* Socket.framework in Frameworks */,
+				OBJ_265 /* SwiftyBeaver.framework in Frameworks */,
+				OBJ_266 /* Socket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_99 /* Frameworks */ = {
+		OBJ_288 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_100 /* Swerver.framework in Frameworks */,
-				OBJ_101 /* SwiftyBeaver.framework in Frameworks */,
-				OBJ_102 /* Socket.framework in Frameworks */,
+				OBJ_289 /* Swerver.framework in Frameworks */,
+				OBJ_290 /* SwiftyBeaver.framework in Frameworks */,
+				OBJ_291 /* Socket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_302 /* Nimble.framework in Frameworks */,
+				OBJ_303 /* Quick.framework in Frameworks */,
+				OBJ_304 /* QuickSpecBase.framework in Frameworks */,
+				OBJ_305 /* Swerver.framework in Frameworks */,
+				OBJ_306 /* SwiftyBeaver.framework in Frameworks */,
+				OBJ_307 /* Socket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_328 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +417,37 @@
 			path = Sources/SwerverCore;
 			sourceTree = SOURCE_ROOT;
 		};
+		OBJ_102 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_103 /* Await.swift */,
+				OBJ_104 /* Errors.swift */,
+				OBJ_105 /* Functional.swift */,
+				OBJ_106 /* SourceLocation.swift */,
+				OBJ_107 /* Stringers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		OBJ_109 /* SwiftyBeaver 1.6.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_110 /* Package.swift */,
+				OBJ_111 /* AES256CBC.swift */,
+				OBJ_112 /* Base64.swift */,
+				OBJ_113 /* BaseDestination.swift */,
+				OBJ_114 /* ConsoleDestination.swift */,
+				OBJ_115 /* Extensions.swift */,
+				OBJ_116 /* FileDestination.swift */,
+				OBJ_117 /* Filter.swift */,
+				OBJ_118 /* GoogleCloudDestination.swift */,
+				OBJ_119 /* SBPlatformDestination.swift */,
+				OBJ_120 /* SwiftyBeaver.swift */,
+			);
+			name = "SwiftyBeaver 1.6.0";
+			path = ".build/checkouts/SwiftyBeaver.git--1637639271898239920/Sources";
+			sourceTree = SOURCE_ROOT;
+		};
 		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +455,41 @@
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_121 /* Socket 1.0.16 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_122 /* Socket */,
+				OBJ_126 /* Package.swift */,
+			);
+			name = "Socket 1.0.16";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_122 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_123 /* Socket.swift */,
+				OBJ_124 /* SocketProtocols.swift */,
+				OBJ_125 /* SocketUtils.swift */,
+			);
+			name = Socket;
+			path = ".build/checkouts/BlueSocket.git-3162807777605905816/Sources/Socket";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_127 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Nimble::Nimble::Product" /* Nimble.framework */,
+				"Quick::Quick::Product" /* Quick.framework */,
+				"Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */,
+				"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */,
+				"Socket::Socket::Product" /* Socket.framework */,
+				"Swerver::Swerver::Product" /* Swerver.framework */,
+				"Swerver::SwerverTests::Product" /* SwerverTests.xctest */,
+				"Swerver::SwerverRunner::Product" /* SwerverRunner */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		OBJ_13 /* SwerverTests */ = {
 			isa = PBXGroup;
@@ -224,75 +504,195 @@
 		OBJ_16 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* SwiftyBeaver 1.6.0 */,
-				OBJ_29 /* Socket 1.0.16 */,
+				OBJ_17 /* Quick 1.3.1 */,
+				OBJ_51 /* Nimble 7.3.0 */,
+				OBJ_109 /* SwiftyBeaver 1.6.0 */,
+				OBJ_121 /* Socket 1.0.16 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_17 /* SwiftyBeaver 1.6.0 */ = {
+		OBJ_17 /* Quick 1.3.1 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_18 /* Package.swift */,
-				OBJ_19 /* AES256CBC.swift */,
-				OBJ_20 /* Base64.swift */,
-				OBJ_21 /* BaseDestination.swift */,
-				OBJ_22 /* ConsoleDestination.swift */,
-				OBJ_23 /* Extensions.swift */,
-				OBJ_24 /* FileDestination.swift */,
-				OBJ_25 /* Filter.swift */,
-				OBJ_26 /* GoogleCloudDestination.swift */,
-				OBJ_27 /* SBPlatformDestination.swift */,
-				OBJ_28 /* SwiftyBeaver.swift */,
+				OBJ_18 /* QuickSpecBase */,
+				OBJ_23 /* Quick */,
+				OBJ_50 /* Package.swift */,
 			);
-			name = "SwiftyBeaver 1.6.0";
-			path = ".build/checkouts/SwiftyBeaver.git--1637639271898239920/Sources";
+			name = "Quick 1.3.1";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_29 /* Socket 1.0.16 */ = {
+		OBJ_18 /* QuickSpecBase */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_30 /* Socket */,
-				OBJ_34 /* Package.swift */,
+				OBJ_19 /* QuickSpecBase.m */,
+				OBJ_20 /* include */,
 			);
-			name = "Socket 1.0.16";
+			name = QuickSpecBase;
+			path = ".build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_30 /* Socket */ = {
+		OBJ_20 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_31 /* Socket.swift */,
-				OBJ_32 /* SocketProtocols.swift */,
-				OBJ_33 /* SocketUtils.swift */,
+				OBJ_21 /* QuickSpecBase.h */,
+				OBJ_22 /* module.modulemap */,
 			);
-			name = Socket;
-			path = ".build/checkouts/BlueSocket.git-3162807777605905816/Sources/Socket";
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_23 /* Quick */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* Behavior.swift */,
+				OBJ_25 /* Callsite.swift */,
+				OBJ_26 /* Configuration */,
+				OBJ_29 /* DSL */,
+				OBJ_32 /* ErrorUtility.swift */,
+				OBJ_33 /* Example.swift */,
+				OBJ_34 /* ExampleGroup.swift */,
+				OBJ_35 /* ExampleMetadata.swift */,
+				OBJ_36 /* Filter.swift */,
+				OBJ_37 /* Hooks */,
+				OBJ_42 /* NSBundle+CurrentTestBundle.swift */,
+				OBJ_43 /* NSString+C99ExtendedIdentifier.swift */,
+				OBJ_44 /* QuickMain.swift */,
+				OBJ_45 /* QuickSelectedTestSuiteBuilder.swift */,
+				OBJ_46 /* QuickSpec.swift */,
+				OBJ_47 /* QuickTestSuite.swift */,
+				OBJ_48 /* URL+FileName.swift */,
+				OBJ_49 /* World.swift */,
+			);
+			name = Quick;
+			path = ".build/checkouts/Quick.git-2733117082000052066/Sources/Quick";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_35 /* Products */ = {
+		OBJ_26 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				"Swerver::SwerverTests::Product" /* SwerverTests.xctest */,
-				"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */,
-				"Socket::Socket::Product" /* Socket.framework */,
-				"Swerver::Swerver::Product" /* Swerver.framework */,
-				"Swerver::SwerverRunner::Product" /* SwerverRunner */,
+				OBJ_27 /* Configuration.swift */,
+				OBJ_28 /* QuickConfiguration.swift */,
 			);
-			name = Products;
-			sourceTree = BUILT_PRODUCTS_DIR;
+			path = Configuration;
+			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_29 /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* DSL.swift */,
+				OBJ_31 /* World+DSL.swift */,
+			);
+			path = DSL;
+			sourceTree = "<group>";
+		};
+		OBJ_37 /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_38 /* Closures.swift */,
+				OBJ_39 /* ExampleHooks.swift */,
+				OBJ_40 /* HooksPhase.swift */,
+				OBJ_41 /* SuiteHooks.swift */,
+			);
+			path = Hooks;
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_12 /* Tests */,
 				OBJ_16 /* Dependencies */,
-				OBJ_35 /* Products */,
-				58603B34A858C7E87DDD248C /* Dockerfile */,
-				58603C728756ABEB52F6C341 /* .dockerignore */,
+				OBJ_127 /* Products */,
 			);
-			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_51 /* Nimble 7.3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_52 /* Nimble */,
+				OBJ_108 /* Package.swift */,
+			);
+			name = "Nimble 7.3.0";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_52 /* Nimble */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_53 /* Adapters */,
+				OBJ_63 /* DSL+Wait.swift */,
+				OBJ_64 /* DSL.swift */,
+				OBJ_65 /* Expectation.swift */,
+				OBJ_66 /* ExpectationMessage.swift */,
+				OBJ_67 /* Expression.swift */,
+				OBJ_68 /* FailureMessage.swift */,
+				OBJ_69 /* Matchers */,
+				OBJ_102 /* Utils */,
+			);
+			name = Nimble;
+			path = ".build/checkouts/Nimble.git-1225162792785459507/Sources/Nimble";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_53 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_54 /* AdapterProtocols.swift */,
+				OBJ_55 /* AssertionDispatcher.swift */,
+				OBJ_56 /* AssertionRecorder.swift */,
+				OBJ_57 /* NMBExpectation.swift */,
+				OBJ_58 /* NMBObjCMatcher.swift */,
+				OBJ_59 /* NimbleEnvironment.swift */,
+				OBJ_60 /* NimbleXCTestHandler.swift */,
+				OBJ_61 /* NonObjectiveC */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		OBJ_61 /* NonObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_62 /* ExceptionCapture.swift */,
+			);
+			path = NonObjectiveC;
+			sourceTree = "<group>";
+		};
+		OBJ_69 /* Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_70 /* AllPass.swift */,
+				OBJ_71 /* Async.swift */,
+				OBJ_72 /* BeAKindOf.swift */,
+				OBJ_73 /* BeAnInstanceOf.swift */,
+				OBJ_74 /* BeCloseTo.swift */,
+				OBJ_75 /* BeEmpty.swift */,
+				OBJ_76 /* BeGreaterThan.swift */,
+				OBJ_77 /* BeGreaterThanOrEqualTo.swift */,
+				OBJ_78 /* BeIdenticalTo.swift */,
+				OBJ_79 /* BeLessThan.swift */,
+				OBJ_80 /* BeLessThanOrEqual.swift */,
+				OBJ_81 /* BeLogical.swift */,
+				OBJ_82 /* BeNil.swift */,
+				OBJ_83 /* BeVoid.swift */,
+				OBJ_84 /* BeginWith.swift */,
+				OBJ_85 /* Contain.swift */,
+				OBJ_86 /* ContainElementSatisfying.swift */,
+				OBJ_87 /* EndWith.swift */,
+				OBJ_88 /* Equal.swift */,
+				OBJ_89 /* HaveCount.swift */,
+				OBJ_90 /* Match.swift */,
+				OBJ_91 /* MatchError.swift */,
+				OBJ_92 /* MatcherFunc.swift */,
+				OBJ_93 /* MatcherProtocols.swift */,
+				OBJ_94 /* PostNotification.swift */,
+				OBJ_95 /* Predicate.swift */,
+				OBJ_96 /* RaisesException.swift */,
+				OBJ_97 /* SatisfyAllOf.swift */,
+				OBJ_98 /* SatisfyAnyOf.swift */,
+				OBJ_99 /* ThrowAssertion.swift */,
+				OBJ_100 /* ThrowError.swift */,
+				OBJ_101 /* ToSucceed.swift */,
+			);
+			path = Matchers;
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -316,12 +716,89 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		"Nimble::Nimble" /* Nimble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_137 /* Build configuration list for PBXNativeTarget "Nimble" */;
+			buildPhases = (
+				OBJ_140 /* Sources */,
+				OBJ_192 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nimble;
+			productName = Nimble;
+			productReference = "Nimble::Nimble::Product" /* Nimble.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Nimble::SwiftPMPackageDescription" /* NimblePackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_194 /* Build configuration list for PBXNativeTarget "NimblePackageDescription" */;
+			buildPhases = (
+				OBJ_197 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NimblePackageDescription;
+			productName = NimblePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Quick::Quick" /* Quick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_200 /* Build configuration list for PBXNativeTarget "Quick" */;
+			buildPhases = (
+				OBJ_203 /* Sources */,
+				OBJ_227 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_229 /* PBXTargetDependency */,
+			);
+			name = Quick;
+			productName = Quick;
+			productReference = "Quick::Quick::Product" /* Quick.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Quick::QuickSpecBase" /* QuickSpecBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_237 /* Build configuration list for PBXNativeTarget "QuickSpecBase" */;
+			buildPhases = (
+				OBJ_240 /* Sources */,
+				OBJ_242 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickSpecBase;
+			productName = QuickSpecBase;
+			productReference = "Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Quick::SwiftPMPackageDescription" /* QuickPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_232 /* Build configuration list for PBXNativeTarget "QuickPackageDescription" */;
+			buildPhases = (
+				OBJ_235 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickPackageDescription;
+			productName = QuickPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
 		"Socket::Socket" /* Socket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_42 /* Build configuration list for PBXNativeTarget "Socket" */;
+			buildConfigurationList = OBJ_244 /* Build configuration list for PBXNativeTarget "Socket" */;
 			buildPhases = (
-				OBJ_45 /* Sources */,
-				OBJ_49 /* Frameworks */,
+				OBJ_247 /* Sources */,
+				OBJ_251 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -334,9 +811,9 @@
 		};
 		"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_51 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
+			buildConfigurationList = OBJ_253 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
 			buildPhases = (
-				OBJ_54 /* Sources */,
+				OBJ_256 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -348,16 +825,16 @@
 		};
 		"Swerver::Swerver" /* Swerver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_57 /* Build configuration list for PBXNativeTarget "Swerver" */;
+			buildConfigurationList = OBJ_259 /* Build configuration list for PBXNativeTarget "Swerver" */;
 			buildPhases = (
-				OBJ_60 /* Sources */,
-				OBJ_62 /* Frameworks */,
+				OBJ_262 /* Sources */,
+				OBJ_264 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_65 /* PBXTargetDependency */,
-				OBJ_67 /* PBXTargetDependency */,
+				OBJ_267 /* PBXTargetDependency */,
+				OBJ_269 /* PBXTargetDependency */,
 			);
 			name = Swerver;
 			productName = Swerver;
@@ -366,17 +843,17 @@
 		};
 		"Swerver::SwerverRunner" /* SwerverRunner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "SwerverRunner" */;
+			buildConfigurationList = OBJ_283 /* Build configuration list for PBXNativeTarget "SwerverRunner" */;
 			buildPhases = (
-				OBJ_84 /* Sources */,
-				OBJ_86 /* Frameworks */,
+				OBJ_286 /* Sources */,
+				OBJ_288 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_90 /* PBXTargetDependency */,
-				OBJ_91 /* PBXTargetDependency */,
-				OBJ_92 /* PBXTargetDependency */,
+				OBJ_292 /* PBXTargetDependency */,
+				OBJ_293 /* PBXTargetDependency */,
+				OBJ_294 /* PBXTargetDependency */,
 			);
 			name = SwerverRunner;
 			productName = SwerverRunner;
@@ -385,17 +862,20 @@
 		};
 		"Swerver::SwerverTests" /* SwerverTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_93 /* Build configuration list for PBXNativeTarget "SwerverTests" */;
+			buildConfigurationList = OBJ_295 /* Build configuration list for PBXNativeTarget "SwerverTests" */;
 			buildPhases = (
-				OBJ_96 /* Sources */,
-				OBJ_99 /* Frameworks */,
+				OBJ_298 /* Sources */,
+				OBJ_301 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_103 /* PBXTargetDependency */,
-				OBJ_104 /* PBXTargetDependency */,
-				OBJ_105 /* PBXTargetDependency */,
+				OBJ_308 /* PBXTargetDependency */,
+				OBJ_309 /* PBXTargetDependency */,
+				OBJ_310 /* PBXTargetDependency */,
+				OBJ_311 /* PBXTargetDependency */,
+				OBJ_312 /* PBXTargetDependency */,
+				OBJ_313 /* PBXTargetDependency */,
 			);
 			name = SwerverTests;
 			productName = SwerverTests;
@@ -404,9 +884,9 @@
 		};
 		"Swerver::SwiftPMPackageDescription" /* SwerverPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_69 /* Build configuration list for PBXNativeTarget "SwerverPackageDescription" */;
+			buildConfigurationList = OBJ_271 /* Build configuration list for PBXNativeTarget "SwerverPackageDescription" */;
 			buildPhases = (
-				OBJ_72 /* Sources */,
+				OBJ_274 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -418,9 +898,9 @@
 		};
 		"SwiftyBeaver::SwiftPMPackageDescription" /* SwiftyBeaverPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_122 /* Build configuration list for PBXNativeTarget "SwiftyBeaverPackageDescription" */;
+			buildConfigurationList = OBJ_330 /* Build configuration list for PBXNativeTarget "SwiftyBeaverPackageDescription" */;
 			buildPhases = (
-				OBJ_125 /* Sources */,
+				OBJ_333 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -432,10 +912,10 @@
 		};
 		"SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_106 /* Build configuration list for PBXNativeTarget "SwiftyBeaver" */;
+			buildConfigurationList = OBJ_314 /* Build configuration list for PBXNativeTarget "SwiftyBeaver" */;
 			buildPhases = (
-				OBJ_109 /* Sources */,
-				OBJ_120 /* Frameworks */,
+				OBJ_317 /* Sources */,
+				OBJ_328 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -461,11 +941,16 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_35 /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_127 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				"Nimble::Nimble" /* Nimble */,
+				"Nimble::SwiftPMPackageDescription" /* NimblePackageDescription */,
+				"Quick::Quick" /* Quick */,
+				"Quick::SwiftPMPackageDescription" /* QuickPackageDescription */,
+				"Quick::QuickSpecBase" /* QuickSpecBase */,
 				"Socket::Socket" /* Socket */,
 				"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */,
 				"Swerver::Swerver" /* Swerver */,
@@ -480,134 +965,266 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_109 /* Sources */ = {
+		OBJ_140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_110 /* AES256CBC.swift in Sources */,
-				OBJ_111 /* Base64.swift in Sources */,
-				OBJ_112 /* BaseDestination.swift in Sources */,
-				OBJ_113 /* ConsoleDestination.swift in Sources */,
-				OBJ_114 /* Extensions.swift in Sources */,
-				OBJ_115 /* FileDestination.swift in Sources */,
-				OBJ_116 /* Filter.swift in Sources */,
-				OBJ_117 /* GoogleCloudDestination.swift in Sources */,
-				OBJ_118 /* SBPlatformDestination.swift in Sources */,
-				OBJ_119 /* SwiftyBeaver.swift in Sources */,
+				OBJ_141 /* AdapterProtocols.swift in Sources */,
+				OBJ_142 /* AssertionDispatcher.swift in Sources */,
+				OBJ_143 /* AssertionRecorder.swift in Sources */,
+				OBJ_144 /* NMBExpectation.swift in Sources */,
+				OBJ_145 /* NMBObjCMatcher.swift in Sources */,
+				OBJ_146 /* NimbleEnvironment.swift in Sources */,
+				OBJ_147 /* NimbleXCTestHandler.swift in Sources */,
+				OBJ_148 /* ExceptionCapture.swift in Sources */,
+				OBJ_149 /* DSL+Wait.swift in Sources */,
+				OBJ_150 /* DSL.swift in Sources */,
+				OBJ_151 /* Expectation.swift in Sources */,
+				OBJ_152 /* ExpectationMessage.swift in Sources */,
+				OBJ_153 /* Expression.swift in Sources */,
+				OBJ_154 /* FailureMessage.swift in Sources */,
+				OBJ_155 /* AllPass.swift in Sources */,
+				OBJ_156 /* Async.swift in Sources */,
+				OBJ_157 /* BeAKindOf.swift in Sources */,
+				OBJ_158 /* BeAnInstanceOf.swift in Sources */,
+				OBJ_159 /* BeCloseTo.swift in Sources */,
+				OBJ_160 /* BeEmpty.swift in Sources */,
+				OBJ_161 /* BeGreaterThan.swift in Sources */,
+				OBJ_162 /* BeGreaterThanOrEqualTo.swift in Sources */,
+				OBJ_163 /* BeIdenticalTo.swift in Sources */,
+				OBJ_164 /* BeLessThan.swift in Sources */,
+				OBJ_165 /* BeLessThanOrEqual.swift in Sources */,
+				OBJ_166 /* BeLogical.swift in Sources */,
+				OBJ_167 /* BeNil.swift in Sources */,
+				OBJ_168 /* BeVoid.swift in Sources */,
+				OBJ_169 /* BeginWith.swift in Sources */,
+				OBJ_170 /* Contain.swift in Sources */,
+				OBJ_171 /* ContainElementSatisfying.swift in Sources */,
+				OBJ_172 /* EndWith.swift in Sources */,
+				OBJ_173 /* Equal.swift in Sources */,
+				OBJ_174 /* HaveCount.swift in Sources */,
+				OBJ_175 /* Match.swift in Sources */,
+				OBJ_176 /* MatchError.swift in Sources */,
+				OBJ_177 /* MatcherFunc.swift in Sources */,
+				OBJ_178 /* MatcherProtocols.swift in Sources */,
+				OBJ_179 /* PostNotification.swift in Sources */,
+				OBJ_180 /* Predicate.swift in Sources */,
+				OBJ_181 /* RaisesException.swift in Sources */,
+				OBJ_182 /* SatisfyAllOf.swift in Sources */,
+				OBJ_183 /* SatisfyAnyOf.swift in Sources */,
+				OBJ_184 /* ThrowAssertion.swift in Sources */,
+				OBJ_185 /* ThrowError.swift in Sources */,
+				OBJ_186 /* ToSucceed.swift in Sources */,
+				OBJ_187 /* Await.swift in Sources */,
+				OBJ_188 /* Errors.swift in Sources */,
+				OBJ_189 /* Functional.swift in Sources */,
+				OBJ_190 /* SourceLocation.swift in Sources */,
+				OBJ_191 /* Stringers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_125 /* Sources */ = {
+		OBJ_197 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_126 /* Package.swift in Sources */,
+				OBJ_198 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_45 /* Sources */ = {
+		OBJ_203 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_46 /* Socket.swift in Sources */,
-				OBJ_47 /* SocketProtocols.swift in Sources */,
-				OBJ_48 /* SocketUtils.swift in Sources */,
+				OBJ_204 /* Behavior.swift in Sources */,
+				OBJ_205 /* Callsite.swift in Sources */,
+				OBJ_206 /* Configuration.swift in Sources */,
+				OBJ_207 /* QuickConfiguration.swift in Sources */,
+				OBJ_208 /* DSL.swift in Sources */,
+				OBJ_209 /* World+DSL.swift in Sources */,
+				OBJ_210 /* ErrorUtility.swift in Sources */,
+				OBJ_211 /* Example.swift in Sources */,
+				OBJ_212 /* ExampleGroup.swift in Sources */,
+				OBJ_213 /* ExampleMetadata.swift in Sources */,
+				OBJ_214 /* Filter.swift in Sources */,
+				OBJ_215 /* Closures.swift in Sources */,
+				OBJ_216 /* ExampleHooks.swift in Sources */,
+				OBJ_217 /* HooksPhase.swift in Sources */,
+				OBJ_218 /* SuiteHooks.swift in Sources */,
+				OBJ_219 /* NSBundle+CurrentTestBundle.swift in Sources */,
+				OBJ_220 /* NSString+C99ExtendedIdentifier.swift in Sources */,
+				OBJ_221 /* QuickMain.swift in Sources */,
+				OBJ_222 /* QuickSelectedTestSuiteBuilder.swift in Sources */,
+				OBJ_223 /* QuickSpec.swift in Sources */,
+				OBJ_224 /* QuickTestSuite.swift in Sources */,
+				OBJ_225 /* URL+FileName.swift in Sources */,
+				OBJ_226 /* World.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_54 /* Sources */ = {
+		OBJ_235 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_55 /* Package.swift in Sources */,
+				OBJ_236 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_60 /* Sources */ = {
+		OBJ_240 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_61 /* SwerverCore.swift in Sources */,
+				OBJ_241 /* QuickSpecBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_72 /* Sources */ = {
+		OBJ_247 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_73 /* Package.swift in Sources */,
+				OBJ_248 /* Socket.swift in Sources */,
+				OBJ_249 /* SocketProtocols.swift in Sources */,
+				OBJ_250 /* SocketUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_84 /* Sources */ = {
+		OBJ_256 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_85 /* main.swift in Sources */,
+				OBJ_257 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_96 /* Sources */ = {
+		OBJ_262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_97 /* SwerverTests.swift in Sources */,
-				OBJ_98 /* XCTestManifests.swift in Sources */,
+				OBJ_263 /* SwerverCore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_275 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_287 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_299 /* SwerverTests.swift in Sources */,
+				OBJ_300 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_318 /* AES256CBC.swift in Sources */,
+				OBJ_319 /* Base64.swift in Sources */,
+				OBJ_320 /* BaseDestination.swift in Sources */,
+				OBJ_321 /* ConsoleDestination.swift in Sources */,
+				OBJ_322 /* Extensions.swift in Sources */,
+				OBJ_323 /* FileDestination.swift in Sources */,
+				OBJ_324 /* Filter.swift in Sources */,
+				OBJ_325 /* GoogleCloudDestination.swift in Sources */,
+				OBJ_326 /* SBPlatformDestination.swift in Sources */,
+				OBJ_327 /* SwiftyBeaver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_333 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_334 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_103 /* PBXTargetDependency */ = {
+		OBJ_229 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "Swerver::Swerver" /* Swerver */;
-			targetProxy = 84FF6A9F21402589004ADFF0 /* PBXContainerItemProxy */;
+			target = "Quick::QuickSpecBase" /* QuickSpecBase */;
+			targetProxy = 84FF6AB7214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_104 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6AA021402589004ADFF0 /* PBXContainerItemProxy */;
-		};
-		OBJ_105 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6AA121402589004ADFF0 /* PBXContainerItemProxy */;
-		};
-		OBJ_65 /* PBXTargetDependency */ = {
+		OBJ_267 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6A9A21402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AB8214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_67 /* PBXTargetDependency */ = {
+		OBJ_269 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6A9B21402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AB9214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_78 /* PBXTargetDependency */ = {
+		OBJ_280 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Swerver::SwerverTests" /* SwerverTests */;
-			targetProxy = 84FF6AA221402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6AC3214222D3004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_90 /* PBXTargetDependency */ = {
+		OBJ_292 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Swerver::Swerver" /* Swerver */;
-			targetProxy = 84FF6A9C21402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6ABA214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_91 /* PBXTargetDependency */ = {
+		OBJ_293 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6A9D21402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6ABB214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
-		OBJ_92 /* PBXTargetDependency */ = {
+		OBJ_294 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6A9E21402589004ADFF0 /* PBXContainerItemProxy */;
+			targetProxy = 84FF6ABC214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_308 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Nimble::Nimble" /* Nimble */;
+			targetProxy = 84FF6ABD214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Quick::Quick" /* Quick */;
+			targetProxy = 84FF6ABE214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Quick::QuickSpecBase" /* QuickSpecBase */;
+			targetProxy = 84FF6ABF214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_311 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Swerver::Swerver" /* Swerver */;
+			targetProxy = 84FF6AC0214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_312 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
+			targetProxy = 84FF6AC1214222D2004ADFF0 /* PBXContainerItemProxy */;
+		};
+		OBJ_313 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Socket::Socket" /* Socket */;
+			targetProxy = 84FF6AC2214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_107 /* Debug */ = {
+		OBJ_138 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -616,21 +1233,21 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwiftyBeaver_Info.plist;
+				INFOPLIST_FILE = Swerver.xcodeproj/Nimble_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyBeaver;
+				PRODUCT_BUNDLE_IDENTIFIER = Nimble;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = SwiftyBeaver;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Nimble;
 			};
 			name = Debug;
 		};
-		OBJ_108 /* Release */ = {
+		OBJ_139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -639,35 +1256,387 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwiftyBeaver_Info.plist;
+				INFOPLIST_FILE = Swerver.xcodeproj/Nimble_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyBeaver;
+				PRODUCT_BUNDLE_IDENTIFIER = Nimble;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = SwiftyBeaver;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Nimble;
 			};
 			name = Release;
 		};
-		OBJ_123 /* Debug */ = {
+		OBJ_195 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 3.0;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		OBJ_124 /* Release */ = {
+		OBJ_196 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_201 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+					"$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/Quick_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Quick;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGET_NAME = Quick;
+			};
+			name = Debug;
+		};
+		OBJ_202 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+					"$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/Quick_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Quick;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGET_NAME = Quick;
+			};
+			name = Release;
+		};
+		OBJ_233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_238 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/QuickSpecBase_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = QuickSpecBase;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = QuickSpecBase;
+			};
+			name = Debug;
+		};
+		OBJ_239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/QuickSpecBase_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = QuickSpecBase;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = QuickSpecBase;
+			};
+			name = Release;
+		};
+		OBJ_245 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/Socket_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Socket;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Socket;
+			};
+			name = Debug;
+		};
+		OBJ_246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/Socket_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Socket;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Socket;
+			};
+			name = Release;
+		};
+		OBJ_254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Swerver;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Swerver;
+			};
+			name = Debug;
+		};
+		OBJ_261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Swerver;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Swerver;
+			};
+			name = Release;
+		};
+		OBJ_272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_278 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwerverRunner;
+			};
+			name = Debug;
+		};
+		OBJ_285 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwerverRunner;
+			};
+			name = Release;
+		};
+		OBJ_296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+					"$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwerverTests;
+			};
+			name = Debug;
+		};
+		OBJ_297 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Quick.git-2733117082000052066/Sources/QuickSpecBase/include",
+					"$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase",
+				);
+				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwerverTests;
 			};
 			name = Release;
 		};
@@ -693,6 +1662,70 @@
 			};
 			name = Debug;
 		};
+		OBJ_315 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwiftyBeaver_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyBeaver;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGET_NAME = SwiftyBeaver;
+			};
+			name = Debug;
+		};
+		OBJ_316 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Swerver.xcodeproj/SwiftyBeaver_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyBeaver;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGET_NAME = SwiftyBeaver;
+			};
+			name = Release;
+		};
+		OBJ_331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		OBJ_332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -713,241 +1746,23 @@
 			};
 			name = Release;
 		};
-		OBJ_43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Socket_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Socket;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Socket;
-			};
-			name = Debug;
-		};
-		OBJ_44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Socket_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Socket;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Socket;
-			};
-			name = Release;
-		};
-		OBJ_52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_53 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		OBJ_58 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Swerver;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Swerver;
-			};
-			name = Debug;
-		};
-		OBJ_59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/Swerver_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Swerver;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Swerver;
-			};
-			name = Release;
-		};
-		OBJ_70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		OBJ_76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		OBJ_82 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverRunner;
-			};
-			name = Debug;
-		};
-		OBJ_83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverRunner_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverRunner;
-			};
-			name = Release;
-		};
-		OBJ_94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverTests;
-			};
-			name = Debug;
-		};
-		OBJ_95 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = SwerverTests;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_106 /* Build configuration list for PBXNativeTarget "SwiftyBeaver" */ = {
+		OBJ_137 /* Build configuration list for PBXNativeTarget "Nimble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_107 /* Debug */,
-				OBJ_108 /* Release */,
+				OBJ_138 /* Debug */,
+				OBJ_139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_122 /* Build configuration list for PBXNativeTarget "SwiftyBeaverPackageDescription" */ = {
+		OBJ_194 /* Build configuration list for PBXNativeTarget "NimblePackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_123 /* Debug */,
-				OBJ_124 /* Release */,
+				OBJ_195 /* Debug */,
+				OBJ_196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -961,65 +1776,110 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_42 /* Build configuration list for PBXNativeTarget "Socket" */ = {
+		OBJ_200 /* Build configuration list for PBXNativeTarget "Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_43 /* Debug */,
-				OBJ_44 /* Release */,
+				OBJ_201 /* Debug */,
+				OBJ_202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_51 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
+		OBJ_232 /* Build configuration list for PBXNativeTarget "QuickPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_52 /* Debug */,
-				OBJ_53 /* Release */,
+				OBJ_233 /* Debug */,
+				OBJ_234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_57 /* Build configuration list for PBXNativeTarget "Swerver" */ = {
+		OBJ_237 /* Build configuration list for PBXNativeTarget "QuickSpecBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_58 /* Debug */,
-				OBJ_59 /* Release */,
+				OBJ_238 /* Debug */,
+				OBJ_239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_69 /* Build configuration list for PBXNativeTarget "SwerverPackageDescription" */ = {
+		OBJ_244 /* Build configuration list for PBXNativeTarget "Socket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_70 /* Debug */,
-				OBJ_71 /* Release */,
+				OBJ_245 /* Debug */,
+				OBJ_246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_75 /* Build configuration list for PBXAggregateTarget "SwerverPackageTests" */ = {
+		OBJ_253 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_76 /* Debug */,
-				OBJ_77 /* Release */,
+				OBJ_254 /* Debug */,
+				OBJ_255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_81 /* Build configuration list for PBXNativeTarget "SwerverRunner" */ = {
+		OBJ_259 /* Build configuration list for PBXNativeTarget "Swerver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_82 /* Debug */,
-				OBJ_83 /* Release */,
+				OBJ_260 /* Debug */,
+				OBJ_261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_93 /* Build configuration list for PBXNativeTarget "SwerverTests" */ = {
+		OBJ_271 /* Build configuration list for PBXNativeTarget "SwerverPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_94 /* Debug */,
-				OBJ_95 /* Release */,
+				OBJ_272 /* Debug */,
+				OBJ_273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_277 /* Build configuration list for PBXAggregateTarget "SwerverPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_278 /* Debug */,
+				OBJ_279 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_283 /* Build configuration list for PBXNativeTarget "SwerverRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_284 /* Debug */,
+				OBJ_285 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_295 /* Build configuration list for PBXNativeTarget "SwerverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_296 /* Debug */,
+				OBJ_297 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_314 /* Build configuration list for PBXNativeTarget "SwiftyBeaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_315 /* Debug */,
+				OBJ_316 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_330 /* Build configuration list for PBXNativeTarget "SwiftyBeaverPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_331 /* Debug */,
+				OBJ_332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

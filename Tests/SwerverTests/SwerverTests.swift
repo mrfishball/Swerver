@@ -1,4 +1,6 @@
 import XCTest
+import Quick
+import Nimble
 @testable import Swerver
 
 final class SwerverTests: XCTestCase {

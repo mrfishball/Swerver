@@ -13,6 +13,8 @@ let package = Package(
     dependencies: [
     .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "1.0.8"),
     .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", from: "1.5.1"),
+    .package(url: "https://github.com/Quick/Quick.git", from: "1.0.0"),
+    .package(url: "https://github.com/Quick/Nimble.git", from: "7.0.0"),
     ],
     targets: [
         .target(
@@ -27,6 +29,6 @@ let package = Package(
             path: "Sources/SwerverCore"),
         .testTarget(
             name: "SwerverTests",
-            dependencies: ["Swerver"]),
+            dependencies: ["Swerver", "Quick", "Nimble"]),
     ]
 )
