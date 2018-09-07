@@ -9,7 +9,6 @@ dist: trusty
 sudo: required
 services: docker
 install:
-  - sudo apt-get upgrade
   - sudo apt-get dist-upgrade
   - sudo apt-get install clang libicu-dev
   - mkdir swift
