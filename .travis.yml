@@ -18,7 +18,7 @@ install:
 script:
 #- ./scripts/install.sh
 - swift package clean
-- swift build
+- swift build -Xswiftc -suppress-warnings
 - swift test
 
 after_success:
