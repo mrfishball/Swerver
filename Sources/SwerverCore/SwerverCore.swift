@@ -56,14 +56,9 @@ public class Swerver {
                     if request.hasPrefix(Swerver.quitCommand) {
                         logger.warning("Shutting down swerver...")
                         keepConnectionAlive = false
-                    } else if request.hasPrefix("GET /connie") {
-                        responseBody = """
-                        <html>
-                        <body>
-                        <b>I love you babe!!! I'll be home soon! <33 VERSION 2</b>
-                        </body>
-                        </html>
-                        """
+                    }
+                    if request.hasPrefix(Swerver.quitCommand) {
+                        keepConnectionAlive = false
                     } else {
                         responseBody = """
                         <html>
