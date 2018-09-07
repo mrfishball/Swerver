@@ -18,8 +18,7 @@ install:
 script:
 #- ./scripts/install.sh
 - swift package clean
-- swift build -Xswiftc -suppress-warnings
-- swift test
+- swift test -Xswiftc -suppress-warnings
 
 after_success:
 - docker --version
