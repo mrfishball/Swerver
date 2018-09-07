@@ -9,8 +9,10 @@ dist: trusty
 sudo: required
 services: docker
 install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
-  - sudo apt-get install libstdc++6
+  - sudo apt-get upgrade
+  - sudo apt-get dist-upgrade
   - sudo apt-get install clang libicu-dev
   - mkdir swift
   - curl https://swift.org/builds/$SWIFT_BRANCH/ubuntu1610/$SWIFT_VERSION/$SWIFT_VERSION-ubuntu16.10.tar.gz -s | tar xz -C swift &> /dev/null
