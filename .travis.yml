@@ -1,14 +1,15 @@
-sudo: required
+env:
+  global:
+  - SWIFT_BRANCH=swift-4.2-branch
+  - SWIFT_VERSION=swift-4.2-DEVELOPMENT-SNAPSHOT-2018-05-30-a
 
-os:
-- linux
-- osx
+os: linux
 language: generic
 dist: trusty
+sudo: required
 services: docker
-osx_image: xcode9.4
-install:
-- eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+#install:
+#- eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 #script:
 #- swift build
 
@@ -17,7 +18,8 @@ install:
 #before_script:
 #- gem install xcpretty
 script:
-- swift package generate-xcodeproj
+#- swift package generate-xcodeproj
+- ./scripts/install.sh
 - swift package clean
 - swift build
 - swift test
