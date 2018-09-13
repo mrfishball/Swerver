@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Nimble::Nimble"
-               BuildableName = "Nimble.framework"
-               BlueprintName = "Nimble"
+               BlueprintIdentifier = "Swerver::SwerverRunner"
+               BuildableName = "SwerverRunner"
+               BlueprintName = "SwerverRunner"
                ReferencedContainer = "container:Swerver.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -136,6 +136,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Swerver::SwerverRunner"
+            BuildableName = "SwerverRunner"
+            BlueprintName = "SwerverRunner"
+            ReferencedContainer = "container:Swerver.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -147,6 +156,10 @@
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
