@@ -22,11 +22,13 @@
 
 /* Begin PBXBuildFile section */
 		840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F2214ADFC1001234BE /* HttpRequestSpec.swift */; };
+		840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F4214AE46A001234BE /* HttpResponseSpec.swift */; };
+		840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F6214AE6A9001234BE /* RouterSpec.swift */; };
 		84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6AC421495B65004ADFF0 /* RequestMethod.swift */; };
 		84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */; };
 		84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C400214AAEB600304862 /* HttpRequestParser.swift */; };
 		84D0C403214AB7A900304862 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C402214AB7A900304862 /* Router.swift */; };
-		84D0C405214AB8AD00304862 /* HttpResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C404214AB8AD00304862 /* HttpResponseBuilder.swift */; };
+		84D0C405214AB8AD00304862 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C404214AB8AD00304862 /* HttpResponse.swift */; };
 		84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */; };
 		84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C408214AD80B00304862 /* HttpRequest.swift */; };
 		OBJ_141 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* AdapterProtocols.swift */; };
@@ -236,10 +238,12 @@
 
 /* Begin PBXFileReference section */
 		840421F2214ADFC1001234BE /* HttpRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestSpec.swift; sourceTree = "<group>"; };
+		840421F4214AE46A001234BE /* HttpResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseSpec.swift; sourceTree = "<group>"; };
+		840421F6214AE6A9001234BE /* RouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
 		84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequestHandler.swift; sourceTree = "<group>"; };
 		84D0C400214AAEB600304862 /* HttpRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParser.swift; sourceTree = "<group>"; };
 		84D0C402214AB7A900304862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		84D0C404214AB8AD00304862 /* HttpResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseBuilder.swift; sourceTree = "<group>"; };
+		84D0C404214AB8AD00304862 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParserSpec.swift; sourceTree = "<group>"; };
 		84D0C408214AD80B00304862 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		84FF6AC421495B65004ADFF0 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
@@ -432,7 +436,7 @@
 				84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */,
 				84D0C400214AAEB600304862 /* HttpRequestParser.swift */,
 				84D0C402214AB7A900304862 /* Router.swift */,
-				84D0C404214AB8AD00304862 /* HttpResponseBuilder.swift */,
+				84D0C404214AB8AD00304862 /* HttpResponse.swift */,
 				84D0C408214AD80B00304862 /* HttpRequest.swift */,
 			);
 			name = Swerver;
@@ -520,6 +524,8 @@
 				OBJ_15 /* XCTestManifests.swift */,
 				84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */,
 				840421F2214ADFC1001234BE /* HttpRequestSpec.swift */,
+				840421F4214AE46A001234BE /* HttpResponseSpec.swift */,
+				840421F6214AE6A9001234BE /* RouterSpec.swift */,
 			);
 			name = SwerverTests;
 			path = Tests/SwerverTests;
@@ -1125,7 +1131,7 @@
 			files = (
 				84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */,
 				OBJ_263 /* SwerverCore.swift in Sources */,
-				84D0C405214AB8AD00304862 /* HttpResponseBuilder.swift in Sources */,
+				84D0C405214AB8AD00304862 /* HttpResponse.swift in Sources */,
 				84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */,
 				84D0C403214AB7A900304862 /* Router.swift in Sources */,
 				84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */,
@@ -1154,7 +1160,9 @@
 			buildActionMask = 0;
 			files = (
 				840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */,
+				840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */,
 				OBJ_299 /* SwerverSpec.swift in Sources */,
+				840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */,
 				OBJ_300 /* XCTestManifests.swift in Sources */,
 				84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */,
 			);

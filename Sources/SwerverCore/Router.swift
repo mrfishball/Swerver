@@ -2,16 +2,14 @@ import Foundation
 
 public class Router {
     
-    let httpResponseBuilder = HttpResponseBuilder()
-    
     public init() {}
     
-    public func process (request: HttpRequest) -> String {
+    public func process (request: HttpRequest) -> HttpResponse {
         if request.toString().hasPrefix("GET") {
             let responseHeader = RequestMethods.GET.getHeader()
             let responseMessage = RequestMethods.GET.getBody()
-            return httpResponseBuilder.build(header: responseHeader, payload: responseMessage)
+            return HttpResponse(header: responseHeader, payload: responseMessage)
         }
-        return httpResponseBuilder.build(header: RequestMethods.OTHER.getHeader(), payload: RequestMethods.OTHER.getBody())
+        return HttpResponse(header: RequestMethods.OTHER.getHeader(), payload: RequestMethods.OTHER.getBody())
     }
 }

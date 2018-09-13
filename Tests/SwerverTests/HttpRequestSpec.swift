@@ -6,7 +6,7 @@ import Foundation
 class HttpRequestSpec: QuickSpec {
 
     override func spec() {
-        describe("An HttpRequest") {
+        describe("HttpRequest") {
             var httpRequest: HttpRequest!
             
             beforeEach {
