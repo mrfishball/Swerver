@@ -18,14 +18,12 @@ install:
 
 jobs:
   include:
-    - stage: build
-      script:
-      - swift package clean
-      - swift build -Xswiftc -suppress-warnings
     - stage: test
       script:
-      - swift package clean
-      - swift test -Xswiftc -suppress-warnings
+        - swift package clean
+        - swift build -Xswiftc -suppress-warnings
+        - swift test -Xswiftc -suppress-warnings
+
     - stage: deploy
       script:
       - docker --version
@@ -39,7 +37,6 @@ jobs:
       - aws ecs update-service --cluster $AWS_ECS_CLUSTER --service $AWS_ECS_SERVICE --force-new-deployment
 
 stages:
-  - name: build
   - name: test
   - name: deploy
     if: branch == master

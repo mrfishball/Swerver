@@ -13,8 +13,9 @@ class HttpRequestSpec: QuickSpec {
                 httpRequest = HttpRequest(request: "GET / HTTP/1.1")
             }
             
-            it("can return a string representation of the request") {
-                expect(httpRequest.toString()).to(equal("GET / HTTP/1.1"))
+            it("can return an HttpRequest object") {
+                let expectedRequest = HttpRequest(request: "GET / HTTP/1.1")
+                expect(httpRequest).to(equal(expectedRequest))
             }
         }
     }

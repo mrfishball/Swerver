@@ -2,13 +2,19 @@ import Foundation
 
 public class HttpRequest {
     
-    public var request: String
+    var request: String
     
     public init(request: String) {
         self.request = request
     }
     
     public func toString() -> String {
-        return self.request
+        return request
+    }
+}
+
+extension HttpRequest: Equatable {
+    public static func == (lhs: HttpRequest, rhs: HttpRequest) -> Bool {
+        return lhs.request == rhs.request
     }
 }
