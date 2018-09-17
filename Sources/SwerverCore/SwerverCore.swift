@@ -8,9 +8,9 @@ public class Swerver {
     
     public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
-    public let port: Int
-    public var listenSocket: Socket!
-    public var continueListening = true
+    private let port: Int
+    private var listenSocket: Socket!
+    private var continueListening = true
     
     private let clientRequestHandler = ClientRequestHandler()
     private let console = ConsoleDestination()
@@ -32,6 +32,7 @@ public class Swerver {
     
     private func newConnection(socket: Socket) throws {
         let connectedSocket = try socket.acceptClientConnection()
+        logger.info("Connected to client: \(connectedSocket.remoteHostname)")
         let _ = try clientRequestHandler.handle(client: connectedSocket)
         connectedSocket.close()
     }

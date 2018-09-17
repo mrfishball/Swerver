@@ -10,6 +10,7 @@ public class ClientRequestHandler {
     
     public func handle(client: Socket) throws {
         let httpRequest = try parseRequest(clientSocket: client)
+        logger.info(httpRequest)
         try client.write(from: httpRouteProcessor.process(request: httpRequest).toString())
     }
     

@@ -1,7 +1,10 @@
 import XCTest
+import Quick
 
 import SwerverTests
 
-var tests = [XCTestCaseEntry]()
-tests += SwerverTests.allTests()
-XCTMain(tests)
+XCTMain([HttpRequestParserSpec.self,
+         HttpRequestSpec.self,
+         HttpResponseSpec.self,
+         RouterSpec.self,
+         SwerverCoreSpec.self,])

@@ -352,7 +352,7 @@
 		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::Swerver::Product" /* Swerver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swerver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::SwerverRunner::Product" /* SwerverRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwerverRunner; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Swerver::SwerverTests::Product" /* SwerverTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwerverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Swerver::SwerverTests::Product" /* SwerverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SwerverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1649,6 +1649,7 @@
 				);
 				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";

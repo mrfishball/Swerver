@@ -1,9 +1,9 @@
-import XCTest
-
-#if !os(macOS)
-public func allTests() -> [XCTestCaseEntry] {
-    return [
-        testCase(SwerverTests.allTests),
-    ]
-}
-#endif
+//import XCTest
+//
+//#if !os(macOS)
+//public func allTests() -> [XCTestCaseEntry] {
+//    return [
+//        testCase(SwerverTests.allTests),
+//    ]
+//}
+//#endif

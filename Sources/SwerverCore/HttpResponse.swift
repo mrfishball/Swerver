@@ -1,8 +1,8 @@
 public class HttpResponse {
     
-    var header: String
-    var payload: String
-    let contentType: String = "Content-Type: text/html\n\n"
+    private var header: String
+    private var payload: String
+    private let contentType: String = "Content-Type: text/html\n\n"
     
     public var response: String!
     

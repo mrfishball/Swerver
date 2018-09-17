@@ -13,10 +13,10 @@ class HttpRequestParserSpec: QuickSpec {
             }
             
             it("returns an HttpRequest Object") {
-                let aRequest = "GET / HTTP/1.1"
-                let expectedRequest = HttpRequest(request: aRequest)
-                let parsedRequest = httpRequestParser.parse(request: aRequest)
-                expect(parsedRequest.toString()).to(equal(expectedRequest.toString()))
+                let requestData = "GET / HTTP/1.1"
+                let expectedRequest = HttpRequest(method: "GET", url: "/", httpVersion: "HTTP/1.1")
+                let parsedRequest = httpRequestParser.parse(request: requestData)
+                expect(parsedRequest).to(equal(expectedRequest))
             }
         }
     }

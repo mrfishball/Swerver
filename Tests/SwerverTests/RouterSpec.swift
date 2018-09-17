@@ -14,7 +14,7 @@ class RouterSpec: QuickSpec {
             
             context("when receive a request") {
                 it("returns an response object") {
-                    let aGetRequest = HttpRequest(request: "GET / HTTP/1.1")
+                    let aGetRequest = HttpRequest(method: "GET", url: "/", httpVersion: "HTTP/1.1")
                     let expectedResponse = HttpResponse(header: RequestMethods.GET.getHeader(), payload: RequestMethods.GET.getBody())
                     expect(router.process(request: aGetRequest)).to(equal(expectedResponse))
                 }
