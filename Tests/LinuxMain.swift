@@ -1,10 +1,13 @@
 import XCTest
 import Quick
 
-import SwerverTests
+@testable import SwerverTests
 
-XCTMain([HttpRequestParserSpec.self,
-         HttpRequestSpec.self,
-         HttpResponseSpec.self,
-         RouterSpec.self,
-         SwerverCoreSpec.self,])
+QCKMain([
+    HttpResponseSpec.self,
+    HttpRequestSpec.self,
+    HttpRequestParserSpec.self,
+    RequestStatusSpec.self,
+    ResponseBuilderSpec.self,
+    RouterSpec.self
+])

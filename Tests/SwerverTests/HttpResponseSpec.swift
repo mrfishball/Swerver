@@ -9,19 +9,22 @@ class HttpResponseSpec: QuickSpec {
             var httpResponse: HttpResponse!
             
             beforeEach {
-                httpResponse = HttpResponse(header: "POST", payload: "Not Implemented")
+                httpResponse = HttpResponse(statusCode: "200", statusPhrase: "OK")
             }
             
-            it("can return a string representation of an http response with header, content type and body") {
-                let expectedResponse = """
-                    HTTP/1.1 POST
-                    Content-Type: text/html
-                    
-                    Not Implemented
-                    """
-                expect(httpResponse.toString()).to(equal(expectedResponse))
+            it("has a default content type of 'test/html; charset=UTF-8'") {
+                let expectedContentType: String = "text/html; charset=UTF-8"
+                expect(httpResponse.getContentType()).to(equal(expectedContentType))
+            }
+            
+            it("can return the date and time string of when the response is created") {
+                expect(httpResponse.getResponseDateTime()).toNot(be(nil))
+            }
+            
+            it("can return a string representation of the entire response object") {
+                let expectedResponseString = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nDate: \(httpResponse.getResponseDateTime())\r\n\r\n<h1>200 OK</h1>"
+                expect(httpResponse.responseDataToString()).to(equal(expectedResponseString))
             }
         }
     }
-
 }

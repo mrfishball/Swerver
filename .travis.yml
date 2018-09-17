@@ -21,8 +21,12 @@ jobs:
     - stage: test
       script:
         - swift package clean
-        - swift build -Xswiftc -suppress-warnings
         - swift test -Xswiftc -suppress-warnings
+
+    - stage: build
+      script:
+      - swift package clean
+      - swift build -Xswiftc -suppress-warnings
 
     - stage: deploy
       script:
@@ -38,6 +42,7 @@ jobs:
 
 stages:
   - name: test
+  - name: build
   - name: deploy
     if: branch == master
 
