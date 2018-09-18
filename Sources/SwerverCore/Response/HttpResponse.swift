@@ -4,7 +4,7 @@ public class HttpResponse {
     
     public static let LINE_SEPARATOR: String = "\r\n"
     public static let SPACE: String = " "
-    public static let HTTP_VERSION: String = "HTTP/1.1"
+    public static let HTTP_VERSION: String = HttpVersion.CURRENT.rawValue
     
     private let statusCode: String
     private let statusPhrase: String

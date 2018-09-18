@@ -3,7 +3,7 @@ import Nimble
 import Swerver
 import Foundation
 
-class ResponseBuilderSpec: QuickSpec {
+class ResponseConstructorSpec: QuickSpec {
     override func spec() {
         describe("A ResponseBuilder") {
             var responseBuilder: ResponseConstructor!
