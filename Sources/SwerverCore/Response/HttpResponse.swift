@@ -18,19 +18,29 @@ public class HttpResponse {
         self.setDateTime()
     }
     
+    public func statusLineToHeaderItem() -> String {
+        return HttpResponse.HTTP_VERSION + HttpResponse.SPACE + self.statusCode + HttpResponse.SPACE + self.statusPhrase + HttpResponse.LINE_SEPARATOR
+    }
+    
     public func getContentType() -> String {
         return headerComponents["Content-Type"]!
+    }
+    
+    public func contentTypeToHeaderItem() -> String {
+        return "Content-Type: \(self.getContentType())" + HttpResponse.LINE_SEPARATOR
     }
     
     public func getResponseDateTime() -> String {
         return headerComponents["Date"]!
     }
     
+    public func dateTimeToHeaderItem() -> String {
+        return "Date: \(self.getResponseDateTime())" + HttpResponse.LINE_SEPARATOR
+    }
+    
     public func responseDataToString() -> String {
-        let responseHeaderString = HttpResponse.HTTP_VERSION + HttpResponse.SPACE + self.statusCode + HttpResponse.SPACE + self.statusPhrase + HttpResponse.LINE_SEPARATOR + self.headerComponentsToString(headerComponents: self.headerComponents) + HttpResponse.LINE_SEPARATOR
-        let body = "<h1>\(statusCode) \(statusPhrase)</h1>"
-        let responseDataString = responseHeaderString + body
-        return responseDataString
+        let body = HttpResponse.LINE_SEPARATOR + "<h1>\(statusCode) \(statusPhrase)</h1>"
+        return self.statusLineToHeaderItem() + self.contentTypeToHeaderItem() + self.dateTimeToHeaderItem() + body
     }
     
     private func setContentType() {
@@ -43,14 +53,6 @@ public class HttpResponse {
         dateTimeFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss 'GMT'"
         let currentDateTime: String = dateTimeFormatter.string(from: Date())
         headerComponents["Date"] = currentDateTime
-    }
-    
-    private func headerComponentsToString(headerComponents: [String: String]) -> String {
-        var headerComponentString: String = ""
-        for (headerKey, headerValue) in headerComponents {
-            headerComponentString += headerKey + ": " + headerValue + HttpResponse.LINE_SEPARATOR
-        }
-        return headerComponentString
     }
 }
 

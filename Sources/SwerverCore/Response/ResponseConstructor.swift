@@ -1,6 +1,6 @@
 import Foundation
 
-public class ResponseBuilder {
+public class ResponseConstructor {
     
     public init() {}
     

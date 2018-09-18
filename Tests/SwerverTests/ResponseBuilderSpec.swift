@@ -6,10 +6,10 @@ import Foundation
 class ResponseBuilderSpec: QuickSpec {
     override func spec() {
         describe("A ResponseBuilder") {
-            var responseBuilder: ResponseBuilder!
+            var responseBuilder: ResponseConstructor!
             
             beforeEach {
-                responseBuilder = ResponseBuilder()
+                responseBuilder = ResponseConstructor()
             }
             
             it("can build a 200 OK response") {

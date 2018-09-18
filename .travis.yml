@@ -18,15 +18,11 @@ install:
 
 jobs:
   include:
-    - stage: test
+    - stage: test_and_build
       script:
         - swift package clean
         - swift test -Xswiftc -suppress-warnings
-
-    - stage: build
-      script:
-      - swift package clean
-      - swift build -Xswiftc -suppress-warnings
+        - swift build -Xswiftc -suppress-warnings
 
     - stage: deploy
       script:
@@ -41,8 +37,7 @@ jobs:
       - aws ecs update-service --cluster $AWS_ECS_CLUSTER --service $AWS_ECS_SERVICE --force-new-deployment
 
 stages:
-  - name: test
-  - name: build
+  - name: test_and_build
   - name: deploy
     if: branch == master
 

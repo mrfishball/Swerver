@@ -2,7 +2,7 @@ import Foundation
 
 public class Router {
     
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder = ResponseConstructor()
     
     public init() {}
     
