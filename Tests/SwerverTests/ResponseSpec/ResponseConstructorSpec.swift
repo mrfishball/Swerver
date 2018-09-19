@@ -12,12 +12,14 @@ class ResponseConstructorSpec: QuickSpec {
             }
             
             it("can build a 200 OK response") {
-                let expectedResponse = HttpResponse(statusCode: RequestStatus.success.getStatusCode(), statusPhrase: RequestStatus.success.getStatusPhrase())
+                let body = "\(StatusCode.ok.rawValue) \(StatusCode.ok.getStatusPhrase())"
+                let expectedResponse = HttpResponse(statusCode: StatusCode.ok.rawValue, statusPhrase: StatusCode.ok.getStatusPhrase(), body: body)
                 expect(responseBuilder.generate200OKResponse()).to(equal(expectedResponse))
             }
             
             it("can build a 501 Not Implemented response") {
-                let expectedResponse = HttpResponse(statusCode: RequestStatus.failed.getStatusCode(), statusPhrase: RequestStatus.failed.getStatusPhrase())
+                let body = "\(StatusCode.not_implemented.rawValue) \(StatusCode.not_implemented.getStatusPhrase())"
+                let expectedResponse = HttpResponse(statusCode: StatusCode.not_implemented.rawValue, statusPhrase: StatusCode.not_implemented.getStatusPhrase(), body: body)
                 expect(responseBuilder.generate501NotImplementedResponse()).to(equal(expectedResponse))
             }
         }

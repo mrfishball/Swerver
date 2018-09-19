@@ -4,10 +4,11 @@ import Quick
 @testable import SwerverTests
 
 QCKMain([
-    HttpResponseSpec.self,
     HttpRequestSpec.self,
     HttpRequestParserSpec.self,
-    RequestStatusSpec.self,
+    HttpResponseSpec.self,
     ResponseConstructorSpec.self,
-    RouterSpec.self
+    ResponseFormatterSpec.self,
+    StatusCodeSpec.self,
+    RouterSpec.self,
 ])

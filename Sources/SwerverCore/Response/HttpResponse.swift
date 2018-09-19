@@ -2,45 +2,38 @@ import Foundation
 
 public class HttpResponse {
     
-    public static let LINE_SEPARATOR: String = "\r\n"
-    public static let SPACE: String = " "
-    public static let HTTP_VERSION: HttpVersion = HttpVersion.current
-    
     private let statusCode: String
     private let statusPhrase: String
     private var headerComponents: [String: String]
+    private let body: String
     
-    public init(statusCode: String, statusPhrase: String) {
+    public init(statusCode: String, statusPhrase: String, body: String) {
         self.statusCode = statusCode
         self.statusPhrase = statusPhrase
         self.headerComponents = [:]
+        self.body = body
         self.setContentType()
         self.setDateTime()
     }
     
-    public func statusLineToHeaderItem() -> String {
-        return HttpResponse.HTTP_VERSION.rawValue + HttpResponse.SPACE + self.statusCode + HttpResponse.SPACE + self.statusPhrase + HttpResponse.LINE_SEPARATOR
+    public func getStatusCode() -> String {
+        return statusCode
+    }
+    
+    public func getStatusPhrase() -> String {
+        return statusPhrase
     }
     
     public func getContentType() -> String {
         return headerComponents["Content-Type"]!
     }
     
-    public func contentTypeToHeaderItem() -> String {
-        return "Content-Type: \(self.getContentType())" + HttpResponse.LINE_SEPARATOR
-    }
-    
     public func getResponseDateTime() -> String {
         return headerComponents["Date"]!
     }
     
-    public func dateTimeToHeaderItem() -> String {
-        return "Date: \(self.getResponseDateTime())" + HttpResponse.LINE_SEPARATOR
-    }
-    
-    public func responseDataToString() -> String {
-        let body = HttpResponse.LINE_SEPARATOR + "<h1>\(statusCode) \(statusPhrase)</h1>"
-        return self.statusLineToHeaderItem() + self.contentTypeToHeaderItem() + self.dateTimeToHeaderItem() + body
+    public func getBody() -> String {
+        return body
     }
     
     private func setContentType() {
@@ -60,7 +53,8 @@ extension HttpResponse: Equatable {
     public static func == (lhs: HttpResponse, rhs: HttpResponse) -> Bool {
         return lhs.statusCode == rhs.statusCode &&
             lhs.statusPhrase == rhs.statusPhrase &&
-            lhs.headerComponents == rhs.headerComponents
+            lhs.headerComponents == rhs.headerComponents &&
+            lhs.body == rhs.body
         
     }
 }

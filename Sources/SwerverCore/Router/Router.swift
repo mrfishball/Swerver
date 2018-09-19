@@ -1,13 +1,16 @@
+import Foundation
+
 public class Router {
     
     private let responseBuilder = ResponseConstructor()
+    private let responseHeaderFormatter = ResponseFormatter()
     
     public init() {}
     
-    public func process(request: HttpRequest) -> HttpResponse {
-        if request.getMethod() == RequestMethods.GET {
-            return responseBuilder.generate200OKResponse()
+    public func process(request: HttpRequest) -> String {
+        if request.getMethod() == RequestMethods.get {
+            return responseHeaderFormatter.format(httpResponse: responseBuilder.generate200OKResponse())
         }
-        return responseBuilder.generate501NotImplementedResponse()
+        return responseHeaderFormatter.format(httpResponse: responseBuilder.generate501NotImplementedResponse())
     }
 }
