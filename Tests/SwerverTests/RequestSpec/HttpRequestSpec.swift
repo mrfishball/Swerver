@@ -10,19 +10,19 @@ class HttpRequestSpec: QuickSpec {
             var httpRequest: HttpRequest!
             
             beforeEach {
-                httpRequest = HttpRequest(method: "GET", url: "/", httpVersion: "HTTP/1.1")
+                httpRequest = HttpRequest(method: RequestMethods.GET, url: URL(string: "/")!, httpVersion: HttpVersion.current)
             }
             
             it("can return the method of the request") {
-                expect(httpRequest.getMethod()).to(equal("GET"))
+                expect(httpRequest.getMethod()).to(equal(RequestMethods.GET))
             }
             
             it("can return the url of the request") {
-                expect(httpRequest.getUrl()).to(equal("/"))
+                expect(httpRequest.getUrl().absoluteString).to(equal("/"))
             }
             
             it("can return the http version of the request") {
-                expect(httpRequest.getHttpVersion()).to(equal("HTTP/1.1"))
+                expect(httpRequest.getHttpVersion()).to(equal(HttpVersion.current))
             }
         }
     }

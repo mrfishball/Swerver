@@ -1,7 +1,6 @@
 import Quick
 import Nimble
 import Swerver
-import Foundation
 
 class HttpResponseSpec: QuickSpec {
     override func spec() {

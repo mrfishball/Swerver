@@ -4,7 +4,7 @@ public class HttpResponse {
     
     public static let LINE_SEPARATOR: String = "\r\n"
     public static let SPACE: String = " "
-    public static let HTTP_VERSION: String = HttpVersion.CURRENT.rawValue
+    public static let HTTP_VERSION: HttpVersion = HttpVersion.current
     
     private let statusCode: String
     private let statusPhrase: String
@@ -19,7 +19,7 @@ public class HttpResponse {
     }
     
     public func statusLineToHeaderItem() -> String {
-        return HttpResponse.HTTP_VERSION + HttpResponse.SPACE + self.statusCode + HttpResponse.SPACE + self.statusPhrase + HttpResponse.LINE_SEPARATOR
+        return HttpResponse.HTTP_VERSION.rawValue + HttpResponse.SPACE + self.statusCode + HttpResponse.SPACE + self.statusPhrase + HttpResponse.LINE_SEPARATOR
     }
     
     public func getContentType() -> String {

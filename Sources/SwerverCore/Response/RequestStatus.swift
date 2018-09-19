@@ -1,17 +1,17 @@
 public enum RequestStatus {
-    case SUCCESS, FAILED
+    case success, failed
     
     public func getStatusPhrase() -> String {
         switch self {
-            case .SUCCESS: return "OK"
-            case .FAILED: return "Not Implemented"
+            case .success: return "OK"
+            case .failed: return "Not Implemented"
         }
     }
     
     public func getStatusCode() -> String {
         switch self {
-            case .SUCCESS: return "200"
-            case .FAILED: return "501"
+            case .success: return "200"
+            case .failed: return "501"
         }
     }
 }
