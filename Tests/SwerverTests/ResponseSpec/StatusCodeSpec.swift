@@ -10,6 +10,10 @@ class StatusCodeSpec: QuickSpec {
                 expect(StatusCode.ok.getStatusPhrase()).to(equal("OK"))
             }
             
+            it("can return a status phrase of 'Not Found'") {
+                expect(StatusCode.not_found.getStatusPhrase()).to(equal("Not Found"))
+            }
+            
             it("can return a status phrase of 'Not Implemented'") {
                 expect(StatusCode.not_implemented.getStatusPhrase()).to(equal("Not Implemented"))
             }

@@ -7,7 +7,7 @@ QCKMain([
     HttpRequestSpec.self,
     HttpRequestParserSpec.self,
     HttpResponseSpec.self,
-    ResponseConstructorSpec.self,
+    ResponseBuilderSpec.self,
     ResponseFormatterSpec.self,
     StatusCodeSpec.self,
     RouterSpec.self,

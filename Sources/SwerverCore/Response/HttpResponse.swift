@@ -2,18 +2,21 @@ import Foundation
 
 public class HttpResponse {
     
-    private let statusCode: String
-    private let statusPhrase: String
+    private var httpVersion: String = HttpVersion.current.rawValue
+    private var statusCode: String
+    private var statusPhrase: String
     private var headerComponents: [String: String]
-    private let body: String
+    private var body: String
     
     public init(statusCode: String, statusPhrase: String, body: String) {
         self.statusCode = statusCode
         self.statusPhrase = statusPhrase
         self.headerComponents = [:]
         self.body = body
-        self.setContentType()
-        self.setDateTime()
+    }
+    
+    public static func anEmptyResponse() -> HttpResponse {
+        return HttpResponse(statusCode: StatusCode.not_found.rawValue, statusPhrase: StatusCode.not_found.getStatusPhrase(), body: String())
     }
     
     public func getStatusCode() -> String {
@@ -25,7 +28,7 @@ public class HttpResponse {
     }
     
     public func getContentType() -> String {
-        return headerComponents["Content-Type"]!
+        return headerComponents["Content-Type"] ?? String()
     }
     
     public func getResponseDateTime() -> String {
@@ -36,16 +39,37 @@ public class HttpResponse {
         return body
     }
     
-    private func setContentType() {
-        headerComponents["Content-Type"] = "text/html; charset=UTF-8"
+    public func getHttpVersion() -> String {
+        return httpVersion
     }
     
-    private func setDateTime() {
-        let dateTimeFormatter = DateFormatter()
-        dateTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateTimeFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss 'GMT'"
-        let currentDateTime: String = dateTimeFormatter.string(from: Date())
-        headerComponents["Date"] = currentDateTime
+    public func getHeaderComponents() -> [String: String] {
+        return headerComponents
+    }
+    
+    public func setResponseBody(body: String) -> HttpResponse {
+        self.body = body
+        return self
+    }
+    
+    public func setResponseStatusCode(statusCode: String) -> HttpResponse {
+        self.statusCode = statusCode
+        return self
+    }
+    
+    public func setResponseStatusPhrase(statusPhrase: String) -> HttpResponse {
+        self.statusPhrase = statusPhrase
+        return self
+    }
+    
+    public func setResponseContentType(contentType: String) -> HttpResponse {
+        headerComponents["Content-Type"] = contentType
+        return self
+    }
+    
+    public func setResponseDateTime(dateTime: String) -> HttpResponse {
+        headerComponents["Date"] = dateTime
+        return self
     }
 }
 
@@ -55,6 +79,5 @@ extension HttpResponse: Equatable {
             lhs.statusPhrase == rhs.statusPhrase &&
             lhs.headerComponents == rhs.headerComponents &&
             lhs.body == rhs.body
-        
     }
 }

@@ -13,7 +13,7 @@ jobs:
     - stage: deploy
       script:
       - docker --version
-      - pip install --upgrade pip
+      - sudo pip install --upgrade pip
       - pip install --user awscli
       - export PATH=$PATH:$HOME/.local/bin
       - eval $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
@@ -26,4 +26,3 @@ stages:
   - name: test_and_build
   - name: deploy
     if: branch == master
-

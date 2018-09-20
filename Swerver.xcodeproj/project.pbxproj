@@ -24,13 +24,13 @@
 		840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F2214ADFC1001234BE /* HttpRequestSpec.swift */; };
 		840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F4214AE46A001234BE /* HttpResponseSpec.swift */; };
 		840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F6214AE6A9001234BE /* RouterSpec.swift */; };
-		840421F9214F706A001234BE /* ResponseConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F8214F706A001234BE /* ResponseConstructor.swift */; };
-		840421FB21501815001234BE /* ResponseConstructorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FA21501814001234BE /* ResponseConstructorSpec.swift */; };
+		840421F9214F706A001234BE /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F8214F706A001234BE /* ResponseBuilder.swift */; };
+		840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FA21501814001234BE /* ResponseBuilderSpec.swift */; };
 		840421FD2150200C001234BE /* StatusCodeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FC2150200C001234BE /* StatusCodeSpec.swift */; };
 		840421FF2150284E001234BE /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FE2150284E001234BE /* StatusCode.swift */; };
-		8459140E2152AE430036EF19 /* RequestParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459140D2152AE430036EF19 /* RequestParsingError.swift */; };
 		845914102152BE510036EF19 /* ResponseFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459140F2152BE510036EF19 /* ResponseFormatter.swift */; };
 		845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */; };
+		845914172154102B0036EF19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914162154102B0036EF19 /* ContentType.swift */; };
 		84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6AC421495B65004ADFF0 /* RequestMethod.swift */; };
 		84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */; };
 		84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C400214AAEB600304862 /* HttpRequestParser.swift */; };
@@ -230,13 +230,13 @@
 		840421F2214ADFC1001234BE /* HttpRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestSpec.swift; sourceTree = "<group>"; };
 		840421F4214AE46A001234BE /* HttpResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseSpec.swift; sourceTree = "<group>"; };
 		840421F6214AE6A9001234BE /* RouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
-		840421F8214F706A001234BE /* ResponseConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConstructor.swift; sourceTree = "<group>"; };
-		840421FA21501814001234BE /* ResponseConstructorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConstructorSpec.swift; sourceTree = "<group>"; };
+		840421F8214F706A001234BE /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
+		840421FA21501814001234BE /* ResponseBuilderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilderSpec.swift; sourceTree = "<group>"; };
 		840421FC2150200C001234BE /* StatusCodeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSpec.swift; sourceTree = "<group>"; };
 		840421FE2150284E001234BE /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
-		8459140D2152AE430036EF19 /* RequestParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParsingError.swift; sourceTree = "<group>"; };
 		8459140F2152BE510036EF19 /* ResponseFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatter.swift; sourceTree = "<group>"; };
 		845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatterSpec.swift; sourceTree = "<group>"; };
+		845914162154102B0036EF19 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequestHandler.swift; sourceTree = "<group>"; };
 		84D0C400214AAEB600304862 /* HttpRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParser.swift; sourceTree = "<group>"; };
 		84D0C402214AB7A900304862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -428,7 +428,6 @@
 				84FF6AC421495B65004ADFF0 /* RequestMethod.swift */,
 				84D0C400214AAEB600304862 /* HttpRequestParser.swift */,
 				84D0C408214AD80B00304862 /* HttpRequest.swift */,
-				8459140D2152AE430036EF19 /* RequestParsingError.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -438,9 +437,10 @@
 			children = (
 				840421FE2150284E001234BE /* StatusCode.swift */,
 				84D0C404214AB8AD00304862 /* HttpResponse.swift */,
-				840421F8214F706A001234BE /* ResponseConstructor.swift */,
+				840421F8214F706A001234BE /* ResponseBuilder.swift */,
 				84DDA53F2152903F006A05AC /* HttpVersion.swift */,
 				8459140F2152BE510036EF19 /* ResponseFormatter.swift */,
+				845914162154102B0036EF19 /* ContentType.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -462,6 +462,13 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
+		845914132153F0CF0036EF19 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		84DDA53C21516A15006A05AC /* RouterSpec */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				840421FC2150200C001234BE /* StatusCodeSpec.swift */,
-				840421FA21501814001234BE /* ResponseConstructorSpec.swift */,
+				840421FA21501814001234BE /* ResponseBuilderSpec.swift */,
 				840421F4214AE46A001234BE /* HttpResponseSpec.swift */,
 				845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */,
 			);
@@ -493,6 +500,7 @@
 		OBJ_10 /* Swerver */ = {
 			isa = PBXGroup;
 			children = (
+				845914132153F0CF0036EF19 /* Action */,
 				8404220321503DB3001234BE /* Server */,
 				8404220221503D4F001234BE /* Router */,
 				8404220121503D35001234BE /* Response */,
@@ -1192,9 +1200,9 @@
 				84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */,
 				84D0C403214AB7A900304862 /* Router.swift in Sources */,
 				84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */,
-				840421F9214F706A001234BE /* ResponseConstructor.swift in Sources */,
+				840421F9214F706A001234BE /* ResponseBuilder.swift in Sources */,
+				845914172154102B0036EF19 /* ContentType.swift in Sources */,
 				84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */,
-				8459140E2152AE430036EF19 /* RequestParsingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,7 +1228,7 @@
 			files = (
 				840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */,
 				840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */,
-				840421FB21501815001234BE /* ResponseConstructorSpec.swift in Sources */,
+				840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */,
 				845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */,
 				840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */,
 				84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */,
