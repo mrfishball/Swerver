@@ -21,6 +21,24 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F2214ADFC1001234BE /* HttpRequestSpec.swift */; };
+		840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F4214AE46A001234BE /* HttpResponseSpec.swift */; };
+		840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F6214AE6A9001234BE /* RouterSpec.swift */; };
+		840421F9214F706A001234BE /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F8214F706A001234BE /* ResponseBuilder.swift */; };
+		840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FA21501814001234BE /* ResponseBuilderSpec.swift */; };
+		840421FD2150200C001234BE /* StatusCodeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FC2150200C001234BE /* StatusCodeSpec.swift */; };
+		840421FF2150284E001234BE /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421FE2150284E001234BE /* StatusCode.swift */; };
+		845914102152BE510036EF19 /* ResponseFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459140F2152BE510036EF19 /* ResponseFormatter.swift */; };
+		845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */; };
+		845914172154102B0036EF19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914162154102B0036EF19 /* ContentType.swift */; };
+		84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6AC421495B65004ADFF0 /* RequestMethod.swift */; };
+		84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */; };
+		84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C400214AAEB600304862 /* HttpRequestParser.swift */; };
+		84D0C403214AB7A900304862 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C402214AB7A900304862 /* Router.swift */; };
+		84D0C405214AB8AD00304862 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C404214AB8AD00304862 /* HttpResponse.swift */; };
+		84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */; };
+		84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C408214AD80B00304862 /* HttpRequest.swift */; };
+		84DDA5402152903F006A05AC /* HttpVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDA53F2152903F006A05AC /* HttpVersion.swift */; };
 		OBJ_141 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* AdapterProtocols.swift */; };
 		OBJ_142 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* AssertionDispatcher.swift */; };
 		OBJ_143 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* AssertionRecorder.swift */; };
@@ -111,14 +129,10 @@
 		OBJ_289 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
 		OBJ_290 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
 		OBJ_291 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_299 /* SwerverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SwerverTests.swift */; };
-		OBJ_300 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* XCTestManifests.swift */; };
 		OBJ_302 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Nimble::Nimble::Product" /* Nimble.framework */; };
 		OBJ_303 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Quick::Quick::Product" /* Quick.framework */; };
 		OBJ_304 /* QuickSpecBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Quick::QuickSpecBase::Product" /* QuickSpecBase.framework */; };
 		OBJ_305 /* Swerver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swerver::Swerver::Product" /* Swerver.framework */; };
-		OBJ_306 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */; };
-		OBJ_307 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
 		OBJ_318 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* AES256CBC.swift */; };
 		OBJ_319 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* Base64.swift */; };
 		OBJ_320 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* BaseDestination.swift */; };
@@ -203,20 +217,6 @@
 			remoteGlobalIDString = "Swerver::Swerver";
 			remoteInfo = Swerver;
 		};
-		84FF6AC1214222D2004ADFF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
-			remoteInfo = SwiftyBeaver;
-		};
-		84FF6AC2214222D2004ADFF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Socket::Socket";
-			remoteInfo = Socket;
-		};
 		84FF6AC3214222D3004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -227,6 +227,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840421F2214ADFC1001234BE /* HttpRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestSpec.swift; sourceTree = "<group>"; };
+		840421F4214AE46A001234BE /* HttpResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseSpec.swift; sourceTree = "<group>"; };
+		840421F6214AE6A9001234BE /* RouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
+		840421F8214F706A001234BE /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
+		840421FA21501814001234BE /* ResponseBuilderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilderSpec.swift; sourceTree = "<group>"; };
+		840421FC2150200C001234BE /* StatusCodeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeSpec.swift; sourceTree = "<group>"; };
+		840421FE2150284E001234BE /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		8459140F2152BE510036EF19 /* ResponseFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatter.swift; sourceTree = "<group>"; };
+		845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatterSpec.swift; sourceTree = "<group>"; };
+		845914162154102B0036EF19 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRequestHandler.swift; sourceTree = "<group>"; };
+		84D0C400214AAEB600304862 /* HttpRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParser.swift; sourceTree = "<group>"; };
+		84D0C402214AB7A900304862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		84D0C404214AB8AD00304862 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParserSpec.swift; sourceTree = "<group>"; };
+		84D0C408214AD80B00304862 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		84DDA53F2152903F006A05AC /* HttpVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpVersion.swift; sourceTree = "<group>"; };
+		84FF6AC421495B65004ADFF0 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		"Nimble::Nimble::Product" /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_100 /* ThrowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowError.swift; sourceTree = "<group>"; };
 		OBJ_101 /* ToSucceed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToSucceed.swift; sourceTree = "<group>"; };
@@ -236,7 +254,7 @@
 		OBJ_106 /* SourceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceLocation.swift; sourceTree = "<group>"; };
 		OBJ_107 /* Stringers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stringers.swift; sourceTree = "<group>"; };
 		OBJ_108 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/Nimble.git-1225162792785459507/Package.swift"; sourceTree = "<group>"; };
-		OBJ_11 /* SwerverCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverCore.swift; sourceTree = "<group>"; };
+		OBJ_11 /* SwerverCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverCore.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		OBJ_110 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/SwiftyBeaver.git--1637639271898239920/Package.swift"; sourceTree = "<group>"; };
 		OBJ_111 /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 		OBJ_112 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
@@ -252,8 +270,6 @@
 		OBJ_124 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
 		OBJ_125 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
 		OBJ_126 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/admin/Desktop/Swerver/.build/checkouts/BlueSocket.git-3162807777605905816/Package.swift"; sourceTree = "<group>"; };
-		OBJ_14 /* SwerverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwerverTests.swift; sourceTree = "<group>"; };
-		OBJ_15 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_19 /* QuickSpecBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickSpecBase.m; sourceTree = "<group>"; };
 		OBJ_21 /* QuickSpecBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickSpecBase.h; sourceTree = "<group>"; };
 		OBJ_22 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/admin/Desktop/Swerver/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap; sourceTree = "<group>"; };
@@ -332,7 +348,7 @@
 		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::Swerver::Product" /* Swerver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Swerver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Swerver::SwerverRunner::Product" /* SwerverRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwerverRunner; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Swerver::SwerverTests::Product" /* SwerverTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwerverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Swerver::SwerverTests::Product" /* SwerverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SwerverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftyBeaver::SwiftyBeaver::Product" /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -393,8 +409,6 @@
 				OBJ_303 /* Quick.framework in Frameworks */,
 				OBJ_304 /* QuickSpecBase.framework in Frameworks */,
 				OBJ_305 /* Swerver.framework in Frameworks */,
-				OBJ_306 /* SwiftyBeaver.framework in Frameworks */,
-				OBJ_307 /* Socket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,10 +422,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_10 /* Swerver */ = {
+		8404220021503D02001234BE /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				84FF6AC421495B65004ADFF0 /* RequestMethod.swift */,
+				84D0C400214AAEB600304862 /* HttpRequestParser.swift */,
+				84D0C408214AD80B00304862 /* HttpRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		8404220121503D35001234BE /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				840421FE2150284E001234BE /* StatusCode.swift */,
+				84D0C404214AB8AD00304862 /* HttpResponse.swift */,
+				840421F8214F706A001234BE /* ResponseBuilder.swift */,
+				84DDA53F2152903F006A05AC /* HttpVersion.swift */,
+				8459140F2152BE510036EF19 /* ResponseFormatter.swift */,
+				845914162154102B0036EF19 /* ContentType.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		8404220221503D4F001234BE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				84D0C402214AB7A900304862 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8404220321503DB3001234BE /* Server */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* SwerverCore.swift */,
+				84D0C3FE214A9DF100304862 /* ClientRequestHandler.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		845914132153F0CF0036EF19 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		84DDA53C21516A15006A05AC /* RouterSpec */ = {
+			isa = PBXGroup;
+			children = (
+				840421F6214AE6A9001234BE /* RouterSpec.swift */,
+			);
+			path = RouterSpec;
+			sourceTree = "<group>";
+		};
+		84DDA53D21516A37006A05AC /* ResponseSpec */ = {
+			isa = PBXGroup;
+			children = (
+				840421FC2150200C001234BE /* StatusCodeSpec.swift */,
+				840421FA21501814001234BE /* ResponseBuilderSpec.swift */,
+				840421F4214AE46A001234BE /* HttpResponseSpec.swift */,
+				845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */,
+			);
+			path = ResponseSpec;
+			sourceTree = "<group>";
+		};
+		84DDA53E21516A40006A05AC /* RequestSpec */ = {
+			isa = PBXGroup;
+			children = (
+				840421F2214ADFC1001234BE /* HttpRequestSpec.swift */,
+				84D0C406214AD27500304862 /* HttpRequestParserSpec.swift */,
+			);
+			path = RequestSpec;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Swerver */ = {
+			isa = PBXGroup;
+			children = (
+				845914132153F0CF0036EF19 /* Action */,
+				8404220321503DB3001234BE /* Server */,
+				8404220221503D4F001234BE /* Router */,
+				8404220121503D35001234BE /* Response */,
+				8404220021503D02001234BE /* Request */,
 			);
 			name = Swerver;
 			path = Sources/SwerverCore;
@@ -494,8 +587,9 @@
 		OBJ_13 /* SwerverTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_14 /* SwerverTests.swift */,
-				OBJ_15 /* XCTestManifests.swift */,
+				84DDA53E21516A40006A05AC /* RequestSpec */,
+				84DDA53D21516A37006A05AC /* ResponseSpec */,
+				84DDA53C21516A15006A05AC /* RouterSpec */,
 			);
 			name = SwerverTests;
 			path = Tests/SwerverTests;
@@ -874,8 +968,6 @@
 				OBJ_309 /* PBXTargetDependency */,
 				OBJ_310 /* PBXTargetDependency */,
 				OBJ_311 /* PBXTargetDependency */,
-				OBJ_312 /* PBXTargetDependency */,
-				OBJ_313 /* PBXTargetDependency */,
 			);
 			name = SwerverTests;
 			productName = SwerverTests;
@@ -932,7 +1024,7 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 9999;
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Swerver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1099,7 +1191,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */,
+				840421FF2150284E001234BE /* StatusCode.swift in Sources */,
 				OBJ_263 /* SwerverCore.swift in Sources */,
+				84D0C405214AB8AD00304862 /* HttpResponse.swift in Sources */,
+				84DDA5402152903F006A05AC /* HttpVersion.swift in Sources */,
+				845914102152BE510036EF19 /* ResponseFormatter.swift in Sources */,
+				84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */,
+				84D0C403214AB7A900304862 /* Router.swift in Sources */,
+				84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */,
+				840421F9214F706A001234BE /* ResponseBuilder.swift in Sources */,
+				845914172154102B0036EF19 /* ContentType.swift in Sources */,
+				84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,8 +1226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_299 /* SwerverTests.swift in Sources */,
-				OBJ_300 /* XCTestManifests.swift in Sources */,
+				840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */,
+				840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */,
+				840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */,
+				845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */,
+				840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */,
+				84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */,
+				840421FD2150200C001234BE /* StatusCodeSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,16 +1318,6 @@
 			isa = PBXTargetDependency;
 			target = "Swerver::Swerver" /* Swerver */;
 			targetProxy = 84FF6AC0214222D2004ADFF0 /* PBXContainerItemProxy */;
-		};
-		OBJ_312 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "SwiftyBeaver::SwiftyBeaver" /* SwiftyBeaver */;
-			targetProxy = 84FF6AC1214222D2004ADFF0 /* PBXContainerItemProxy */;
-		};
-		OBJ_313 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Socket::Socket" /* Socket */;
-			targetProxy = 84FF6AC2214222D2004ADFF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1597,7 +1695,7 @@
 		OBJ_296 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -1609,9 +1707,10 @@
 				);
 				INFOPLIST_FILE = Swerver.xcodeproj/SwerverTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap -suppress-warnings";
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = SwerverTests;
 			};
@@ -1620,7 +1719,7 @@
 		OBJ_297 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -1634,7 +1733,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Swerver.xcodeproj/GeneratedModuleMap/QuickSpecBase/module.modulemap -suppress-warnings";
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = SwerverTests;
 			};
@@ -1644,12 +1743,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
@@ -1658,6 +1783,7 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -1730,11 +1856,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1742,6 +1893,7 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
