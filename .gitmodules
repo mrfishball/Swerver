@@ -1,0 +1,3 @@
+[submodule "http_server_spec"]
+	path = http_server_spec
+	url = git@github.com:ericmeyer/http_server_spec.git

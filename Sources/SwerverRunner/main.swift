@@ -1,6 +1,6 @@
 import Swerver
 
-let port = 5050
+let port = 5000
 let server = Swerver(port: port)
 print("Dummy Server")
 print("Connect with a browser by enter the URL 'localhost:\(port)'")
