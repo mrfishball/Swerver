@@ -17,13 +17,13 @@ class ResponseFormatterSpec: QuickSpec {
             
             it("formats a Response object into a String object") {
                 let aResponse = responseBuilder
-                                    .setStatusCode(statusCode: StatusCode.ok.rawValue)
-                                    .setStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                                    .setBody(body: "200 OK")
+                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                                    .withBody(body: "200 OK")
                                     .build()
 
                 let statusLine = "HTTP/1.1 200 OK\r\n"
-                let headersLine = "Date: \(aResponse.getResponseDateTime())\r\nContent-Type: \r\n\r\n"
+                let headersLine = "Date: \(ResponseFormatter.formatDateTime(response: aResponse))\r\nContent-Type: \r\n\r\n"
                 let body = "200 OK"
                 
                 var expectedResponse = statusLine + headersLine + body

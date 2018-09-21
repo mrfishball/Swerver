@@ -1,3 +1,5 @@
+import Foundation
+
 public class ResponseFormatter {
     
     public static let LINE_SEPARATOR: String = "\r\n"
@@ -6,7 +8,7 @@ public class ResponseFormatter {
     public init() {}
     
     public func format(httpResponse: HttpResponse) -> String {
-        return formatHeader(response: httpResponse) + httpResponse.getBody()
+        return formatHeader(response: httpResponse) + httpResponse.body
     }
     
     private func formatHeader(response: HttpResponse) -> String {
@@ -19,16 +21,28 @@ public class ResponseFormatter {
     }
     
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
-        return response.getHttpVersion() + ResponseFormatter.SPACE +
-            response.getStatusCode() + ResponseFormatter.SPACE +
-            response.getStatusPhrase() + ResponseFormatter.LINE_SEPARATOR
-    }
-    
-    private func dateTimeToHeaderItem(response: HttpResponse) -> String {
-        return "Date: \(response.getResponseDateTime())" + ResponseFormatter.LINE_SEPARATOR
+        return response.httpVersion + ResponseFormatter.SPACE +
+            response.statusCode + ResponseFormatter.SPACE +
+            response.statusPhrase + ResponseFormatter.LINE_SEPARATOR
     }
     
     private func contentTypeToHeaderItem(response: HttpResponse) -> String {
-        return "Content-Type: \(response.getContentType())" + ResponseFormatter.LINE_SEPARATOR
+        return "Content-Type: \(response.contentType)" + ResponseFormatter.LINE_SEPARATOR
+    }
+    
+    private func dateTimeToHeaderItem(response: HttpResponse) -> String {
+        let formattedDateTime = ResponseFormatter.formatDateTime(response: response)
+        
+        return "Date: \(formattedDateTime)" + ResponseFormatter.LINE_SEPARATOR
+    }
+    
+    public static func formatDateTime(response: HttpResponse) -> String {
+        let dateTimeFormatter = DateFormatter()
+        dateTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateTimeFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss 'GMT'"
+        
+        let formattedDateTime: String = dateTimeFormatter.string(from: response.dateTime)
+        
+        return formattedDateTime
     }
 }

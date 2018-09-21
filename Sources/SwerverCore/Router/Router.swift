@@ -1,7 +1,6 @@
 import Foundation
 
 public class Router {
-    
     private let responseBuilder = ResponseBuilder()
     private let responseHeaderFormatter = ResponseFormatter()
     
@@ -10,19 +9,17 @@ public class Router {
     public func process(request: HttpRequest) -> String {
         if request.getMethod() == RequestMethods.get {
             let response = responseBuilder
-                            .setStatusCode(statusCode: StatusCode.ok.rawValue)
-                            .setStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                            .setContentType(contentType: ContentType.text.rawValue)
-                            .setBody(body: "200 OK")
+                            .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                            .withContentType(contentType: ContentType.text.rawValue)
                             .build()
             return responseHeaderFormatter.format(httpResponse: response)
         }
         let response = responseBuilder
-            .setStatusCode(statusCode: StatusCode.not_implemented.rawValue)
-            .setStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
-            .setContentType(contentType: ContentType.text.rawValue)
-            .setBody(body: "501 Not Implemented")
-            .build()
+                        .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
+                        .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
+                        .withContentType(contentType: ContentType.text.rawValue)
+                        .build()
         return responseHeaderFormatter.format(httpResponse: response)
     }
 }

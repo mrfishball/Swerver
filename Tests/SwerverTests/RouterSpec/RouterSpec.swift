@@ -20,10 +20,10 @@ class RouterSpec: QuickSpec {
                 it("returns an response object with 200 OK status") {
                     let aGetRequest = HttpRequest(method: RequestMethods.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
-                                            .setStatusCode(statusCode: StatusCode.ok.rawValue)
-                                            .setStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                                            .setContentType(contentType: ContentType.text.rawValue)
-                                            .setBody(body: "200 OK")
+                                            .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                                            .withContentType(contentType: ContentType.text.rawValue)
+                                            .withBody(body: "200 OK")
                                             .build()
                     expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
@@ -33,11 +33,11 @@ class RouterSpec: QuickSpec {
                 it("returns an response object with 501 Not Implemented status") {
                     let aGetRequest = HttpRequest(method: RequestMethods.other, url: URL(string: "/")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
-                        .setStatusCode(statusCode: StatusCode.not_implemented.rawValue)
-                        .setStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
-                        .setContentType(contentType: ContentType.text.rawValue)
-                        .setBody(body: "501 Not Implemented")
-                        .build()
+                                            .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
+                                            .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
+                                            .withContentType(contentType: ContentType.text.rawValue)
+                                            .withBody(body: "501 Not Implemented")
+                                            .build()
                     expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
             }
