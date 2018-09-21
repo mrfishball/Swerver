@@ -11,37 +11,40 @@ class ResponseBuilderSpec: QuickSpec {
                 responseBuilder = ResponseBuilder()
             }
             
-            it("it builds a response object that has a data value") {
-                let responseToBeTested = responseBuilder.build()
-                let expectedDate: String = responseToBeTested.getHeaderComponents()["Date"]!
+            it("it can build a response object with an 200 status code") {
+                let responseToBeTested = responseBuilder
+                                            .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                            .build()
+                let responseStatusCode = responseToBeTested.statusCode
                 
-                expect(expectedDate).toNot(beNil())
+                expect(responseStatusCode).to(equal("200"))
             }
             
-            it("can build a response with a status code value and a date value") {
+            it("it can build a response object with an OK status phrase") {
                 let responseToBeTested = responseBuilder
-                                            .setStatusCode(statusCode: StatusCode.ok.rawValue)
+                                            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                                             .build()
-                var expectedResponse = HttpResponse(statusCode: StatusCode.ok.rawValue, statusPhrase: String(), body: String())
-                expectedResponse.setResponseContentType(contentType: String())
-                expectedResponse.setResponseDateTime(dateTime: responseToBeTested.getResponseDateTime())
+                let responseStatusPhrase = responseToBeTested.statusPhrase
                 
-                expect(responseToBeTested).to(equal(expectedResponse))
+                expect(responseStatusPhrase).to(equal("OK"))
             }
             
-            it("can build a response with all the values in its field") {
+            it("it can build a response object with a content type") {
                 let responseToBeTested = responseBuilder
-                                            .setStatusCode(statusCode: StatusCode.ok.rawValue)
-                                            .setStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                                            .setContentType(contentType: ContentType.text.rawValue)
-                                            .setBody(body: "This is a response")
+                                            .withContentType(contentType: ContentType.text.rawValue)
                                             .build()
-                var expectedResponse = HttpResponse(statusCode: StatusCode.ok.rawValue, statusPhrase: StatusCode.ok.getStatusPhrase(), body: "This is a response")
-                expectedResponse.setResponseContentType(contentType: ContentType.text.rawValue)
-                expectedResponse.setResponseDateTime(dateTime: responseToBeTested.getResponseDateTime())
-                
-                expect(responseToBeTested).to(equal(expectedResponse))
+                let responseContentType = responseToBeTested.contentType
+                expect(responseContentType).to(equal("text/html; charset=UTF-8"))
             }
+            
+            it("it can build a response object with a body") {
+                let responseToBeTested = responseBuilder
+                                            .withBody(body: "Hello World!")
+                                            .build()
+                let responseBody = responseToBeTested.body
+                expect(responseBody).to(equal("Hello World!"))
+            }
+
         }
     }
 }

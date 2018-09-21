@@ -6,15 +6,28 @@ import Foundation
 class HttpResponseSpec: QuickSpec {
     override func spec() {
         describe("HttpResponse") {
-            var httpResponse: HttpResponse!
+            var responseBuilder: ResponseBuilder!
             
             beforeEach {
-                httpResponse = HttpResponse(statusCode: StatusCode.ok.rawValue, statusPhrase: StatusCode.ok.getStatusPhrase(), body: String())
+                responseBuilder = ResponseBuilder()
             }
             
             it("can equate two response object") {
-                let httpResponse2 = HttpResponse(statusCode: StatusCode.ok.rawValue, statusPhrase: StatusCode.ok.getStatusPhrase(), body: String())
-                expect(httpResponse).to(equal(httpResponse2))
+                let responseOne = responseBuilder
+                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withBody(body: String())
+                                    .build()
+                
+                let responseTwo = responseBuilder
+                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withBody(body: String())
+                                    .build()
+                
+                expect(responseOne).to(equal(responseTwo))
             }
         }
     }
