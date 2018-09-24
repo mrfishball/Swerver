@@ -45,6 +45,14 @@ docker build -t swerver:latest .
 
 Docker will test and build the project into a docker image.
 
+## Acceptance Tests (Spinach)
+
+CD into the submodule directory and run the desired test modules. For example to test the GET request handling:
+
+```sh
+bundle exec spinach --tags @simple-get
+```
+
 ## Running Swerver in the docker container
 
 After successfully building a docker image, run in the terminal:
