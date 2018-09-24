@@ -8,12 +8,14 @@ public final class HttpResponse {
     public let contentType: String
     public let dateTime: Date = Date()
     public let body: String
+    public let contentLength : Int
     
     init(builder: ResponseBuilder) {
         self.statusCode = builder.statusCode
         self.statusPhrase = builder.statusPhrase
         self.contentType = builder.contentType
         self.body = builder.body
+        self.contentLength = builder.contentLength
     }
 }
 

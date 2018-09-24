@@ -15,8 +15,9 @@ public class ResponseFormatter {
         let statusLine = statusLineToHeaderItem(response: response)
         let dateTime = dateTimeToHeaderItem(response: response)
         let contentType = contentTypeToHeaderItem(response: response)
+        let contentLength = contentLengthToHeaderItem(response: response)
         
-        let formattedHeader = (statusLine + dateTime + contentType + ResponseFormatter.LINE_SEPARATOR)
+        let formattedHeader = (statusLine + dateTime + contentType + contentLength + ResponseFormatter.LINE_SEPARATOR)
         return formattedHeader
     }
     
@@ -24,6 +25,10 @@ public class ResponseFormatter {
         return response.httpVersion + ResponseFormatter.SPACE +
             response.statusCode + ResponseFormatter.SPACE +
             response.statusPhrase + ResponseFormatter.LINE_SEPARATOR
+    }
+    
+    private func contentLengthToHeaderItem(response: HttpResponse) -> String {
+        return "Content-Length: \(response.contentLength)" + ResponseFormatter.LINE_SEPARATOR
     }
     
     private func contentTypeToHeaderItem(response: HttpResponse) -> String {

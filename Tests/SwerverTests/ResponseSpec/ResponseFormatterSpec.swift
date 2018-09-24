@@ -23,7 +23,7 @@ class ResponseFormatterSpec: QuickSpec {
                                     .build()
 
                 let statusLine = "HTTP/1.1 200 OK\r\n"
-                let headersLine = "Date: \(ResponseFormatter.formatDateTime(response: aResponse))\r\nContent-Type: \r\n\r\n"
+                let headersLine = "Date: \(ResponseFormatter.formatDateTime(response: aResponse))\r\nContent-Type: \r\nContent-Length: 0\r\n\r\n"
                 let body = "200 OK"
                 
                 var expectedResponse = statusLine + headersLine + body

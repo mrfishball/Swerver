@@ -4,6 +4,12 @@ dist: trusty
 sudo: required
 services: docker
 
+git:
+  submodules: false
+before_install:
+- echo -e "machine github.com\n  login $CI_TOKEN" > ~/.netrc
+- git submodule update --init --recursive
+
 jobs:
   include:
     - stage: test_and_build
