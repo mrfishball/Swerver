@@ -4,7 +4,7 @@ public class ResponseBuilder {
     private(set) var statusCode: String = String()
     private(set) var statusPhrase: String = String()
     private(set) var contentType: String = String()
-    private(set) var body: String = String()
+    private(set) var body: String = ""
     
     public init() {}
     
