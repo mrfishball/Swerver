@@ -2,17 +2,17 @@ import Foundation
 
 public class HttpRequest {
     
-    private let method: RequestMethods
+    private let method: RequestMethod
     private let url: URL
     private let httpVersion: HttpVersion
     
-    public init(method: RequestMethods, url: URL, httpVersion: HttpVersion) {
+    public init(method: RequestMethod, url: URL, httpVersion: HttpVersion) {
         self.method = method
         self.url = url
         self.httpVersion = httpVersion
     }
     
-    public func getMethod() -> RequestMethods {
+    public func getMethod() -> RequestMethod {
         return method
     }
     

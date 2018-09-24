@@ -4,15 +4,15 @@ dist: trusty
 sudo: required
 services: docker
 
+git:
+  submodules: false
+before_install:
+- echo -e "machine github.com\n  login $CI_TOKEN" > ~/.netrc
+- git submodule update --init --recursive
+
 jobs:
   include:
     - stage: test_and_build
-      git:
-        submodules:
-          false
-      before_install:
-      - echo -e "machine github.com\n  login ci-user\n  password $CI_USER_PASSWORD" >~/.netrc
-      - git submodule update --init --recursive
       script:
         - docker build -t swerver:latest .
 
