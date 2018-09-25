@@ -1,8 +1,10 @@
 public class GetAction: Action {
     
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder: ResponseBuilder
     
-    public init() {}
+    public init(builder: ResponseBuilder) {
+        responseBuilder = builder
+    }
     
     public func dispatch() -> HttpResponse {
         return responseBuilder

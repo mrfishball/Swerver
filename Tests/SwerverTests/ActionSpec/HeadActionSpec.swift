@@ -6,8 +6,8 @@ class HeadActionSpec: QuickSpec {
     
     override func spec() {
         describe("A GET action") {
-            let headAction = HeadAction()
             let responseBuilder = ResponseBuilder()
+            let headAction = HeadAction(builder: responseBuilder)
             
             it("can dispatch to response builder to build a response for a successful HEAD request") {
                 let okResponse = responseBuilder
