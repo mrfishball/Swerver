@@ -6,8 +6,8 @@ class GetActionSpec: QuickSpec {
     
     override func spec() {
         describe("A GET action") {
-            let getAction = GetAction()
             let responseBuilder = ResponseBuilder()
+            let getAction = GetAction(builder: responseBuilder)
             
             it("can dispatch to response builder to build a response for a successful GET request") {
                 let okResponse = responseBuilder

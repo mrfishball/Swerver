@@ -16,9 +16,9 @@ class RouterSpec: QuickSpec {
                 responseBuilder = ResponseBuilder()
             }
             
-            context("when receive a GET request") {
-                it("returns an response object with 200 OK status") {
-                    let aGetRequest = HttpRequest(method: RequestMethod.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
+            context("when receive a GET request for an existing route") {
+                it("returns an response with 200 OK status") {
+                    let aGetRequest = HttpRequest(method: RequestMethod.get, url: URL(string: "/demo")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
@@ -28,15 +28,15 @@ class RouterSpec: QuickSpec {
                 }
             }
 
-            context("when receive a request of type other than GET") {
-                it("returns an response object with 501 Not Implemented status") {
-                    let aGetRequest = HttpRequest(method: RequestMethod.other, url: URL(string: "/")!, httpVersion: HttpVersion.current)
+            context("when receive a HEAD request for an existing route") {
+                it("returns an response with 200 OK status") {
+                    let aHeadRequest = HttpRequest(method: RequestMethod.head, url: URL(string: "/demo")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
-                                            .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
-                                            .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
+                                            .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
                                             .build()
-                    expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: aHeadRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
             }
         }
