@@ -7,7 +7,7 @@ public class Router {
     public init() {}
     
     public func process(request: HttpRequest) -> String {
-        if request.getMethod() == RequestMethods.get {
+        if request.getMethod() == RequestMethod.get {
             let response = responseBuilder
                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())

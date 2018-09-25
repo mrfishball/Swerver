@@ -18,7 +18,7 @@ class RouterSpec: QuickSpec {
             
             context("when receive a GET request") {
                 it("returns an response object with 200 OK status") {
-                    let aGetRequest = HttpRequest(method: RequestMethods.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
+                    let aGetRequest = HttpRequest(method: RequestMethod.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
@@ -30,7 +30,7 @@ class RouterSpec: QuickSpec {
 
             context("when receive a request of type other than GET") {
                 it("returns an response object with 501 Not Implemented status") {
-                    let aGetRequest = HttpRequest(method: RequestMethods.other, url: URL(string: "/")!, httpVersion: HttpVersion.current)
+                    let aGetRequest = HttpRequest(method: RequestMethod.other, url: URL(string: "/")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
