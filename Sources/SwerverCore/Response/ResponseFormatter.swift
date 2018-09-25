@@ -8,17 +8,40 @@ public class ResponseFormatter {
     public init() {}
     
     public func format(httpResponse: HttpResponse) -> String {
-        return formatHeader(response: httpResponse) + httpResponse.body
+        var formattedHeader = formatHeader(response: httpResponse)
+        if hasBody(response: httpResponse) {
+            return formattedHeader + httpResponse.body
+        }
+        return formattedHeader
     }
     
     private func formatHeader(response: HttpResponse) -> String {
-        let statusLine = statusLineToHeaderItem(response: response)
-        let dateTime = dateTimeToHeaderItem(response: response)
-        let contentType = contentTypeToHeaderItem(response: response)
-        let contentLength = contentLengthToHeaderItem(response: response)
+        var formattedHeader = statusLineToHeaderItem(response: response) + dateTimeToHeaderItem(response: response)
+            + contentTypeToHeaderItem(response: response) + contentLengthToHeaderItem(response: response)
         
-        let formattedHeader = (statusLine + dateTime + contentType + contentLength + ResponseFormatter.LINE_SEPARATOR)
-        return formattedHeader
+        if hasAllowedMethods(response: response) {
+            formattedHeader += allowedMethodsToHeaderItem(response: response)
+        }
+        
+        return formattedHeader + ResponseFormatter.LINE_SEPARATOR
+    }
+    
+    public static func formatDateTime(response: HttpResponse) -> String {
+        let dateTimeFormatter = DateFormatter()
+        dateTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateTimeFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss 'GMT'"
+        
+        let formattedDateTime: String = dateTimeFormatter.string(from: response.dateTime)
+        
+        return formattedDateTime
+    }
+    
+    private func hasBody(response: HttpResponse) -> Bool {
+        return response.body.count > 0
+    }
+    
+    private func hasAllowedMethods(response: HttpResponse) -> Bool {
+        return response.allowedMethods.count > 0
     }
     
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
@@ -37,17 +60,10 @@ public class ResponseFormatter {
     
     private func dateTimeToHeaderItem(response: HttpResponse) -> String {
         let formattedDateTime = ResponseFormatter.formatDateTime(response: response)
-        
         return "Date: \(formattedDateTime)" + ResponseFormatter.LINE_SEPARATOR
     }
     
-    public static func formatDateTime(response: HttpResponse) -> String {
-        let dateTimeFormatter = DateFormatter()
-        dateTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateTimeFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss 'GMT'"
-        
-        let formattedDateTime: String = dateTimeFormatter.string(from: response.dateTime)
-        
-        return formattedDateTime
+    private func allowedMethodsToHeaderItem(response: HttpResponse) -> String {
+        return "Allow: \(response.allowedMethods.joined(separator: ", "))" + ResponseFormatter.LINE_SEPARATOR
     }
 }

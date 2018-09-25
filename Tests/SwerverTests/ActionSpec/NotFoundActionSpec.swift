@@ -7,7 +7,7 @@ class NotFoundActionSpec: QuickSpec {
     override func spec() {
         describe("A GET action") {
             let responseBuilder = ResponseBuilder()
-            let notFoundAction = NotFoundAction(builder: responseBuilder)
+            let notFoundAction = NotFoundAction()
             
             it("can dispatch to the response builder to build a response of resource not found") {
                 let notFoundResponse = responseBuilder

@@ -6,6 +6,7 @@ public class ResponseBuilder {
     private(set) var contentType: String = String()
     private(set) var body: String = String()
     private(set) var contentLength: Int = 0
+    private(set) var allowedMethods: [String] = []
     
     public init() {}
     
@@ -31,6 +32,11 @@ public class ResponseBuilder {
     
     public func withContentLength(contentLength: Int) -> ResponseBuilder {
         self.contentLength = contentLength
+        return self
+    }
+    
+    public func withAllowedMethods(allowedMethods: [String]) -> ResponseBuilder {
+        self.allowedMethods = allowedMethods
         return self
     }
     

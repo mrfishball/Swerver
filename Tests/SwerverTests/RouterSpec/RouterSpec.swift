@@ -51,6 +51,19 @@ class RouterSpec: QuickSpec {
                     expect(router.process(request: aRogueRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
             }
+            
+            context("when receive an OPTIONS request to an existing resource") {
+                it("returns an response with all the allowed methods of that resource") {
+                    let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: URL(string: "/demo2")!, httpVersion: HttpVersion.current)
+                    let expectedResponse = responseBuilder
+                        .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                        .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+                        .withContentType(contentType: ContentType.text.rawValue)
+                        .withAllowedMethods(allowedMethods: ["HEAD"])
+                        .build()
+                    expect(router.process(request: anOptionsRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                }
+            }
         }
     }
 }
