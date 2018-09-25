@@ -33,6 +33,8 @@
 		84340442215A75DF00F50DC6 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84340441215A75DF00F50DC6 /* ActionProtocol.swift */; };
 		84340444215A75F700F50DC6 /* GetActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84340443215A75F700F50DC6 /* GetActionSpec.swift */; };
 		84340446215A760E00F50DC6 /* HeadActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84340445215A760E00F50DC6 /* HeadActionSpec.swift */; };
+		84340448215A809600F50DC6 /* NotFoundAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84340447215A809600F50DC6 /* NotFoundAction.swift */; };
+		8434044A215A810B00F50DC6 /* NotFoundActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84340449215A810B00F50DC6 /* NotFoundActionSpec.swift */; };
 		845914102152BE510036EF19 /* ResponseFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459140F2152BE510036EF19 /* ResponseFormatter.swift */; };
 		845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */; };
 		845914172154102B0036EF19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914162154102B0036EF19 /* ContentType.swift */; };
@@ -244,6 +246,8 @@
 		84340441215A75DF00F50DC6 /* ActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		84340443215A75F700F50DC6 /* GetActionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActionSpec.swift; sourceTree = "<group>"; };
 		84340445215A760E00F50DC6 /* HeadActionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadActionSpec.swift; sourceTree = "<group>"; };
+		84340447215A809600F50DC6 /* NotFoundAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundAction.swift; sourceTree = "<group>"; };
+		84340449215A810B00F50DC6 /* NotFoundActionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundActionSpec.swift; sourceTree = "<group>"; };
 		8459140F2152BE510036EF19 /* ResponseFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatter.swift; sourceTree = "<group>"; };
 		845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatterSpec.swift; sourceTree = "<group>"; };
 		845914162154102B0036EF19 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 				8434043B215A759300F50DC6 /* GetAction.swift */,
 				8434043E215A75A400F50DC6 /* HeadAction.swift */,
 				84340441215A75DF00F50DC6 /* ActionProtocol.swift */,
+				84340447215A809600F50DC6 /* NotFoundAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 			children = (
 				84340443215A75F700F50DC6 /* GetActionSpec.swift */,
 				84340445215A760E00F50DC6 /* HeadActionSpec.swift */,
+				84340449215A810B00F50DC6 /* NotFoundActionSpec.swift */,
 			);
 			path = ActionSpec;
 			sourceTree = "<group>";
@@ -1224,6 +1230,7 @@
 				8434043F215A75A400F50DC6 /* HeadAction.swift in Sources */,
 				84D0C403214AB7A900304862 /* Router.swift in Sources */,
 				8434043D215A759300F50DC6 /* GetAction.swift in Sources */,
+				84340448215A809600F50DC6 /* NotFoundAction.swift in Sources */,
 				84D0C3FF214A9DF100304862 /* ClientRequestHandler.swift in Sources */,
 				840421F9214F706A001234BE /* ResponseBuilder.swift in Sources */,
 				845914172154102B0036EF19 /* ContentType.swift in Sources */,
@@ -1253,6 +1260,7 @@
 			buildActionMask = 0;
 			files = (
 				84340446215A760E00F50DC6 /* HeadActionSpec.swift in Sources */,
+				8434044A215A810B00F50DC6 /* NotFoundActionSpec.swift in Sources */,
 				840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */,
 				840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */,
 				840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */,

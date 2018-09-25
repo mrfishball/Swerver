@@ -39,6 +39,18 @@ class RouterSpec: QuickSpec {
                     expect(router.process(request: aHeadRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
             }
+            
+            context("when receive a request to an unknown URL") {
+                it("returns an response of 404 Not Found status") {
+                    let aRogueRequest = HttpRequest(method: RequestMethod.other, url: URL(string: "/not_here")!, httpVersion: HttpVersion.current)
+                    let expectedResponse = responseBuilder
+                        .withStatusCode(statusCode: StatusCode.not_found.rawValue)
+                        .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
+                        .withContentType(contentType: ContentType.text.rawValue)
+                        .build()
+                    expect(router.process(request: aRogueRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                }
+            }
         }
     }
 }

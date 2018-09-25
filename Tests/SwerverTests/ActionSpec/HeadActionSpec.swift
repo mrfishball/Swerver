@@ -5,7 +5,7 @@ import Swerver
 class HeadActionSpec: QuickSpec {
     
     override func spec() {
-        describe("A GET action") {
+        describe("A HEAD action") {
             let responseBuilder = ResponseBuilder()
             let headAction = HeadAction(builder: responseBuilder)
             

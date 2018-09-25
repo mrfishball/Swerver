@@ -6,12 +6,14 @@ public class Router {
     
     private let headAction: Action
     private let getAction: Action
+    private let notFoundAction: Action
     
     private var routes: [URL:[RequestMethod:Action]] = [:]
     
     public init() {
         headAction = HeadAction(builder: responseBuilder)
         getAction = GetAction(builder: responseBuilder)
+        notFoundAction = NotFoundAction(builder: responseBuilder)
         populateRoutes()
     }
     
@@ -23,7 +25,7 @@ public class Router {
             }
             return responseHeaderFormatter.format(httpResponse: action.dispatch())
         }
-        return "HTTP/1.1"
+        return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
     }
     
     private func fetchMethod(request: HttpRequest) -> [RequestMethod:Action] {
