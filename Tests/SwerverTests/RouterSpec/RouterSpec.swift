@@ -23,7 +23,6 @@ class RouterSpec: QuickSpec {
                                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
-                                            .withBody(body: "200 OK")
                                             .build()
                     expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
@@ -36,7 +35,6 @@ class RouterSpec: QuickSpec {
                                             .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
-                                            .withBody(body: "501 Not Implemented")
                                             .build()
                     expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }

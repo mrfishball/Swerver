@@ -12,7 +12,6 @@ public class Router {
                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                             .withContentType(contentType: ContentType.text.rawValue)
-                            .withBody(body: "200 OK")
                             .build()
             return responseHeaderFormatter.format(httpResponse: response)
         }
@@ -20,7 +19,6 @@ public class Router {
                         .withStatusCode(statusCode: StatusCode.not_implemented.rawValue)
                         .withStatusPhrase(statusPhrase: StatusCode.not_implemented.getStatusPhrase())
                         .withContentType(contentType: ContentType.text.rawValue)
-                        .withBody(body: "501 Not Implemented")
                         .build()
         return responseHeaderFormatter.format(httpResponse: response)
     }

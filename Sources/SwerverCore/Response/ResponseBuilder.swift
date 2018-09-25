@@ -5,6 +5,7 @@ public class ResponseBuilder {
     private(set) var statusPhrase: String = String()
     private(set) var contentType: String = String()
     private(set) var body: String = String()
+    private(set) var contentLength: Int = 0
     
     public init() {}
     
@@ -25,6 +26,11 @@ public class ResponseBuilder {
     
     public func withBody(body: String) -> ResponseBuilder {
         self.body = body
+        return self
+    }
+    
+    public func withContentLength(contentLength: Int) -> ResponseBuilder {
+        self.contentLength = contentLength
         return self
     }
     
