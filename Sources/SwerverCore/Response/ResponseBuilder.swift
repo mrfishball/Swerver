@@ -36,7 +36,7 @@ public class ResponseBuilder {
     }
     
     public func withAllowedMethods(allowedMethods: [String]) -> ResponseBuilder {
-        self.allowedMethods = allowedMethods
+        self.allowedMethods = allowedMethods.sorted(by: <)
         return self
     }
     
