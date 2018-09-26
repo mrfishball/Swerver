@@ -10,13 +10,12 @@ class NotFoundActionSpec: QuickSpec {
             let notFoundAction = NotFoundAction()
             
             it("can dispatch to the response builder to build a response of resource not found") {
-                let notFoundResponse = responseBuilder
-                    .withStatusCode(statusCode: StatusCode.not_found.rawValue)
-                    .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
-                    .withContentType(contentType: ContentType.text.rawValue)
-                    .withBody(body: String())
-                    .build()
-                expect(notFoundAction.dispatch()).to(equal(notFoundResponse))
+                let notFoundResponse = notFoundAction.dispatch()
+
+                expect(notFoundResponse.statusCode).to(equal(StatusCode.not_found.rawValue))
+                expect(notFoundResponse.statusPhrase).to(equal(StatusCode.not_found.getStatusPhrase()))
+                expect(notFoundResponse.contentType).to(equal(ContentType.text.rawValue))
+                expect(notFoundResponse.body.count).to(equal(0))
             }
         }
     }

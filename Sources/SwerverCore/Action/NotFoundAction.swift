@@ -11,7 +11,6 @@ extension NotFoundAction: HttpAction {
             .withStatusCode(statusCode: StatusCode.not_found.rawValue)
             .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
             .withContentType(contentType: ContentType.text.rawValue)
-            .withBody(body: String())
             .build()
     }
 }

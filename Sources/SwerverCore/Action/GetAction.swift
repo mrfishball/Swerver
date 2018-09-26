@@ -11,7 +11,6 @@ extension GetAction: HttpAction {
             .withStatusCode(statusCode: StatusCode.ok.rawValue)
             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
             .withContentType(contentType: ContentType.text.rawValue)
-            .withBody(body: String())
             .build()
     }
 }

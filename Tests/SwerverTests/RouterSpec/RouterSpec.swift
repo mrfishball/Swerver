@@ -6,15 +6,9 @@ import Foundation
 class RouterSpec: QuickSpec {
     override func spec() {
         describe("A Router") {
-            var router: Router!
-            var formatter: ResponseFormatter!
-            var responseBuilder: ResponseBuilder!
-            
-            beforeEach {
-                router = Router()
-                formatter = ResponseFormatter()
-                responseBuilder = ResponseBuilder()
-            }
+            var router = Router()
+            var formatter = ResponseFormatter()
+            var responseBuilder = ResponseBuilder()
             
             context("when receive a GET request for an existing route") {
                 it("returns an response with 200 OK status") {

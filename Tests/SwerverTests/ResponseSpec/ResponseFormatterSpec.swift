@@ -7,13 +7,8 @@ class ResponseFormatterSpec: QuickSpec {
 
     override func spec() {
         describe("A ResponseFormatter") {
-            var formatter: ResponseFormatter!
-            var responseBuilder: ResponseBuilder!
-            
-            beforeEach {
-                formatter = ResponseFormatter()
-                responseBuilder = ResponseBuilder()
-            }
+            var formatter = ResponseFormatter()
+            var responseBuilder = ResponseBuilder()
             
             it("formats a Response object into a String object") {
                 let aResponse = responseBuilder
@@ -22,13 +17,15 @@ class ResponseFormatterSpec: QuickSpec {
                                     .withBody(body: "200 OK")
                                     .build()
 
+                let formattedResponse = formatter.format(httpResponse: aResponse)
+                
                 let statusLine = "HTTP/1.1 200 OK\r\n"
                 let headersLine = "Date: \(ResponseFormatter.formatDateTime(response: aResponse))\r\nContent-Type: \r\nContent-Length: 0\r\n\r\n"
                 let body = "200 OK"
-                
+
                 var expectedResponse = statusLine + headersLine + body
 
-                expect(formatter.format(httpResponse: aResponse)).to(equal(expectedResponse))
+                expect(formattedResponse).to(equal(expectedResponse))
             }
         }
     }

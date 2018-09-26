@@ -13,14 +13,18 @@ public class Router {
     }
     
     public func process(request: HttpRequest) -> String {
+        
         let targetURL = request.getUrl()
         let targetMethod = request.getMethod()
         
         if routes.routeExist(url: targetURL) {
+            
             let allowedActions = routes.fetchAllActions(url: targetURL)
+            
             if isOptionsRequest(request: request) {
                 return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
             }
+            
             guard let action = allowedActions[targetMethod] else {
                 return "HTTP/1.1"
             }

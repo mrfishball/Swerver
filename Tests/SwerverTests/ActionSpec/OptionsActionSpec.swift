@@ -10,15 +10,18 @@ class OptionsActionSpec: QuickSpec {
             let optionsAction = OptionsAction()
             
             it("can dispatch to response builder to build a response for a successful OPTIONS request") {
-                let allowedMethods = ["GET"]
-                let okResponse = responseBuilder
-                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
-                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                    .withContentType(contentType: ContentType.text.rawValue)
-                    .withAllowedMethods(allowedMethods: allowedMethods)
-                    .build()
+                let allowedMethods = [RequestMethod.get.rawValue, RequestMethod.options.rawValue]
                 optionsAction.setAllowedMethods(methods: allowedMethods)
-                expect(optionsAction.dispatch()).to(equal(okResponse))
+                let okResponse = optionsAction.dispatch()
+//                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
+//                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+//                    .withContentType(contentType: ContentType.text.rawValue)
+//                    .withAllowedMethods(allowedMethods: allowedMethods)
+//                    .build()
+                expect(okResponse.statusCode).to(equal(StatusCode.ok.rawValue))
+                expect(okResponse.statusPhrase).to(equal(StatusCode.ok.getStatusPhrase()))
+                expect(okResponse.contentType).to(equal(ContentType.text.rawValue))
+                expect(okResponse.allowedMethods).to(equal(allowedMethods))
             }
         }
     }
