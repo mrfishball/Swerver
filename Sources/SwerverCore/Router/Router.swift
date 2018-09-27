@@ -1,42 +1,43 @@
 import Foundation
 
 public class Router {
-    private let responseBuilder = ResponseBuilder()
     private let responseHeaderFormatter = ResponseFormatter()
-    
-    private let headAction: Action
-    private let getAction: Action
-    private let notFoundAction: Action
-    
-    private var routes: [URL:[RequestMethod:Action]] = [:]
-    
+    private let routes = Routes()
+
+    private let headAction = HeadAction()
+    private let getAction = GetAction()
+    private let notFoundAction = NotFoundAction()
+
     public init() {
-        headAction = HeadAction(builder: responseBuilder)
-        getAction = GetAction(builder: responseBuilder)
-        notFoundAction = NotFoundAction(builder: responseBuilder)
         populateRoutes()
     }
-    
+
     public func process(request: HttpRequest) -> String {
-        if routeExist(request: request) {
-            let route = fetchMethod(request: request)
-            guard let action = route[request.getMethod()] else {
+
+        let targetURL = request.getUrl()
+        let targetMethod = request.getMethod()
+
+        if routes.routeExist(url: targetURL) {
+
+            let allowedActions = routes.fetchAllActions(url: targetURL)
+
+            if isOptionsRequest(request: request) {
+                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
+            }
+
+            guard let action = allowedActions[targetMethod] else {
                 return "HTTP/1.1"
             }
             return responseHeaderFormatter.format(httpResponse: action.dispatch())
         }
         return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
     }
-    
-    private func fetchMethod(request: HttpRequest) -> [RequestMethod:Action] {
-        return routes[request.getUrl()]!
+
+    private func isOptionsRequest(request: HttpRequest) -> Bool {
+        return request.getMethod() == RequestMethod.options
     }
-    
-    private func routeExist(request: HttpRequest) -> Bool {
-        return routes[request.getUrl()] != nil
-    }
-    
+
     private func populateRoutes() {
-        routes[URL(string: "/demo")!] = [RequestMethod.head: headAction, RequestMethod.get: getAction]
+        routes.addRoute(url: URL(string: Resource.test.rawValue)!, actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
     }
 }

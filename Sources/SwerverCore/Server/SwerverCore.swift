@@ -8,7 +8,7 @@ public class Swerver {
     public static let bufferSize = Socket.SOCKET_DEFAULT_READ_BUFFER_SIZE
     
     private let port: Int
-    private var listenSocket: Socket!
+    private var listenSocket: Socket?
     private var continueListening = true
     
     private let clientRequestHandler = ClientRequestHandler()

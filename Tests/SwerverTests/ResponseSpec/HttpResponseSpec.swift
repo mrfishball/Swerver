@@ -6,11 +6,7 @@ import Foundation
 class HttpResponseSpec: QuickSpec {
     override func spec() {
         describe("HttpResponse") {
-            var responseBuilder: ResponseBuilder!
-            
-            beforeEach {
-                responseBuilder = ResponseBuilder()
-            }
+            var responseBuilder = ResponseBuilder()
             
             it("can equate two response object") {
                 let responseOne = responseBuilder

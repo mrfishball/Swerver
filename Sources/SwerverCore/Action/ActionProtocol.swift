@@ -1,3 +1,3 @@
-public protocol Action {
+public protocol HttpAction {
     func dispatch() -> HttpResponse
 }
