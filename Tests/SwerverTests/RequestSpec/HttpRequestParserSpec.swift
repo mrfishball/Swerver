@@ -7,7 +7,7 @@ class HttpRequestParserSpec: QuickSpec {
     override func spec() {
         describe("An HTTP Request Parser") {
             var httpRequestParser = HttpRequestParser()
-            
+
             it("returns an HttpRequest Object") {
                 let requestData = "GET / HTTP/1.1"
                 let parsedRequest = httpRequestParser.parse(request: requestData)

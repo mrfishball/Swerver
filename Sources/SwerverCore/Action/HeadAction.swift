@@ -1,7 +1,7 @@
 public class HeadAction {
-    
+
     private let responseBuilder = ResponseBuilder()
-    
+
     public init() {}
 }
 

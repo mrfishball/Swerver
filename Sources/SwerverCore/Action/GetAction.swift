@@ -1,7 +1,7 @@
 public class GetAction {
-    
+
     private let responseBuilder = ResponseBuilder()
-    
+
     public init() {}
 }
 

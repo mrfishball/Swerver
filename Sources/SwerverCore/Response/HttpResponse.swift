@@ -1,7 +1,7 @@
 import Foundation
 
 public final class HttpResponse {
-    
+
     public let httpVersion: String = HttpVersion.current.rawValue
     public let statusCode: String
     public let statusPhrase: String
@@ -10,7 +10,7 @@ public final class HttpResponse {
     public let body: String
     public let contentLength : Int
     public let allowedMethods: [String]
-    
+
     init(builder: ResponseBuilder) {
         self.statusCode = builder.statusCode
         self.statusPhrase = builder.statusPhrase
