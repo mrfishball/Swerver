@@ -12,7 +12,7 @@ class RouterSpec: QuickSpec {
             
             context("when receive a GET request for an existing route") {
                 it("returns an response with 200 OK status") {
-                    let aGetRequest = HttpRequest(method: RequestMethod.get, url: URL(string: Resource.home.rawValue)!, httpVersion: HttpVersion.current)
+                    let aGetRequest = HttpRequest(method: RequestMethod.get, url: URL(string: Resource.test.rawValue)!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
@@ -24,7 +24,7 @@ class RouterSpec: QuickSpec {
 
             context("when receive a HEAD request for an existing route") {
                 it("returns an response with 200 OK status") {
-                    let aHeadRequest = HttpRequest(method: RequestMethod.head, url: URL(string: Resource.home.rawValue)!, httpVersion: HttpVersion.current)
+                    let aHeadRequest = HttpRequest(method: RequestMethod.head, url: URL(string: Resource.test.rawValue)!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: StatusCode.ok.rawValue)
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
@@ -48,7 +48,7 @@ class RouterSpec: QuickSpec {
             
             context("when receive an OPTIONS request to an existing resource") {
                 it("returns an response with all the allowed methods of that resource") {
-                    let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: URL(string: Resource.home.rawValue)!, httpVersion: HttpVersion.current)
+                    let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: URL(string: Resource.test.rawValue)!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                         .withStatusCode(statusCode: StatusCode.ok.rawValue)
                         .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
