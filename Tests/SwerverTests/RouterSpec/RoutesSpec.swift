@@ -15,15 +15,6 @@ class RoutesSpec: QuickSpec {
                 expect(routes.routeExist(url: targetRoute!)).to(beTrue())
             }
             
-            it("can return an options action object with all the allowed methods for an existing route") {
-                let optionsAction = OptionsAction()
-                optionsAction.setAllowedMethods(methods: ["GET", "HEAD"])
-                
-                let expectedOptionsAction = routes.optionsAction(url: targetRoute!)
-
-                expect(expectedOptionsAction.dispatch()).to(equal(optionsAction.dispatch()))
-            }
-            
             it("can return a dictionary of all allowed methods for an existing route") {
                 let expectedListOfMethods = routes.fetchAllActions(url: targetRoute!)
                 let expectedActionType =

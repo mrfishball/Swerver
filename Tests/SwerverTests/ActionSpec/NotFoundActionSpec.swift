@@ -5,7 +5,7 @@ import Swerver
 class NotFoundActionSpec: QuickSpec {
     
     override func spec() {
-        describe("A GET action") {
+        describe("A Not Found action") {
             let responseBuilder = ResponseBuilder()
             let notFoundAction = NotFoundAction()
             

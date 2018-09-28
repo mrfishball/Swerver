@@ -7,6 +7,8 @@ public class Router {
     private let headAction = HeadAction()
     private let getAction = GetAction()
     private let notFoundAction = NotFoundAction()
+    private let optionsActionHandler = OptionsAction()
+    private let notAllowedActionHandler = NotAllowedAction()
 
     public init() {
         populateRoutes()
@@ -22,15 +24,25 @@ public class Router {
             let allowedActions = routes.fetchAllActions(url: targetURL)
 
             if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
+                return responseHeaderFormatter.format(httpResponse: optionsAction(url: targetURL).dispatch())
             }
 
             guard let action = allowedActions[targetMethod] else {
-                return "HTTP/1.1"
+                return responseHeaderFormatter.format(httpResponse: notAllowedAction(url: targetURL).dispatch())
             }
             return responseHeaderFormatter.format(httpResponse: action.dispatch())
         }
         return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+    }
+    
+    private func optionsAction(url: URL) -> HttpAction {
+        optionsActionHandler.setAllowedMethods(methods: routes.fetchAllowedMethods(url: url))
+        return optionsActionHandler
+    }
+    
+    private func notAllowedAction(url: URL) -> HttpAction {
+        notAllowedActionHandler.setAllowedMethods(methods: routes.fetchAllowedMethods(url: url))
+        return notAllowedActionHandler
     }
 
     private func isOptionsRequest(request: HttpRequest) -> Bool {

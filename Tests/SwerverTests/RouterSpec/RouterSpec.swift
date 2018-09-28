@@ -35,7 +35,7 @@ class RouterSpec: QuickSpec {
             }
 
             context("when receive a request to an unknown URL") {
-                it("returns an response of 404 Not Found status") {
+                it("returns a response of 404 Not Found status") {
                     let aRogueRequest = HttpRequest(method: RequestMethod.other, url: URL(string: "/not_here")!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                         .withStatusCode(statusCode: StatusCode.not_found.rawValue)
@@ -47,7 +47,7 @@ class RouterSpec: QuickSpec {
             }
 
             context("when receive an OPTIONS request to an existing resource") {
-                it("returns an response with all the allowed methods of that resource") {
+                it("returns a 200 OK response with all the allowed methods of that resource") {
                     let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: URL(string: Resource.test.rawValue)!, httpVersion: HttpVersion.current)
                     let expectedResponse = responseBuilder
                         .withStatusCode(statusCode: StatusCode.ok.rawValue)
@@ -56,6 +56,19 @@ class RouterSpec: QuickSpec {
                         .withAllowedMethods(allowedMethods: ["HEAD", "GET"])
                         .build()
                     expect(router.process(request: anOptionsRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                }
+            }
+            
+            context("when receive a unknown request to an existing resource") {
+                it("returns a 405 Method Not Allowed response with all the allowed methods of that resource") {
+                    let anUnknownRequest = HttpRequest(method: RequestMethod.other, url: URL(string: Resource.test.rawValue)!, httpVersion: HttpVersion.current)
+                    let expectedResponse = responseBuilder
+                        .withStatusCode(statusCode: StatusCode.not_allowed.rawValue)
+                        .withStatusPhrase(statusPhrase: StatusCode.not_allowed.getStatusPhrase())
+                        .withContentType(contentType: ContentType.text.rawValue)
+                        .withAllowedMethods(allowedMethods: ["HEAD", "GET"])
+                        .build()
+                    expect(router.process(request: anUnknownRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }
             }
         }
