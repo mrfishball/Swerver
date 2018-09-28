@@ -2,13 +2,13 @@ import Foundation
 
 public class HttpRequest {
     
-    private let method: RequestMethod
-    private let url: URL
-    private let httpVersion: HttpVersion
+    private var method: RequestMethod
+    private var url: URL
+    private var httpVersion: HttpVersion
     
-    public init(method: RequestMethod, url: URL, httpVersion: HttpVersion) {
+    public init(method: RequestMethod, url: URL?, httpVersion: HttpVersion) {
         self.method = method
-        self.url = url
+        self.url = url!
         self.httpVersion = httpVersion
     }
     

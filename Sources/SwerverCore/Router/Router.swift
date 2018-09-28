@@ -50,6 +50,7 @@ public class Router {
     }
 
     private func populateRoutes() {
-        routes.addRoute(url: URL(string: Resource.test.rawValue)!, actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
+        routes.addRoute(url: URL(string: Resource.test.rawValue), actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
+        logger.debug(routes.numberOfRoute())
     }
 }
