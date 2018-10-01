@@ -7,11 +7,16 @@ class HttpRequestSpec: QuickSpec {
 
     override func spec() {
         describe("HttpRequest") {
-            var httpRequest = HttpRequest(method: RequestMethod.get, url: URL(string: Resource.test.rawValue), httpVersion: HttpVersion.current)
-
+            let httpRequestParser = HttpRequestParser()
+            
             it("can equate two request objects") {
-                let httpRequest2 = HttpRequest(method: RequestMethod.get, url: URL(string: Resource.test.rawValue), httpVersion: HttpVersion.current)
-                expect(httpRequest).to(equal(httpRequest2))
+                let requestString = "\(RequestMethod.get.rawValue) \(Resource.test.rawValue) \(HttpVersion.current.rawValue)"
+                
+                do {
+                    let request = try httpRequestParser.parse(request: requestString)
+                    let request2 = try httpRequestParser.parse(request: requestString)
+                    expect(request).to(equal(request2))
+                } catch {}
             }
         }
     }

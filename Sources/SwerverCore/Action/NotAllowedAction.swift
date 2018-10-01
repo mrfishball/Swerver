@@ -11,7 +11,7 @@ public class NotAllowedAction {
 }
 
 extension NotAllowedAction: HttpAction {
-    public func dispatch() -> HttpResponse {
+    public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.not_allowed.rawValue)
             .withStatusPhrase(statusPhrase: StatusCode.not_allowed.getStatusPhrase())

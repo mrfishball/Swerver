@@ -16,4 +16,5 @@ QCKMain([
     HeadActionSpec.self,
     NotFoundActionSpec.self,
     OptionsActionSpec.self,
+    NotAllowedActionSpec.self,
 ])

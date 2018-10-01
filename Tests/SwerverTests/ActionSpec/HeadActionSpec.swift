@@ -9,8 +9,8 @@ class HeadActionSpec: QuickSpec {
             let responseBuilder = ResponseBuilder()
             let headAction = HeadAction()
 
-            it("can dispatch to response builder to build a response for a successful HEAD request") {
-                let expectResponse = headAction.dispatch()
+            it("can execute to response builder to build a response for a successful HEAD request") {
+                let expectResponse = headAction.execute()
                 expect(expectResponse.statusCode).to(equal(StatusCode.ok.rawValue))
                 expect(expectResponse.statusPhrase).to(equal(StatusCode.ok.getStatusPhrase()))
                 expect(expectResponse.contentType).to(equal(ContentType.text.rawValue))

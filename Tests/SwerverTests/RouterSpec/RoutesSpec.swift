@@ -10,7 +10,7 @@ class RoutesSpec: QuickSpec {
             var routes = Routes()
             let targetRoute = URL(string: Resource.test.rawValue)
             let invalidURL = URL(string: String())
-            let unknownURL = URL(string: Resource.home.rawValue)
+            let unknownURL = URL(string: Resource.not_there.rawValue)
             
             it("accept and store new routes") {
                 routes.addRoute(url: targetRoute, actions: [RequestMethod.get: GetAction(), RequestMethod.head: HeadAction()])

@@ -1,5 +1,5 @@
 public enum Resource: String {
-    case home = "/index"
     case test = "/simple_get"
-    case invalid = "/invalid"
+    case not_there = "/not_there"
+    case tests2 = "/get_with_body"
 }

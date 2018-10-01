@@ -9,8 +9,13 @@ public class ClientRequestHandler {
     public init() {}
     
     public func handle(client: Socket) throws {
-        let httpRequest = try parseRequest(clientSocket: client)
-        try client.write(from: httpRouteProcessor.process(request: httpRequest))
+        do {
+            let httpRequest = try parseRequest(clientSocket: client)
+            try client.write(from: httpRouteProcessor.process(request: httpRequest))
+        } catch ServerError.parserError(let reason) {
+            logger.error(reason)
+            client.close()
+        }
     }
     
     private func parseRequest(clientSocket: Socket) throws -> HttpRequest {
@@ -19,10 +24,14 @@ public class ClientRequestHandler {
         guard let parsedData = String(data: readData!, encoding: .utf8) else {
             readData!.count = 0
             logger.info("Error decoding socket data")
-            return httpRequestParser.parse(request: "")
+            do {
+                return try httpRequestParser.parse(request: "")
+            } catch ServerError.parserError(let reason) {
+                throw ServerError.parserError(reason: reason)
+            }
         }
         readData!.count = 0
         logger.info(parsedData)
-        return httpRequestParser.parse(request: parsedData)
+        return try httpRequestParser.parse(request: parsedData)
     }
 }

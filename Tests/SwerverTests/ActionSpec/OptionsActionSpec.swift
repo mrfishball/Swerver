@@ -9,10 +9,10 @@ class OptionsActionSpec: QuickSpec {
             let responseBuilder = ResponseBuilder()
             let optionsAction = OptionsAction()
             
-            it("can dispatch to response builder to build a response for a successful OPTIONS request") {
+            it("can execute to response builder to build a response for a successful OPTIONS request") {
                 let allowedMethods = [RequestMethod.get.rawValue, RequestMethod.options.rawValue]
                 optionsAction.setAllowedMethods(methods: allowedMethods)
-                let okResponse = optionsAction.dispatch()
+                let okResponse = optionsAction.execute()
                 expect(okResponse.statusCode).to(equal(StatusCode.ok.rawValue))
                 expect(okResponse.statusPhrase).to(equal(StatusCode.ok.getStatusPhrase()))
                 expect(okResponse.contentType).to(equal(ContentType.text.rawValue))

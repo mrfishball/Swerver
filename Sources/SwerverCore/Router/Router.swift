@@ -24,15 +24,15 @@ public class Router {
             let allowedActions = routes.fetchAllActions(url: targetURL)
 
             if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: optionsAction(url: targetURL).dispatch())
+                return responseHeaderFormatter.format(httpResponse: optionsAction(url: targetURL).execute())
             }
 
             guard let action = allowedActions[targetMethod] else {
-                return responseHeaderFormatter.format(httpResponse: notAllowedAction(url: targetURL).dispatch())
+                return responseHeaderFormatter.format(httpResponse: notAllowedAction(url: targetURL).execute())
             }
-            return responseHeaderFormatter.format(httpResponse: action.dispatch())
+            return responseHeaderFormatter.format(httpResponse: action.execute())
         }
-        return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+        return responseHeaderFormatter.format(httpResponse: notFoundAction.execute())
     }
     
     private func optionsAction(url: URL) -> HttpAction {
@@ -51,6 +51,6 @@ public class Router {
 
     private func populateRoutes() {
         routes.addRoute(url: URL(string: Resource.test.rawValue), actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
-        logger.debug(routes.numberOfRoute())
+        routes.addRoute(url: URL(string: Resource.tests2.rawValue), actions: [RequestMethod.head: headAction])
     }
 }
