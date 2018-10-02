@@ -6,10 +6,10 @@ public class NotFoundAction {
 }
 
 extension NotFoundAction: HttpAction {
-    public func dispatch() -> HttpResponse {
+    public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.not_found.rawValue)
-            .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
+            .withStatusCode(statusCode: StatusCode.notFound.rawValue)
+            .withStatusPhrase(statusPhrase: StatusCode.notFound.getStatusPhrase())
             .withContentType(contentType: ContentType.text.rawValue)
             .build()
     }

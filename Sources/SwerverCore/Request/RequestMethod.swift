@@ -2,5 +2,5 @@ public enum RequestMethod: String {
     case get = "GET"
     case head = "HEAD"
     case options = "OPTIONS"
-    case other = "OTHER"
+    case invalid = "%$^ACHYT"
 }

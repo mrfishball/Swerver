@@ -1,4 +1,4 @@
-public class OptionsAction {
+public class NotAllowedAction {
     
     private let responseBuilder = ResponseBuilder()
     private var allowedMethods: [String] = []
@@ -10,11 +10,11 @@ public class OptionsAction {
     }
 }
 
-extension OptionsAction: HttpAction {
+extension NotAllowedAction: HttpAction {
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.ok.rawValue)
-            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
+            .withStatusCode(statusCode: StatusCode.notAllowed.rawValue)
+            .withStatusPhrase(statusPhrase: StatusCode.notAllowed.getStatusPhrase())
             .withContentType(contentType: ContentType.text.rawValue)
             .withAllowedMethods(allowedMethods: allowedMethods)
             .build()

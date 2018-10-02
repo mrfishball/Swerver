@@ -8,7 +8,7 @@ public class ResponseFormatter {
     public init() {}
 
     public func format(httpResponse: HttpResponse) -> String {
-        var formattedHeader = formatHeader(response: httpResponse)
+        let formattedHeader = formatHeader(response: httpResponse)
         if hasBody(response: httpResponse) {
             return formattedHeader + httpResponse.body
         }
