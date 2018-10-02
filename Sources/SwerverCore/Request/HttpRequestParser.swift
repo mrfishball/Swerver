@@ -22,7 +22,9 @@ public class HttpRequestParser {
                     
                     return HttpRequest(method: requestMethod, url: url, httpVersion: httpVersion)
                 
-                } catch {}
+                } catch ServerError.parserError(let reason){
+                    logger.error("Request Parser Error: \(reason)")
+                }
             }
         }
         throw ServerError.parserError(reason: "Invalid request format")

@@ -13,8 +13,8 @@ public class NotAllowedAction {
 extension NotAllowedAction: HttpAction {
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.not_allowed.rawValue)
-            .withStatusPhrase(statusPhrase: StatusCode.not_allowed.getStatusPhrase())
+            .withStatusCode(statusCode: StatusCode.notAllowed.rawValue)
+            .withStatusPhrase(statusPhrase: StatusCode.notAllowed.getStatusPhrase())
             .withContentType(contentType: ContentType.text.rawValue)
             .withAllowedMethods(allowedMethods: allowedMethods)
             .build()

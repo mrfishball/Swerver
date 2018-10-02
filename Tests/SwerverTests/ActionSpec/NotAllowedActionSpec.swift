@@ -9,12 +9,12 @@ class NotAllowedActionSpec: QuickSpec {
             let responseBuilder = ResponseBuilder()
             let notAllowedAction = NotAllowedAction()
             
-            it("can execute to response builder to build a response for a successful OPTIONS request") {
+            it("can dispatch to response builder to build a response for a successful OPTIONS request") {
                 let allowedMethods = [RequestMethod.get.rawValue, RequestMethod.options.rawValue]
                 notAllowedAction.setAllowedMethods(methods: allowedMethods)
                 let okResponse = notAllowedAction.execute()
-                expect(okResponse.statusCode).to(equal(StatusCode.not_allowed.rawValue))
-                expect(okResponse.statusPhrase).to(equal(StatusCode.not_allowed.getStatusPhrase()))
+                expect(okResponse.statusCode).to(equal(StatusCode.notAllowed.rawValue))
+                expect(okResponse.statusPhrase).to(equal(StatusCode.notAllowed.getStatusPhrase()))
                 expect(okResponse.contentType).to(equal(ContentType.text.rawValue))
                 expect(okResponse.allowedMethods).to(equal(allowedMethods))
             }

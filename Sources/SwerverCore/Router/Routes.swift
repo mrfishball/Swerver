@@ -13,7 +13,7 @@ public class Routes {
         logger.error("Error adding route: Invalid string for URL type")
     }
     
-    public func numberOfRoute() -> Int {
+    public func numberOfRoutes() -> Int {
         return allRoutes.count
     }
     

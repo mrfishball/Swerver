@@ -14,23 +14,26 @@ public class Router {
         populateRoutes()
     }
 
-    public func process(request: HttpRequest) -> String {
-
-        let targetURL = request.getUrl()
-        let targetMethod = request.getMethod()
-
-        if routes.routeExist(url: targetURL) {
-
-            let allowedActions = routes.fetchAllActions(url: targetURL)
-
-            if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: optionsAction(url: targetURL).execute())
+    public func process(request: HttpRequest?) -> String {
+        
+        if let request = request {
+            
+            let targetURL = request.getUrl()
+            let targetMethod = request.getMethod()
+            
+            if routes.routeExist(url: targetURL) {
+                
+                let allowedActions = routes.fetchAllActions(url: targetURL)
+                
+                if isOptionsRequest(request: request) {
+                    return responseHeaderFormatter.format(httpResponse: optionsAction(url: targetURL).execute())
+                }
+                
+                guard let action = allowedActions[targetMethod] else {
+                    return responseHeaderFormatter.format(httpResponse: notAllowedAction(url: targetURL).execute())
+                }
+                return responseHeaderFormatter.format(httpResponse: action.execute())
             }
-
-            guard let action = allowedActions[targetMethod] else {
-                return responseHeaderFormatter.format(httpResponse: notAllowedAction(url: targetURL).execute())
-            }
-            return responseHeaderFormatter.format(httpResponse: action.execute())
         }
         return responseHeaderFormatter.format(httpResponse: notFoundAction.execute())
     }

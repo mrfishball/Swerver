@@ -1,13 +1,13 @@
 public enum StatusCode: String {
     case ok = "200"
-    case not_found = "404"
-    case not_allowed = "405"
+    case notFound = "404"
+    case notAllowed = "405"
     
     public func getStatusPhrase() -> String {
         switch self {
             case .ok: return "OK"
-            case .not_found: return "Not Found"
-            case .not_allowed: return "Method Not Allowed"
+            case .notFound: return "Not Found"
+            case .notAllowed: return "Method Not Allowed"
         }
     }
 }

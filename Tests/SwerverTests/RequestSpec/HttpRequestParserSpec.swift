@@ -6,16 +6,15 @@ import Foundation
 class HttpRequestParserSpec: QuickSpec {
     override func spec() {
         describe("An HTTP Request Parser") {
-            var httpRequestParser = HttpRequestParser()
+            let httpRequestParser = HttpRequestParser()
 
             it("can returns an HttpRequest Object for a valid request") {
-                do {
-                    let requestData = "\(RequestMethod.get.rawValue) \(Resource.test.rawValue) \(HttpVersion.current.rawValue)"
-                    let parsedRequest = try httpRequestParser.parse(request: requestData)
-                    expect(parsedRequest.getHttpVersion()).to(equal(HttpVersion.current))
-                    expect(parsedRequest.getUrl()).to(equal(URL(string: Resource.test.rawValue)))
-                    expect(parsedRequest.getMethod()).to(equal(RequestMethod.get))
-                } catch {}
+                let requestData = "\(RequestMethod.get.rawValue) \(Resource.test.rawValue) \(HttpVersion.current.rawValue)"
+                
+                let parsedRequest = try? httpRequestParser.parse(request: requestData)
+                expect(parsedRequest?.getHttpVersion()).to(equal(HttpVersion.current))
+                expect(parsedRequest?.getUrl()).to(equal(URL(string: Resource.test.rawValue)))
+                expect(parsedRequest?.getMethod()).to(equal(RequestMethod.get))
             }
             
             it("throws a ServerError for an invalid request") {

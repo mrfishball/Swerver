@@ -10,7 +10,7 @@ class RoutesSpec: QuickSpec {
             var routes = Routes()
             let targetRoute = URL(string: Resource.test.rawValue)
             let invalidURL = URL(string: String())
-            let unknownURL = URL(string: Resource.not_there.rawValue)
+            let unknownURL = URL(string: Resource.notThere.rawValue)
             
             it("accept and store new routes") {
                 routes.addRoute(url: targetRoute, actions: [RequestMethod.get: GetAction(), RequestMethod.head: HeadAction()])
@@ -18,7 +18,7 @@ class RoutesSpec: QuickSpec {
             }
             
             it("can return the total number of routes") {
-                expect(routes.numberOfRoute()).to(equal(1))
+                expect(routes.numberOfRoutes()).to(equal(1))
             }
             
             it("can return a dictionary of all allowed methods for an existing route with the request method as keys and http action as values") {
@@ -27,8 +27,8 @@ class RoutesSpec: QuickSpec {
                 expect(expectedDictOfMethods.count).to(equal(2))
                 expect(expectedDictOfMethods.keys.contains(RequestMethod.get)).to(beTrue())
                 expect(expectedDictOfMethods.keys.contains(RequestMethod.head)).to(beTrue())
-                expect(expectedDictOfMethods[RequestMethod.get]).toNot(beNil())
-                expect(expectedDictOfMethods[RequestMethod.head]).toNot(beNil())
+                expect(type(of: expectedDictOfMethods[RequestMethod.get])).to(beAKindOf(Optional<HttpAction>.Type.self))
+                expect(type(of: expectedDictOfMethods[RequestMethod.head])).to(beAKindOf(Optional<HttpAction>.Type.self))
             }
             
             it("can return a list of all allowed methods for an existing route") {
@@ -42,7 +42,7 @@ class RoutesSpec: QuickSpec {
             context("when trying to add invalid URL") {
                 it("will ignore the invalid URL") {
                     routes.addRoute(url: invalidURL, actions: [:])
-                    expect(routes.numberOfRoute()).to(equal(1))
+                    expect(routes.numberOfRoutes()).to(equal(1))
                 }
             }
             
@@ -50,7 +50,6 @@ class RoutesSpec: QuickSpec {
                 it("will return an empty dictionary") {
                     let allActions = routes.fetchAllActions(url: unknownURL)
                     expect(allActions.count).to(equal(0))
-                    
                 }
             }
             
@@ -58,7 +57,6 @@ class RoutesSpec: QuickSpec {
                 it("will return an empty dictionary") {
                     let allActions = routes.fetchAllActions(url: invalidURL)
                     expect(allActions.count).to(equal(0))
-                    
                 }
             }
         }
