@@ -6,7 +6,7 @@ public class HeadAction {
 }
 
 extension HeadAction: HttpAction {
-    public func dispatch() -> HttpResponse {
+    public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.ok.rawValue)
             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())

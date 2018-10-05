@@ -22,15 +22,15 @@ public class Router {
             let allowedActions = routes.fetchAllActions(url: targetURL)
 
             if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
+                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).execute())
             }
 
             guard let action = allowedActions[targetMethod] else {
                 return "HTTP/1.1"
             }
-            return responseHeaderFormatter.format(httpResponse: action.dispatch())
+            return responseHeaderFormatter.format(httpResponse: action.execute())
         }
-        return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+        return responseHeaderFormatter.format(httpResponse: notFoundAction.execute())
     }
 
     private func isOptionsRequest(request: HttpRequest) -> Bool {

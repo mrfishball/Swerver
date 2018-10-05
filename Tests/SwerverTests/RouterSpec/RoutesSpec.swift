@@ -21,7 +21,7 @@ class RoutesSpec: QuickSpec {
                 
                 let expectedOptionsAction = routes.optionsAction(url: targetRoute!)
 
-                expect(expectedOptionsAction.dispatch()).to(equal(optionsAction.dispatch()))
+                expect(expectedOptionsAction.execute()).to(equal(optionsAction.execute()))
             }
             
             it("can return a dictionary of all allowed methods for an existing route") {
