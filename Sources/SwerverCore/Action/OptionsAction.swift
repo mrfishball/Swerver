@@ -1,4 +1,4 @@
-public class OptionsAction {
+public class OptionsAction: HttpAction {
     
     private let responseBuilder = ResponseBuilder()
     private var allowedMethods: [String] = []
@@ -8,9 +8,7 @@ public class OptionsAction {
     public func setAllowedMethods(methods: [String]) {
         allowedMethods = methods
     }
-}
-
-extension OptionsAction: HttpAction {
+    
     public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.ok.rawValue)

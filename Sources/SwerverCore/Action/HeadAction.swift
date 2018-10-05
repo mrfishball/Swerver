@@ -1,11 +1,9 @@
-public class HeadAction {
+public class HeadAction: HttpAction {
 
     private let responseBuilder = ResponseBuilder()
 
     public init() {}
-}
-
-extension HeadAction: HttpAction {
+    
     public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.ok.rawValue)

@@ -1,11 +1,9 @@
-public class NotFoundAction {
+public class NotFoundAction: HttpAction {
     
     private let responseBuilder = ResponseBuilder()
     
     public init() {}
-}
-
-extension NotFoundAction: HttpAction {
+    
     public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.not_found.rawValue)

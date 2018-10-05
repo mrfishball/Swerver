@@ -1,11 +1,9 @@
-public class GetAction {
+public class GetAction: HttpAction {
 
     private let responseBuilder = ResponseBuilder()
 
     public init() {}
-}
-
-extension GetAction: HttpAction {
+    
     public func execute() -> HttpResponse {
         return responseBuilder
             .withStatusCode(statusCode: StatusCode.ok.rawValue)
