@@ -6,8 +6,8 @@ public class HeadAction: HttpAction {
     
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.ok.rawValue)
-            .withContentType(contentType: ContentType.text.rawValue)
+            .withStatusCode(statusCode: .ok)
+            .withContentType(contentType: .text)
             .build()
     }
 }

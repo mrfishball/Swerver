@@ -47,7 +47,7 @@ public class ResponseFormatter {
 
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
         return ResponseFormatter.HTTP_VERSION + ResponseFormatter.SPACE +
-            response.statusCode + ResponseFormatter.SPACE +
+            response.statusCode  + ResponseFormatter.SPACE +
             response.statusPhrase + ResponseFormatter.LINE_SEPARATOR
     }
 

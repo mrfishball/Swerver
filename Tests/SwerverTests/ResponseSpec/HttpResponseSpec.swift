@@ -10,14 +10,14 @@ class HttpResponseSpec: QuickSpec {
             
             it("can equate two response object") {
                 let responseOne = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
-                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withStatusCode(statusCode: .ok)
+                                    .withContentType(contentType: .text)
                                     .withBody(body: String())
                                     .build()
                 
                 let responseTwo = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
-                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withStatusCode(statusCode: .ok)
+                                    .withContentType(contentType: .text)
                                     .withBody(body: String())
                                     .build()
                 

@@ -12,7 +12,7 @@ class ResponseFormatterSpec: QuickSpec {
             
             it("formats a Response object into a String object") {
                 let aResponse = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                    .withStatusCode(statusCode: .ok)
                                     .withBody(body: "200 OK")
                                     .build()
 

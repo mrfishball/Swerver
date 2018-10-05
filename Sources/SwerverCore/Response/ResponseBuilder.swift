@@ -1,21 +1,21 @@
 import Foundation
 
 public class ResponseBuilder {
-    private(set) var statusCode: String = String()
+    private(set) var statusCode: StatusCode?
     private(set) var statusPhrase: String = String()
-    private(set) var contentType: String = String()
+    private(set) var contentType: ContentType?
     private(set) var body: String = String()
     private(set) var contentLength: Int = 0
     private(set) var allowedMethods: [String] = []
 
     public init() {}
 
-    public func withStatusCode(statusCode: String) -> ResponseBuilder {
+    public func withStatusCode(statusCode: StatusCode) -> ResponseBuilder {
         self.statusCode = statusCode
         return self
     }
 
-    public func withContentType(contentType: String) -> ResponseBuilder {
+    public func withContentType(contentType: ContentType) -> ResponseBuilder {
         self.contentType = contentType
         return self
     }
@@ -36,7 +36,7 @@ public class ResponseBuilder {
     }
 
     public func build() -> HttpResponse {
-        if let statusPhrase = StatusCode(rawValue: statusCode)?.getStatusPhrase() {
+        if let statusPhrase = statusCode?.getStatusPhrase() {
             self.statusPhrase = statusPhrase
         }
         return HttpResponse(builder: self)

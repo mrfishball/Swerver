@@ -9,7 +9,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can build a response object with an 200 status code") {
                 let responseToBeTested = responseBuilder
-                                            .withStatusCode(statusCode: StatusCode.ok.rawValue)
+                                            .withStatusCode(statusCode: .ok)
                                             .build()
                 let responseStatusCode = responseToBeTested.statusCode
                 
@@ -18,7 +18,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can set status phrase according to the status code") {
                 let responseToBeTested = responseBuilder
-                                            .withStatusCode(statusCode: StatusCode.not_found.rawValue)
+                                            .withStatusCode(statusCode: .not_found)
                                             .build()
                 let expectedResponseStatusPhrase = StatusCode.not_found.getStatusPhrase()
 
@@ -27,7 +27,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can build a response object with a content type") {
                 let responseToBeTested = responseBuilder
-                                            .withContentType(contentType: ContentType.text.rawValue)
+                                            .withContentType(contentType: .text)
                                             .build()
                 let responseContentType = responseToBeTested.contentType
                 expect(responseContentType).to(equal("text/html; charset=UTF-8"))

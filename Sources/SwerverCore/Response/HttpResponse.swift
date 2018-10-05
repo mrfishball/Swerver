@@ -11,9 +11,9 @@ public final class HttpResponse {
     public let allowedMethods: [String]
 
     init(builder: ResponseBuilder) {
-        self.statusCode = builder.statusCode
+        self.statusCode = builder.statusCode?.rawValue ?? String()
         self.statusPhrase = builder.statusPhrase
-        self.contentType = builder.contentType
+        self.contentType = builder.contentType?.rawValue ?? String()
         self.body = builder.body
         self.contentLength = builder.contentLength
         self.allowedMethods = builder.allowedMethods
