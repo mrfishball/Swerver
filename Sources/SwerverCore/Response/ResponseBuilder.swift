@@ -15,11 +15,6 @@ public class ResponseBuilder {
         return self
     }
 
-    public func withStatusPhrase(statusPhrase: String) -> ResponseBuilder {
-        self .statusPhrase = statusPhrase
-        return self
-    }
-
     public func withContentType(contentType: String) -> ResponseBuilder {
         self.contentType = contentType
         return self
@@ -41,6 +36,9 @@ public class ResponseBuilder {
     }
 
     public func build() -> HttpResponse {
+        if let statusPhrase = StatusCode(rawValue: statusCode)?.getStatusPhrase() {
+            self.statusPhrase = statusPhrase
+        }
         return HttpResponse(builder: self)
     }
 }
