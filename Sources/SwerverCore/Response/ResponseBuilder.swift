@@ -2,7 +2,6 @@ import Foundation
 
 public class ResponseBuilder {
     private(set) var statusCode: StatusCode?
-    private(set) var statusPhrase: String = String()
     private(set) var contentType: ContentType?
     private(set) var body: String = String()
     private(set) var contentLength: Int = 0
@@ -29,16 +28,13 @@ public class ResponseBuilder {
         self.contentLength = contentLength
         return self
     }
-
+    
     public func withAllowedMethods(allowedMethods: [String]) -> ResponseBuilder {
         self.allowedMethods = allowedMethods.sorted(by: <)
         return self
     }
 
     public func build() -> HttpResponse {
-        if let statusPhrase = statusCode?.getStatusPhrase() {
-            self.statusPhrase = statusPhrase
-        }
         return HttpResponse(builder: self)
     }
 }

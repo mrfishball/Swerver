@@ -14,7 +14,6 @@ class OptionsActionSpec: QuickSpec {
                 optionsAction.setAllowedMethods(methods: allowedMethods)
                 let okResponse = optionsAction.execute()
                 expect(okResponse.statusCode).to(equal(StatusCode.ok.rawValue))
-                expect(okResponse.statusPhrase).to(equal(StatusCode.ok.getStatusPhrase()))
                 expect(okResponse.contentType).to(equal(ContentType.text.rawValue))
                 expect(okResponse.allowedMethods).to(equal(allowedMethods))
             }

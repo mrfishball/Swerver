@@ -46,9 +46,14 @@ public class ResponseFormatter {
     }
 
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
-        return ResponseFormatter.HTTP_VERSION + ResponseFormatter.SPACE +
-            response.statusCode  + ResponseFormatter.SPACE +
-            response.statusPhrase + ResponseFormatter.LINE_SEPARATOR
+        let statusCode = response.statusCode
+        let statusLine = ResponseFormatter.HTTP_VERSION + ResponseFormatter.SPACE +
+            statusCode  + ResponseFormatter.SPACE
+        
+        if let statusPhrase = StatusCode(rawValue: statusCode)?.getStatusPhrase() {
+            return statusLine + statusPhrase + ResponseFormatter.LINE_SEPARATOR
+        }
+        return statusLine + ResponseFormatter.LINE_SEPARATOR
     }
 
     private func contentLengthToHeaderItem(response: HttpResponse) -> String {

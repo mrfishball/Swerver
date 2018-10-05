@@ -13,7 +13,6 @@ class NotFoundActionSpec: QuickSpec {
                 let notFoundResponse = notFoundAction.execute()
 
                 expect(notFoundResponse.statusCode).to(equal(StatusCode.not_found.rawValue))
-                expect(notFoundResponse.statusPhrase).to(equal(StatusCode.not_found.getStatusPhrase()))
                 expect(notFoundResponse.contentType).to(equal(ContentType.text.rawValue))
                 expect(notFoundResponse.body.count).to(equal(0))
             }

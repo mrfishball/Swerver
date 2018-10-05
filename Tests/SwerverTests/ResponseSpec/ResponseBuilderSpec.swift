@@ -16,14 +16,6 @@ class ResponseBuilderSpec: QuickSpec {
                 expect(responseStatusCode).to(equal("200"))
             }
             
-            it("it can set status phrase according to the status code") {
-                let responseToBeTested = responseBuilder
-                                            .withStatusCode(statusCode: .not_found)
-                                            .build()
-                let expectedResponseStatusPhrase = StatusCode.not_found.getStatusPhrase()
-
-                expect(responseToBeTested.statusPhrase).to(equal(expectedResponseStatusPhrase))
-            }
             
             it("it can build a response object with a content type") {
                 let responseToBeTested = responseBuilder
