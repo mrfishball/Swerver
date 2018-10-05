@@ -2,7 +2,6 @@ import Foundation
 
 public final class HttpResponse {
 
-    public let httpVersion: String = HttpVersion.current.rawValue
     public let statusCode: String
     public let statusPhrase: String
     public let contentType: String

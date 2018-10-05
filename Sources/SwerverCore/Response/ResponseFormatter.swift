@@ -2,6 +2,7 @@ import Foundation
 
 public class ResponseFormatter {
 
+    public static let HTTP_VERSION: String = HttpVersion.current.rawValue
     public static let LINE_SEPARATOR: String = "\r\n"
     public static let SPACE: String = " "
 
@@ -45,7 +46,7 @@ public class ResponseFormatter {
     }
 
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
-        return response.httpVersion + ResponseFormatter.SPACE +
+        return ResponseFormatter.HTTP_VERSION + ResponseFormatter.SPACE +
             response.statusCode + ResponseFormatter.SPACE +
             response.statusPhrase + ResponseFormatter.LINE_SEPARATOR
     }
