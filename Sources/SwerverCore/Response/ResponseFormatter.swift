@@ -16,17 +16,6 @@ public class ResponseFormatter {
         return formattedHeader
     }
 
-    private func formatHeader(response: HttpResponse) -> String {
-        var formattedHeader = statusLineToHeaderItem(response: response) + dateTimeToHeaderItem(response: response)
-            + contentTypeToHeaderItem(response: response) + contentLengthToHeaderItem(response: response)
-
-        if hasAllowedMethods(response: response) {
-            formattedHeader += allowedMethodsToHeaderItem(response: response)
-        }
-
-        return formattedHeader + ResponseFormatter.LINE_SEPARATOR
-    }
-
     public static func formatDateTime(response: HttpResponse) -> String {
         let dateTimeFormatter = DateFormatter()
         dateTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -40,9 +29,11 @@ public class ResponseFormatter {
     private func hasBody(response: HttpResponse) -> Bool {
         return response.body.count > 0
     }
-
-    private func hasAllowedMethods(response: HttpResponse) -> Bool {
-        return response.allowedMethods.count > 0
+    
+    private func formatHeader(response: HttpResponse) -> String {
+        let formattedHeader = statusLineToHeaderItem(response: response) + allHeaderItems(response: response) + dateTimeToHeaderItem(response: response)
+        
+        return formattedHeader + ResponseFormatter.LINE_SEPARATOR
     }
 
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
@@ -55,21 +46,17 @@ public class ResponseFormatter {
         }
         return statusLine + ResponseFormatter.LINE_SEPARATOR
     }
-
-    private func contentLengthToHeaderItem(response: HttpResponse) -> String {
-        return "Content-Length: \(response.contentLength)" + ResponseFormatter.LINE_SEPARATOR
-    }
-
-    private func contentTypeToHeaderItem(response: HttpResponse) -> String {
-        return "Content-Type: \(response.contentType)" + ResponseFormatter.LINE_SEPARATOR
-    }
-
+    
     private func dateTimeToHeaderItem(response: HttpResponse) -> String {
         let formattedDateTime = ResponseFormatter.formatDateTime(response: response)
         return "Date: \(formattedDateTime)" + ResponseFormatter.LINE_SEPARATOR
     }
-
-    private func allowedMethodsToHeaderItem(response: HttpResponse) -> String {
-        return "Allow: \(response.allowedMethods.joined(separator: ", "))" + ResponseFormatter.LINE_SEPARATOR
+    
+    private func allHeaderItems(response: HttpResponse) -> String {
+        var allHeaderItemsArray: [String] = []
+        for (key, value) in response.headers {
+            allHeaderItemsArray.append("\(key.rawValue)\(value)")
+        }
+        return allHeaderItemsArray.sorted(by: <).joined(separator: ResponseFormatter.LINE_SEPARATOR) + ResponseFormatter.LINE_SEPARATOR
     }
 }
