@@ -46,10 +46,10 @@ class RouterSpec: QuickSpec {
             context("when receive an OPTIONS request to an existing resource") {
                 it("returns an response with all the allowed methods of that resource") {
                     let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: URL(string: Resource.test.rawValue)!)
+                    responseBuilder.setHeader(header: .allow, value: "\(RequestMethod.get.rawValue), \(RequestMethod.head.rawValue), \(RequestMethod.options.rawValue)")
                     let expectedResponse = responseBuilder
                                             .withStatusCode(statusCode: .ok)
                                             .withContentType(contentType: .text)
-                                            .withAllowedMethods(allowedMethods: ["HEAD", "GET"])
                                             .build()
                     expect(router.process(request: anOptionsRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
                 }

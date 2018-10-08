@@ -1,21 +1,23 @@
 import Quick
 import Nimble
 import Swerver
+import Foundation
 
 class OptionsActionSpec: QuickSpec {
     
     override func spec() {
         describe("A OPTIONS action") {
-            let responseBuilder = ResponseBuilder()
-            let optionsAction = OptionsAction()
+            let routes = Routes()
+            let route = URL(string: Resource.test.rawValue)
+            let optionsAction = OptionsAction(routes: routes, route: route!)
+            routes.addRoute(url: route!, actions: [RequestMethod.options: optionsAction, RequestMethod.get: GetAction()])
             
             it("can dispatch to response builder to build a response for a successful OPTIONS request") {
-                let allowedMethods = [RequestMethod.get.rawValue, RequestMethod.options.rawValue]
-                optionsAction.setAllowedMethods(methods: allowedMethods)
+                
                 let okResponse = optionsAction.execute()
                 expect(okResponse.statusCode).to(equal(StatusCode.ok.rawValue))
-                expect(okResponse.contentType).to(equal(ContentType.text.rawValue))
-                expect(okResponse.allowedMethods).to(equal(allowedMethods))
+                expect(okResponse.headers[.contentType]).to(equal(ContentType.text.rawValue))
+                expect(okResponse.headers[.allow]).to(equal("\(RequestMethod.get.rawValue), \(RequestMethod.options.rawValue)"))
             }
         }
     }
