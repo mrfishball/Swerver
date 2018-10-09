@@ -10,23 +10,20 @@ class HttpResponseSpec: QuickSpec {
             
             it("can equate two response object") {
                 let responseOne = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
-                                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withStatusCode(statusCode: .ok)
+                                    .withContentType(contentType: .text)
                                     .withBody(body: String())
                                     .build()
                 
                 let responseTwo = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.ok.rawValue)
-                                    .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withStatusCode(statusCode: .ok)
+                                    .withContentType(contentType: .text)
                                     .withBody(body: String())
                                     .build()
                 
                 let responseThree = responseBuilder
-                                    .withStatusCode(statusCode: StatusCode.not_found.rawValue)
-                                    .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
-                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withStatusCode(statusCode: .not_found)
+                                    .withContentType(contentType: .text)
                                     .withBody(body: String())
                                     .build()
                 

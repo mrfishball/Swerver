@@ -10,10 +10,10 @@ class HttpRequestSpec: QuickSpec {
             guard let url = URL(string: "/") else {
                 return
             }
-            var httpRequest = HttpRequest(method: RequestMethod.get, url: url, httpVersion: HttpVersion.current)
-            var httpRequest2 = HttpRequest(method: RequestMethod.get, url: url, httpVersion: HttpVersion.current)
-            
-            var httpRequest3 = HttpRequest(method: RequestMethod.head, url: url, httpVersion: HttpVersion.current)
+            var httpRequest = HttpRequest(method: RequestMethod.get, url: url)
+            var httpRequest2 = HttpRequest(method: RequestMethod.get, url: url)
+
+            var httpRequest3 = HttpRequest(method: RequestMethod.head, url: url)
             
             it("can equate two request objects") {
                 expect(httpRequest).to(equal(httpRequest2))

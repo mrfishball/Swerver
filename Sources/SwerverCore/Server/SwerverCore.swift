@@ -11,7 +11,7 @@ public class Swerver {
     private var listenSocket: Socket?
     private var continueListening = true
     
-    private let clientRequestHandler = ClientRequestHandler()
+    private let clientRequestHandler = HttpConnection()
     private let console = ConsoleDestination()
     
     public init(port: Int) {

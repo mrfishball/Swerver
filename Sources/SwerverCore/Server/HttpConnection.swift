@@ -1,7 +1,7 @@
 import Foundation
 import Socket
 
-public class ClientRequestHandler {
+public class HttpConnection {
     
     private let httpRequestParser = HttpRequestParser()
     private let httpRouteProcessor = Router()
