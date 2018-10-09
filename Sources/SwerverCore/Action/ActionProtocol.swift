@@ -1,3 +1,3 @@
 public protocol HttpAction {
-    func dispatch() -> HttpResponse
+    func execute() -> HttpResponse
 }

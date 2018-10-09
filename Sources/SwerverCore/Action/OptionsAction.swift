@@ -1,22 +1,29 @@
-public class OptionsAction {
+import Foundation
+
+public class OptionsAction: HttpAction {
     
     private let responseBuilder = ResponseBuilder()
-    private var allowedMethods: [String] = []
+    private let routes: Routes
+    private let route: URL
     
-    public init() {}
-    
-    public func setAllowedMethods(methods: [String]) {
-        allowedMethods = methods
+    public init(routes: Routes, route: URL) {
+        self.routes = routes
+        self.route = route
     }
-}
-
-extension OptionsAction: HttpAction {
-    public func dispatch() -> HttpResponse {
+    
+    public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.ok.rawValue)
-            .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
-            .withContentType(contentType: ContentType.text.rawValue)
-            .withAllowedMethods(allowedMethods: allowedMethods)
+            .withStatusCode(statusCode: .ok)
+            .withContentType(contentType: .text)
+            .setHeader(header: .allow, value: getAllowedMethods())
             .build()
+    }
+    
+    private func getAllowedMethods() -> String {
+        var allowedMethodList: [String] = []
+        for (method, _) in routes.fetchRoute(url: route) {
+            allowedMethodList.append(method.rawValue)
+        }
+        return allowedMethodList.sorted(by: <).joined(separator: ", ")
     }
 }

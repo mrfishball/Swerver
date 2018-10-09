@@ -1,16 +1,13 @@
-public class NotFoundAction {
+public class NotFoundAction: HttpAction {
     
     private let responseBuilder = ResponseBuilder()
     
     public init() {}
-}
-
-extension NotFoundAction: HttpAction {
-    public func dispatch() -> HttpResponse {
+    
+    public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: StatusCode.not_found.rawValue)
-            .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
-            .withContentType(contentType: ContentType.text.rawValue)
+            .withStatusCode(statusCode: .not_found)
+            .withContentType(contentType: .text)
             .build()
     }
 }
