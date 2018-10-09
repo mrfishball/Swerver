@@ -30,10 +30,11 @@ public class Router {
     }
 
     private func populateRoutes() {
-        let route = URL(string: Resource.test.rawValue)
-        let route2 = URL(string: Resource.test2.rawValue)
-
-        routes.addRoute(url: route!, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: route!)])
-        routes.addRoute(url: route2!, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction()])
+        if let route = URL(string: Resource.test.rawValue),
+            let route2 = URL(string: Resource.test2.rawValue) {
+            
+            routes.addRoute(url: route, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: route)])
+            routes.addRoute(url: route2, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction()])
+        }
     }
 }
