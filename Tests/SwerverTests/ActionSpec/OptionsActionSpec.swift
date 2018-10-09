@@ -11,9 +11,10 @@ class OptionsActionSpec: QuickSpec {
             guard let route = URL(string: Resource.test.rawValue) else {
                     return
             }
-            
             let optionsAction = OptionsAction(routes: routes, route: route)
-            routes.addRoute(url: route, actions: [RequestMethod.options: optionsAction, RequestMethod.get: GetAction()])
+            let aRoute = Route(url: route, actions: [RequestMethod.options: optionsAction, RequestMethod.get: GetAction()])
+            
+            routes.addRoute(route: aRoute)
             
             it("can dispatch to response builder to build a response for a successful OPTIONS request") {
                 

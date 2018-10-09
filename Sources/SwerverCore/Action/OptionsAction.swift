@@ -21,9 +21,12 @@ public class OptionsAction: HttpAction {
     
     private func getAllowedMethods() -> String {
         var allowedMethodList: [String] = []
-        for (method, _) in routes.fetchRoute(url: route) {
-            allowedMethodList.append(method.rawValue)
+        if let actions = routes.fetchRoute(url: route)?.actions {
+            for (method, _) in actions {
+                allowedMethodList.append(method.rawValue)
+            }
+            return allowedMethodList.sorted(by: <).joined(separator: ", ")
         }
-        return allowedMethodList.sorted(by: <).joined(separator: ", ")
+        return ""
     }
 }

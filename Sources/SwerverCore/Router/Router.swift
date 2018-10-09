@@ -16,25 +16,33 @@ public class Router {
             let targetURL = request.getUrl()
             let targetMethod = request.getMethod()
             
-            if routes.routeExist(url: targetURL) {
+            if let targetRoute = routes.fetchRoute(url: targetURL) {
                 
-                let targetRoute = routes.fetchRoute(url: targetURL)
-                
-                guard let action = targetRoute[targetMethod] else {
-                    return notFoundAction.execute()
+                guard let action = targetRoute.actions[targetMethod] else {
+                    return targetRoute.notAllowedAction().execute()
                 }
                 return action.execute()
+            } else {
+                return notFoundAction.execute()
             }
+        } else {
+            return notFoundAction.execute()
         }
-        return notFoundAction.execute()
     }
 
     private func populateRoutes() {
-        if let route = URL(string: Resource.test.rawValue),
-            let route2 = URL(string: Resource.test2.rawValue) {
+        if let url = URL(string: Resource.test.rawValue),
+            let url2 = URL(string: Resource.test2.rawValue) {
             
-            routes.addRoute(url: route, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: route)])
-            routes.addRoute(url: route2, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction()])
+            let route1 = Route(url: url, actions: [RequestMethod.head: HeadAction(),
+                                                   RequestMethod.get: GetAction(),
+                                                   RequestMethod.options: OptionsAction(routes: routes, route: url)])
+            
+            let route2 = Route(url: url2, actions: [RequestMethod.head: HeadAction(),
+                                                    RequestMethod.get: GetAction()])
+            
+            routes.addRoute(route: route1)
+            routes.addRoute(route: route2)
         }
     }
 }

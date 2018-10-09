@@ -10,6 +10,7 @@ class RouterSpec: QuickSpec {
             var responseBuilder = ResponseBuilder()
 
             guard let url = URL(string: Resource.test.rawValue),
+                let url2 = URL(string: Resource.test2.rawValue),
                 let urlNotFound = URL(string: "/not_here") else {
                 return
             }
@@ -49,7 +50,7 @@ class RouterSpec: QuickSpec {
 
             context("when receive a request to an unknown URL") {
                 it("returns an response of 404 Not Found status") {
-                    let aRogueRequest = HttpRequest(method: RequestMethod.other, url: urlNotFound)
+                    let aRogueRequest = HttpRequest(method: RequestMethod.get, url: urlNotFound)
                     let expectedResponse = responseBuilder
                         .withStatusCode(statusCode: .not_found)
                         .withContentType(contentType: .text)
@@ -67,6 +68,18 @@ class RouterSpec: QuickSpec {
                         .setHeader(header: .allow, value: "GET, HEAD, OPTIONS")
                         .build()
                     expect(router.process(request: anOptionsRequest)).to(equal(expectedResponse))
+                }
+            }
+            
+            context("when receive an unknown request to an existing resource") {
+                it("returns a 405 method not allowed response with all the allowed methods of that resource") {
+                    let anUnknownRequest = HttpRequest(method: RequestMethod.options, url: url2)
+                    let expectedResponse = responseBuilder
+                        .withStatusCode(statusCode: .not_allowed)
+                        .withContentType(contentType: .text)
+                        .setHeader(header: .allow, value: "GET, HEAD")
+                        .build()
+                    expect(router.process(request: anUnknownRequest)).to(equal(expectedResponse))
                 }
             }
         }
