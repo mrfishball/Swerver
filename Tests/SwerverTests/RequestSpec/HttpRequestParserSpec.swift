@@ -8,12 +8,27 @@ class HttpRequestParserSpec: QuickSpec {
         describe("An HTTP Request Parser") {
             var httpRequestParser = HttpRequestParser()
 
-            it("returns an HttpRequest Object") {
+            context("when the request string is valid ") {
                 let requestData = "GET / HTTP/1.1"
                 let parsedRequest = httpRequestParser.parse(request: requestData)
-                expect(parsedRequest.getUrl()).to(equal(URL(string: "/")))
-                expect(parsedRequest.getMethod()).to(equal(RequestMethod.get))
+
+                it("returns an HttpRequest Object with the request method") {
+                    expect(parsedRequest?.getMethod()).to(equal(RequestMethod.get))
+                }
+
+                it("returns an HttpRequest Object with the URL") {
+                    expect(parsedRequest?.getUrl()).to(equal(URL(string: "/")))
+                }
             }
+
+            context("when the request string is invalid") {
+                it("returns nil") {
+                    let requestData = "Invalid Request"
+                    let parsedRequest = httpRequestParser.parse(request: requestData)
+                    expect(parsedRequest).to(beNil())
+                }
+            }
+
         }
     }
 }
