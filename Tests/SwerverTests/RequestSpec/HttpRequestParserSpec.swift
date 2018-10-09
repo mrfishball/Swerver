@@ -15,6 +15,15 @@ class HttpRequestParserSpec: QuickSpec {
                 expect(parsedRequest?.getUrl()).to(equal(URL(string: "/")))
                 expect(parsedRequest?.getMethod()).to(equal(RequestMethod.get))
             }
+            
+            context("when the request string is invalid") {
+                it("returns nil") {
+                    let requestData = "Invalid Request"
+                    let parsedRequest = httpRequestParser.parse(request: requestData)
+                    expect(parsedRequest).to(beNil())
+                }
+            }
+            
         }
     }
 }

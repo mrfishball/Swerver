@@ -14,6 +14,18 @@ class RouterSpec: QuickSpec {
                 let urlNotFound = URL(string: "/not_here") else {
                 return
             }
+            
+            context("when receive an invalid request object") {
+                it("returns a 404 not found response") {
+                    let anInvalidRequest: HttpRequest? = nil
+                    let expectedResponse = responseBuilder
+                                            .withStatusCode(statusCode: StatusCode.not_found.rawValue)
+                                            .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
+                                            .withContentType(contentType: ContentType.text.rawValue)
+                                            .build()
+                    expect(router.process(request: anInvalidRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                }
+            }
 
             context("when receive a GET request for an existing route") {
                 it("returns an response with 200 OK status") {
