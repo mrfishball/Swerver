@@ -14,8 +14,8 @@ class StatusCodeSpec: QuickSpec {
                 expect(StatusCode.not_found.getStatusPhrase()).to(equal("Not Found"))
             }
             
-            it("can return a status phrase of 'Not Implemented'") {
-                expect(StatusCode.not_implemented.getStatusPhrase()).to(equal("Not Implemented"))
+            it("can return a status phrase of 'Method Not Allowed'") {
+                expect(StatusCode.not_allowed.getStatusPhrase()).to(equal("Method Not Allowed"))
             }
         }
     }

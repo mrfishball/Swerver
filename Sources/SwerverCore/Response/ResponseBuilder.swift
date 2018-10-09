@@ -5,8 +5,7 @@ public class ResponseBuilder {
     private(set) var body: String = String()
     private(set) var headers: [ResponseHeader:String] = [:]
 
-    public init() {
-}
+    public init() {}
 
     public func withStatusCode(statusCode: StatusCode) -> ResponseBuilder {
         self.statusCode = statusCode
