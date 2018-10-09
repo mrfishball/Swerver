@@ -17,13 +17,14 @@ public class ClientRequestHandler {
     private func parseRequest(clientSocket: Socket) throws -> HttpRequest? {
         var readData: Data = Data(capacity: Swerver.bufferSize)
         let _ = try clientSocket.read(into: &readData)
-        guard let parsedData = String(data: readData, encoding: .utf8) else {
+        if let parsedData = String(data: readData, encoding: .utf8) {
+            readData.count = 0
+            logger.info(parsedData)
+            return httpRequestParser.parse(request: parsedData)
+        } else {
             readData.count = 0
             logger.info("Error decoding socket data")
             return httpRequestParser.parse(request: "")
         }
-        readData.count = 0
-        logger.info(parsedData)
-        return httpRequestParser.parse(request: parsedData)
     }
 }
