@@ -11,7 +11,7 @@ public class Swerver {
     private var listenSocket: Socket?
     private var continueListening = true
     
-    private let clientRequestHandler = HttpConnection()
+    private let httpConnection = HttpConnection()
     private let console = ConsoleDestination()
     
     public init(port: Int) {
@@ -32,7 +32,7 @@ public class Swerver {
     private func newConnection(socket: Socket) throws {
         let connectedSocket = try socket.acceptClientConnection()
         logger.info("Connected to client: \(connectedSocket.remoteHostname)")
-        let _ = try clientRequestHandler.handle(client: connectedSocket)
+        let _ = try httpConnection.handle(client: connectedSocket)
         connectedSocket.close()
     }
 }
