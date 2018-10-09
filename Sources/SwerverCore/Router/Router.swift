@@ -12,10 +12,10 @@ public class Router {
         populateRoutes()
     }
 
-    public func process(request: HttpRequest?) -> String {
+    public func process(request: HttpRequest?) -> HttpResponse {
 
         guard let targetURL = request?.getUrl(), let targetMethod = request?.getMethod() else {
-            return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+            return notFoundAction.dispatch()
         }
 
         if routes.routeExist(url: targetURL) {
@@ -23,15 +23,15 @@ public class Router {
             let allowedActions = routes.fetchAllActions(url: targetURL)
 
             if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
+                return routes.optionsAction(url: targetURL).dispatch()
             }
 
             guard let action = allowedActions[targetMethod] else {
-                return "HTTP/1.1"
+                return notFoundAction.dispatch()
             }
-            return responseHeaderFormatter.format(httpResponse: action.dispatch())
+            return action.dispatch()
         }
-        return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+        return notFoundAction.dispatch()
     }
 
     private func isOptionsRequest(request: HttpRequest?) -> Bool {

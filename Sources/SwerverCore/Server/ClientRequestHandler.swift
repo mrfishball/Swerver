@@ -5,12 +5,13 @@ public class ClientRequestHandler {
     
     private let httpRequestParser = HttpRequestParser()
     private let httpRouteProcessor = Router()
+    private let httpResponseFormatter = ResponseFormatter()
     
     public init() {}
     
     public func handle(client: Socket) throws {
         let httpRequest = try parseRequest(clientSocket: client)
-        try client.write(from: httpRouteProcessor.process(request: (httpRequest)))
+        try client.write(from: httpResponseFormatter.format(httpResponse: httpRouteProcessor.process(request: httpRequest)))
     }
     
     private func parseRequest(clientSocket: Socket) throws -> HttpRequest? {

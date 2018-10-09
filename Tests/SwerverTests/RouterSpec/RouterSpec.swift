@@ -7,7 +7,6 @@ class RouterSpec: QuickSpec {
     override func spec() {
         describe("A Router") {
             var router = Router()
-            var formatter = ResponseFormatter()
             var responseBuilder = ResponseBuilder()
             
             guard let url = URL(string: Resource.test.rawValue),
@@ -23,7 +22,7 @@ class RouterSpec: QuickSpec {
                                             .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
                                             .build()
-                    expect(router.process(request: anInvalidRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: anInvalidRequest)).to(equal(expectedResponse))
                 }
             }
 
@@ -35,7 +34,7 @@ class RouterSpec: QuickSpec {
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
                                             .build()
-                    expect(router.process(request: aGetRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: aGetRequest)).to(equal(expectedResponse))
                 }
             }
 
@@ -47,7 +46,7 @@ class RouterSpec: QuickSpec {
                                             .withStatusPhrase(statusPhrase: StatusCode.ok.getStatusPhrase())
                                             .withContentType(contentType: ContentType.text.rawValue)
                                             .build()
-                    expect(router.process(request: aHeadRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: aHeadRequest)).to(equal(expectedResponse))
                 }
             }
 
@@ -59,7 +58,7 @@ class RouterSpec: QuickSpec {
                         .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
                         .withContentType(contentType: ContentType.text.rawValue)
                         .build()
-                    expect(router.process(request: aRogueRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: aRogueRequest)).to(equal(expectedResponse))
                 }
             }
 
@@ -72,7 +71,7 @@ class RouterSpec: QuickSpec {
                         .withContentType(contentType: ContentType.text.rawValue)
                         .withAllowedMethods(allowedMethods: ["HEAD", "GET"])
                         .build()
-                    expect(router.process(request: anOptionsRequest)).to(equal(formatter.format(httpResponse: expectedResponse)))
+                    expect(router.process(request: anOptionsRequest)).to(equal(expectedResponse))
                 }
             }
         }
