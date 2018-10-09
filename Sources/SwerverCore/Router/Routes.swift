@@ -22,7 +22,7 @@ public class Routes {
     }
     
     public func fetchAllActions(url: URL) -> [RequestMethod:HttpAction] {
-        return allRoutes[url]!
+        return allRoutes[url] ?? [:]
     }
 
     private func fetchAllowedMethods(url: URL) -> [String] {

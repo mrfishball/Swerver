@@ -7,11 +7,17 @@ class HttpRequestSpec: QuickSpec {
 
     override func spec() {
         describe("HttpRequest") {
-            var httpRequest = HttpRequest(method: RequestMethod.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
-
+            guard let url = URL(string: "/") else {
+                return
+            }
+            var httpRequest = HttpRequest(method: RequestMethod.get, url: url, httpVersion: HttpVersion.current)
+            var httpRequest2 = HttpRequest(method: RequestMethod.get, url: url, httpVersion: HttpVersion.current)
+            
+            var httpRequest3 = HttpRequest(method: RequestMethod.head, url: url, httpVersion: HttpVersion.current)
+            
             it("can equate two request objects") {
-                let httpRequest2 = HttpRequest(method: RequestMethod.get, url: URL(string: "/")!, httpVersion: HttpVersion.current)
                 expect(httpRequest).to(equal(httpRequest2))
+                expect(httpRequest3).toNot(equal(httpRequest2))
             }
         }
     }

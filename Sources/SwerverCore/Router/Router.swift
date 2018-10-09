@@ -12,10 +12,11 @@ public class Router {
         populateRoutes()
     }
 
-    public func process(request: HttpRequest) -> String {
+    public func process(request: HttpRequest?) -> String {
 
-        let targetURL = request.getUrl()
-        let targetMethod = request.getMethod()
+        guard let targetURL = request?.getUrl(), let targetMethod = request?.getMethod() else {
+            return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
+        }
 
         if routes.routeExist(url: targetURL) {
 
@@ -33,11 +34,13 @@ public class Router {
         return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
     }
 
-    private func isOptionsRequest(request: HttpRequest) -> Bool {
-        return request.getMethod() == RequestMethod.options
+    private func isOptionsRequest(request: HttpRequest?) -> Bool {
+        return request?.getMethod() == RequestMethod.options
     }
 
     private func populateRoutes() {
-        routes.addRoute(url: URL(string: Resource.test.rawValue)!, actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
+        if let url = URL(string: Resource.test.rawValue) {
+            routes.addRoute(url: url, actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
+        }
     }
 }

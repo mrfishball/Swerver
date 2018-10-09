@@ -11,9 +11,9 @@ class HttpRequestParserSpec: QuickSpec {
             it("returns an HttpRequest Object") {
                 let requestData = "GET / HTTP/1.1"
                 let parsedRequest = httpRequestParser.parse(request: requestData)
-                expect(parsedRequest.getHttpVersion()).to(equal(HttpVersion.current))
-                expect(parsedRequest.getUrl()).to(equal(URL(string: "/")))
-                expect(parsedRequest.getMethod()).to(equal(RequestMethod.get))
+                expect(parsedRequest?.getHttpVersion()).to(equal(HttpVersion.current))
+                expect(parsedRequest?.getUrl()).to(equal(URL(string: "/")))
+                expect(parsedRequest?.getMethod()).to(equal(RequestMethod.get))
             }
         }
     }

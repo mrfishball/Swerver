@@ -23,7 +23,15 @@ class HttpResponseSpec: QuickSpec {
                                     .withBody(body: String())
                                     .build()
                 
+                let responseThree = responseBuilder
+                                    .withStatusCode(statusCode: StatusCode.not_found.rawValue)
+                                    .withStatusPhrase(statusPhrase: StatusCode.not_found.getStatusPhrase())
+                                    .withContentType(contentType: ContentType.text.rawValue)
+                                    .withBody(body: String())
+                                    .build()
+                
                 expect(responseOne).to(equal(responseTwo))
+                expect(responseThree).toNot(equal(responseTwo))
             }
         }
     }
