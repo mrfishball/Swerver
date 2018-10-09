@@ -14,22 +14,23 @@ public class Router {
 
     public func process(request: HttpRequest?) -> HttpResponse {
 
-        guard let targetURL = request?.getUrl(), let targetMethod = request?.getMethod() else {
-            return notFoundAction.dispatch()
-        }
-
-        if routes.routeExist(url: targetURL) {
-
-            let allowedActions = routes.fetchAllActions(url: targetURL)
-
-            if isOptionsRequest(request: request) {
-                return routes.optionsAction(url: targetURL).dispatch()
+        if let request = request {
+            let targetURL = request.getUrl()
+            let targetMethod = request.getMethod()
+            
+            if routes.routeExist(url: targetURL) {
+                
+                let allowedActions = routes.fetchAllActions(url: targetURL)
+                
+                if isOptionsRequest(request: request) {
+                    return routes.optionsAction(url: targetURL).dispatch()
+                }
+                
+                guard let action = allowedActions[targetMethod] else {
+                    return notFoundAction.dispatch()
+                }
+                return action.dispatch()
             }
-
-            guard let action = allowedActions[targetMethod] else {
-                return notFoundAction.dispatch()
-            }
-            return action.dispatch()
         }
         return notFoundAction.dispatch()
     }
