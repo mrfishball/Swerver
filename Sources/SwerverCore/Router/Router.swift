@@ -3,9 +3,7 @@ import Foundation
 public class Router {
     private let responseHeaderFormatter = ResponseFormatter()
     private let routes = Routes()
-
-    private let headAction = HeadAction()
-    private let getAction = GetAction()
+    
     private let notFoundAction = NotFoundAction()
 
     public init() {
@@ -19,25 +17,21 @@ public class Router {
 
         if routes.routeExist(url: targetURL) {
 
-            let allowedActions = routes.fetchAllActions(url: targetURL)
+            let targetRoute = routes.fetchRoute(url: targetURL)
 
-            if isOptionsRequest(request: request) {
-                return responseHeaderFormatter.format(httpResponse: routes.optionsAction(url: targetURL).dispatch())
-            }
-
-            guard let action = allowedActions[targetMethod] else {
+            guard let action = targetRoute[targetMethod] else {
                 return "HTTP/1.1"
             }
-            return responseHeaderFormatter.format(httpResponse: action.dispatch())
+            return responseHeaderFormatter.format(httpResponse: action.execute())
         }
-        return responseHeaderFormatter.format(httpResponse: notFoundAction.dispatch())
-    }
-
-    private func isOptionsRequest(request: HttpRequest) -> Bool {
-        return request.getMethod() == RequestMethod.options
+        return responseHeaderFormatter.format(httpResponse: notFoundAction.execute())
     }
 
     private func populateRoutes() {
-        routes.addRoute(url: URL(string: Resource.test.rawValue)!, actions: [RequestMethod.head: headAction, RequestMethod.get: getAction])
+        let route = URL(string: Resource.test.rawValue)
+        let route2 = URL(string: Resource.test2.rawValue)
+        
+        routes.addRoute(url: route!, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: route!)])
+        routes.addRoute(url: route2!, actions: [RequestMethod.head: HeadAction(), RequestMethod.get: GetAction()])
     }
 }
