@@ -43,6 +43,10 @@
 		845914122152D1C40036EF19 /* ResponseFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */; };
 		845914172154102B0036EF19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914162154102B0036EF19 /* ContentType.swift */; };
 		845D7DE9216ABF7B00345A6E /* ResponseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D7DE8216ABF7B00345A6E /* ResponseHeader.swift */; };
+		84ADA073216D356200207F2D /* NotAllowedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA072216D356200207F2D /* NotAllowedAction.swift */; };
+		84ADA075216D35C800207F2D /* NotAllowedActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA074216D35C800207F2D /* NotAllowedActionSpec.swift */; };
+		84ADA077216D364D00207F2D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA076216D364D00207F2D /* Route.swift */; };
+		84ADA079216D36F200207F2D /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA078216D36F200207F2D /* RouteSpec.swift */; };
 		84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6AC421495B65004ADFF0 /* RequestMethod.swift */; };
 		84D0C3FF214A9DF100304862 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C3FE214A9DF100304862 /* HttpConnection.swift */; };
 		84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C400214AAEB600304862 /* HttpRequestParser.swift */; };
@@ -262,6 +266,10 @@
 		845914112152D1C40036EF19 /* ResponseFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormatterSpec.swift; sourceTree = "<group>"; };
 		845914162154102B0036EF19 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		845D7DE8216ABF7B00345A6E /* ResponseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeader.swift; sourceTree = "<group>"; };
+		84ADA072216D356200207F2D /* NotAllowedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAllowedAction.swift; sourceTree = "<group>"; };
+		84ADA074216D35C800207F2D /* NotAllowedActionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotAllowedActionSpec.swift; sourceTree = "<group>"; };
+		84ADA076216D364D00207F2D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		84ADA078216D36F200207F2D /* RouteSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		84D0C3FE214A9DF100304862 /* HttpConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConnection.swift; sourceTree = "<group>"; };
 		84D0C400214AAEB600304862 /* HttpRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParser.swift; sourceTree = "<group>"; };
 		84D0C402214AB7A900304862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -478,6 +486,7 @@
 				84D0C402214AB7A900304862 /* Router.swift */,
 				84340455215AF1B300F50DC6 /* Routes.swift */,
 				84340457215AFEF100F50DC6 /* Resources.swift */,
+				84ADA076216D364D00207F2D /* Route.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 				84340441215A75DF00F50DC6 /* ActionProtocol.swift */,
 				84340447215A809600F50DC6 /* NotFoundAction.swift */,
 				8434044B215A8AAE00F50DC6 /* OptionsAction.swift */,
+				84ADA072216D356200207F2D /* NotAllowedAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -510,6 +520,7 @@
 				84340445215A760E00F50DC6 /* HeadActionSpec.swift */,
 				84340449215A810B00F50DC6 /* NotFoundActionSpec.swift */,
 				84340453215ADC7C00F50DC6 /* OptionsActionSpec.swift */,
+				84ADA074216D35C800207F2D /* NotAllowedActionSpec.swift */,
 			);
 			path = ActionSpec;
 			sourceTree = "<group>";
@@ -519,6 +530,7 @@
 			children = (
 				840421F6214AE6A9001234BE /* RouterSpec.swift */,
 				84ECB7C8215BB010009FA1A4 /* RoutesSpec.swift */,
+				84ADA078216D36F200207F2D /* RouteSpec.swift */,
 			);
 			path = RouterSpec;
 			sourceTree = "<group>";
@@ -1244,12 +1256,14 @@
 				84D0C405214AB8AD00304862 /* HttpResponse.swift in Sources */,
 				84340458215AFEF100F50DC6 /* Resources.swift in Sources */,
 				84DDA5402152903F006A05AC /* HttpVersion.swift in Sources */,
+				84ADA073216D356200207F2D /* NotAllowedAction.swift in Sources */,
 				845914102152BE510036EF19 /* ResponseFormatter.swift in Sources */,
 				84D0C409214AD80B00304862 /* HttpRequest.swift in Sources */,
 				8434043F215A75A400F50DC6 /* HeadAction.swift in Sources */,
 				84D0C403214AB7A900304862 /* Router.swift in Sources */,
 				8434043D215A759300F50DC6 /* GetAction.swift in Sources */,
 				845D7DE9216ABF7B00345A6E /* ResponseHeader.swift in Sources */,
+				84ADA077216D364D00207F2D /* Route.swift in Sources */,
 				8434044C215A8AAE00F50DC6 /* OptionsAction.swift in Sources */,
 				84340448215A809600F50DC6 /* NotFoundAction.swift in Sources */,
 				84D0C3FF214A9DF100304862 /* HttpConnection.swift in Sources */,
@@ -1283,7 +1297,9 @@
 			files = (
 				84340446215A760E00F50DC6 /* HeadActionSpec.swift in Sources */,
 				8434044A215A810B00F50DC6 /* NotFoundActionSpec.swift in Sources */,
+				84ADA075216D35C800207F2D /* NotAllowedActionSpec.swift in Sources */,
 				840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */,
+				84ADA079216D36F200207F2D /* RouteSpec.swift in Sources */,
 				840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */,
 				84ECB7C9215BB010009FA1A4 /* RoutesSpec.swift in Sources */,
 				840421FB21501815001234BE /* ResponseBuilderSpec.swift in Sources */,

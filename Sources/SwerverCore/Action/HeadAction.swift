@@ -1,7 +1,7 @@
 public class HeadAction: HttpAction {
 
     private let responseBuilder = ResponseBuilder()
-
+    
     public init() {}
     
     public func execute() -> HttpResponse {

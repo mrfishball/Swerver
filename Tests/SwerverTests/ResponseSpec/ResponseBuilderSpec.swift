@@ -22,7 +22,7 @@ class ResponseBuilderSpec: QuickSpec {
                                             .withContentType(contentType: .text)
                                             .build()
 
-                expect(responseToBeTested.headers[.contentType]).to(equal(ContentType.text.rawValue))
+                expect(responseToBeTested.get(header: .contentType)).to(equal(ContentType.text.rawValue))
             }
             
             it("it can build a response object with a body") {
@@ -39,7 +39,7 @@ class ResponseBuilderSpec: QuickSpec {
                     .withBody(body: body)
                     .build()
 
-                expect(responseToBeTested.headers[.contentLength]).to(equal(String(body.count)))
+                expect(responseToBeTested.get(header: .contentLength)).to(equal(String(body.count)))
             }
             
             it("can set the allow header") {
@@ -47,7 +47,7 @@ class ResponseBuilderSpec: QuickSpec {
                 responseBuilder.setHeader(header: .allow, value: allowedMethodString)
                 let responseToBeTested = responseBuilder
                     .build()
-                expect(responseToBeTested.headers[.allow]).to(equal(allowedMethodString))
+                expect(responseToBeTested.get(header: .allow)).to(equal(allowedMethodString))
             }
         }
     }

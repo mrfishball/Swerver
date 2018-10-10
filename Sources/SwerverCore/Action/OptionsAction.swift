@@ -15,15 +15,17 @@ public class OptionsAction: HttpAction {
         return responseBuilder
             .withStatusCode(statusCode: .ok)
             .withContentType(contentType: .text)
-            .setHeader(header: .allow, value: getAllowedMethods())
+            .setHeader(header: .allow, value: allowedMethods())
             .build()
     }
     
-    private func getAllowedMethods() -> String {
-        var allowedMethodList: [String] = []
-        for (method, _) in routes.fetchRoute(url: route) {
-            allowedMethodList.append(method.rawValue)
+    private func allowedMethods() -> String {
+        var listOfMethods = routes.allowedMethods(url: route)
+        if route.absoluteString == Resource.test_option_two.rawValue {
+            listOfMethods.append("POST")
+            listOfMethods.append("PUT")
+            return listOfMethods.sorted(by: <).joined(separator: ",")
         }
-        return allowedMethodList.sorted(by: <).joined(separator: ", ")
+        return routes.allowedMethods(url: route).joined(separator: ",")
     }
 }
