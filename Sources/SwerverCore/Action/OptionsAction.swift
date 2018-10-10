@@ -15,18 +15,11 @@ public class OptionsAction: HttpAction {
         return responseBuilder
             .withStatusCode(statusCode: .ok)
             .withContentType(contentType: .text)
-            .setHeader(header: .allow, value: getAllowedMethods())
+            .setHeader(header: .allow, value: allowedMethods())
             .build()
     }
     
-    private func getAllowedMethods() -> String {
-        var allowedMethodList: [String] = []
-        if let actions = routes.fetchRoute(url: route)?.actions {
-            for (method, _) in actions {
-                allowedMethodList.append(method.rawValue)
-            }
-            return allowedMethodList.sorted(by: <).joined(separator: ", ")
-        }
-        return ""
+    private func allowedMethods() -> String {
+        return routes.allowedMethods(url: route).sorted(by: <).joined(separator: ", ")
     }
 }

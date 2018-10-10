@@ -17,4 +17,8 @@ public class Routes {
     public func fetchRoute(url: URL) -> Route? {
         return allRoutes[url]
     }
+    
+    public func allowedMethods(url: URL) -> [String] {
+        return allRoutes[url]?.getListOfMethods() ?? []
+    }
 }
