@@ -11,6 +11,7 @@ class RouterSpec: QuickSpec {
             guard let urlOne = URL(string: Resource.test_get.rawValue),
                 let urlTwo = URL(string: Resource.test_head.rawValue),
                 let urlThree = URL(string: Resource.test_option.rawValue),
+                let urlFour = URL(string: Resource.test_redirect.rawValue),
                 let urlNotFound = URL(string: "/not_here") else {
                 return
             }
@@ -117,6 +118,23 @@ class RouterSpec: QuickSpec {
                 
                 it("returns an response with all the allowed methods for the resource in the allow header") {
                     expect(expectedResponse.get(header: .allow)).to(equal("HEAD,OPTIONS"))
+                }
+                
+                it("returns an response with an empty body") {
+                    expect(expectedResponse.get(header: .contentLength)).to(equal("0"))
+                }
+            }
+            
+            context("when receive a request to a resource that has been moved") {
+                let aRequestForAMovedRoute = HttpRequest(method: RequestMethod.get, url: urlFour)
+                let expectedResponse = router.process(request: aRequestForAMovedRoute)
+                
+                it("returns a response with a 301 status code") {
+                    expect(expectedResponse.statusCode).to(equal(StatusCode.moved.rawValue))
+                }
+                
+                it("returns an response with a location header") {
+                    expect(expectedResponse.get(header: .location)).toNot(beNil())
                 }
                 
                 it("returns an response with an empty body") {
