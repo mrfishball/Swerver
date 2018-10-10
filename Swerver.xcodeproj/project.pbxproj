@@ -1003,6 +1003,7 @@
 			buildPhases = (
 				OBJ_286 /* Sources */,
 				OBJ_288 /* Frameworks */,
+				84ADA07B216E91C000207F2D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1117,6 +1118,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84ADA07B216E91C000207F2D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "open -a Terminal.app ./Scripts/acceptance_tests_local.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_140 /* Sources */ = {
