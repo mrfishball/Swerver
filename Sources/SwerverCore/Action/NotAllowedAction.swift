@@ -18,6 +18,6 @@ public class NotAllowedAction: HttpAction {
     }
     
     private func getAllowedMethods() -> String {
-        return listOfAllowedMethods.sorted(by: <).joined(separator: ", ")
+        return listOfAllowedMethods.joined(separator: ",")
     }
 }

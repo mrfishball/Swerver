@@ -15,7 +15,7 @@ public class Route {
         for (method, _) in actions {
             listOfMethods.append(method.rawValue)
         }
-        return listOfMethods
+        return listOfMethods.sorted(by: <)
     }
     
     public func notAllowedAction() -> HttpAction {

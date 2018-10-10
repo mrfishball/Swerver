@@ -31,18 +31,26 @@ public class Router {
     }
 
     private func populateRoutes() {
-        if let url = URL(string: Resource.test.rawValue),
-            let url2 = URL(string: Resource.test2.rawValue) {
+        if let urlOne = URL(string: Resource.test_get.rawValue),
+            let urlTwo = URL(string: Resource.test_head.rawValue),
+            let urlThree = URL(string: Resource.test_option.rawValue),
+            let urlFour = URL(string: Resource.test_option_two.rawValue) {
             
-            let route1 = Route(url: url, actions: [RequestMethod.head: HeadAction(),
-                                                   RequestMethod.get: GetAction(),
-                                                   RequestMethod.options: OptionsAction(routes: routes, route: url)])
+            let routeOne = Route(url: urlOne, actions: [RequestMethod.head: HeadAction(),
+                                                   RequestMethod.get: GetAction()])
             
-            let route2 = Route(url: url2, actions: [RequestMethod.head: HeadAction(),
-                                                    RequestMethod.get: GetAction()])
+            let routeTwo = Route(url: urlTwo, actions: [RequestMethod.head: HeadAction()])
+                
+            let routeThree = Route(url: urlThree, actions: [RequestMethod.head: HeadAction(),
+                                                            RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: urlThree)])
             
-            routes.addRoute(route: route1)
-            routes.addRoute(route: route2)
+            let routeFour = Route(url: urlFour, actions: [RequestMethod.head: HeadAction(),
+                                                            RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: urlFour)])
+            
+            routes.addRoute(route: routeOne)
+            routes.addRoute(route: routeTwo)
+            routes.addRoute(route: routeThree)
+            routes.addRoute(route: routeFour)
         }
     }
 }

@@ -20,6 +20,12 @@ public class OptionsAction: HttpAction {
     }
     
     private func allowedMethods() -> String {
-        return routes.allowedMethods(url: route).sorted(by: <).joined(separator: ", ")
+        var listOfMethods = routes.allowedMethods(url: route)
+        if route.absoluteString == Resource.test_option_two.rawValue {
+            listOfMethods.append("POST")
+            listOfMethods.append("PUT")
+            return listOfMethods.sorted(by: <).joined(separator: ",")
+        }
+        return routes.allowedMethods(url: route).joined(separator: ",")
     }
 }

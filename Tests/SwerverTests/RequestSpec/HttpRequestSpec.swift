@@ -17,6 +17,9 @@ class HttpRequestSpec: QuickSpec {
             
             it("can equate two request objects") {
                 expect(httpRequest).to(equal(httpRequest2))
+            }
+            
+            it("differentiate two request objects") {
                 expect(httpRequest3).toNot(equal(httpRequest2))
             }
         }

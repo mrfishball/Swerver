@@ -13,6 +13,10 @@ public final class HttpResponse {
         headers = builder.headers
         dateTime = Date()
     }
+    
+    public func get(header: ResponseHeader) -> String? {
+        return headers[header]
+    }
 }
 
 extension HttpResponse: Equatable {

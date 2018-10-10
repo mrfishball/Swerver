@@ -8,7 +8,7 @@ class RoutesSpec: QuickSpec {
     override func spec() {
         describe("A Routes") {
             var routes = Routes()
-            guard let targetRoute = URL(string: Resource.test.rawValue) else {
+            guard let targetRoute = URL(string: Resource.test_get.rawValue) else {
                 return
             }
             
@@ -22,6 +22,10 @@ class RoutesSpec: QuickSpec {
             it("can return an existing route") {
                 let expectedRoute = routes.fetchRoute(url: targetRoute)
                 expect(expectedRoute?.url).to(equal(targetRoute))
+            }
+            
+            it("can return a list of allowed methods of a resource") {
+                expect(routes.allowedMethods(url: targetRoute)).to(equal(["GET", "HEAD"]))
             }
         }
     }
