@@ -5,26 +5,48 @@ import Foundation
 
 class HttpRequestParserSpec: QuickSpec {
     override func spec() {
-        describe("An HTTP Request Parser") {
-            var httpRequestParser = HttpRequestParser()
+        describe("Parsing the request") {
+
+            func buildParser() -> HttpRequestParser {
+                return HttpRequestParser()
+            }
 
             context("when the request string is valid ") {
-                let requestData = "GET / HTTP/1.1"
-                let parsedRequest = httpRequestParser.parse(request: requestData)
+                let requestLine = "GET / HTTP/1.1"
 
-                it("returns an HttpRequest Object with the request method") {
+                it("returns a valid request")  {
+                    let requestParser = buildParser()
+
+                    let parsedRequest = requestParser.parse(request: requestLine)
+
+                    expect(parsedRequest).notTo(beNil())
+                }
+
+                it("parses the request method") {
+                    let requestParser = buildParser()
+
+                    let parsedRequest = requestParser.parse(request: requestLine)
+
                     expect(parsedRequest?.getMethod()).to(equal(RequestMethod.get))
                 }
 
                 it("returns an HttpRequest Object with the URL") {
+                    let requestParser = buildParser()
+
+                    let parsedRequest = requestParser.parse(request: requestLine)
+
                     expect(parsedRequest?.getUrl()).to(equal(URL(string: "/")))
                 }
             }
 
             context("when the request string is invalid") {
+
                 it("returns nil") {
+                    let requestParser = buildParser()
                     let requestData = "Invalid Request"
-                    let parsedRequest = httpRequestParser.parse(request: requestData)
+
+                    let parsedRequest = requestParser.parse(request: requestData)
+
                     expect(parsedRequest).to(beNil())
                 }
             }

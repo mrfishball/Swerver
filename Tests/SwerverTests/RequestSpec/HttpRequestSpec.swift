@@ -6,21 +6,26 @@ import Foundation
 class HttpRequestSpec: QuickSpec {
 
     override func spec() {
-        describe("HttpRequest") {
-            guard let url = URL(string: "/") else {
-                return
-            }
-            var httpRequest = HttpRequest(method: RequestMethod.get, url: url)
-            var httpRequest2 = HttpRequest(method: RequestMethod.get, url: url)
+        describe("Comparing requests") {
+            it("is true when attributes match") {
+                let requestOne = HttpRequest(method: .get, url: TestData.validUrlOne())
+                let requestTwo = HttpRequest(method: .get, url: TestData.validUrlOne())
 
-            var httpRequest3 = HttpRequest(method: RequestMethod.head, url: url)
-            
-            it("can equate two request objects") {
-                expect(httpRequest).to(equal(httpRequest2))
+                expect(requestOne).to(equal(requestTwo))
             }
-            
-            it("differentiate two request objects") {
-                expect(httpRequest3).toNot(equal(httpRequest2))
+
+            it("is false when the method does not match") {
+                let requestOne = HttpRequest(method: .options, url: TestData.validUrlOne())
+                let requestTwo = HttpRequest(method: .get, url: TestData.validUrlOne())
+
+                expect(requestOne).notTo(equal(requestTwo))
+            }
+
+            it("is false when the URL does not match") {
+                let requestOne = HttpRequest(method: .get, url: TestData.validUrlOne())
+                let requestTwo = HttpRequest(method: .get, url: TestData.validUrlTwo())
+
+                expect(requestOne).notTo(equal(requestTwo))
             }
         }
     }

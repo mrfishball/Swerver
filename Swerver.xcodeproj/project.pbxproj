@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		586031EC1201C7E497FBE9D0 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586037E27D3E6ACA3F176C30 /* TestData.swift */; };
 		840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F2214ADFC1001234BE /* HttpRequestSpec.swift */; };
 		840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F4214AE46A001234BE /* HttpResponseSpec.swift */; };
 		840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F6214AE6A9001234BE /* RouterSpec.swift */; };
@@ -168,82 +169,83 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Quick::QuickSpecBase";
+			remoteGlobalIDString = Quick::QuickSpecBase;
 			remoteInfo = QuickSpecBase;
 		};
 		84FF6AB8214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
+			remoteGlobalIDString = SwiftyBeaver::SwiftyBeaver;
 			remoteInfo = SwiftyBeaver;
 		};
 		84FF6AB9214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Socket::Socket";
+			remoteGlobalIDString = Socket::Socket;
 			remoteInfo = Socket;
 		};
 		84FF6ABA214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Swerver::Swerver";
+			remoteGlobalIDString = Swerver::Swerver;
 			remoteInfo = Swerver;
 		};
 		84FF6ABB214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "SwiftyBeaver::SwiftyBeaver";
+			remoteGlobalIDString = SwiftyBeaver::SwiftyBeaver;
 			remoteInfo = SwiftyBeaver;
 		};
 		84FF6ABC214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Socket::Socket";
+			remoteGlobalIDString = Socket::Socket;
 			remoteInfo = Socket;
 		};
 		84FF6ABD214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Nimble::Nimble";
+			remoteGlobalIDString = Nimble::Nimble;
 			remoteInfo = Nimble;
 		};
 		84FF6ABE214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Quick::Quick";
+			remoteGlobalIDString = Quick::Quick;
 			remoteInfo = Quick;
 		};
 		84FF6ABF214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Quick::QuickSpecBase";
+			remoteGlobalIDString = Quick::QuickSpecBase;
 			remoteInfo = QuickSpecBase;
 		};
 		84FF6AC0214222D2004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Swerver::Swerver";
+			remoteGlobalIDString = Swerver::Swerver;
 			remoteInfo = Swerver;
 		};
 		84FF6AC3214222D3004ADFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "Swerver::SwerverTests";
+			remoteGlobalIDString = Swerver::SwerverTests;
 			remoteInfo = SwerverTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		586037E27D3E6ACA3F176C30 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		840421F2214ADFC1001234BE /* HttpRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestSpec.swift; sourceTree = "<group>"; };
 		840421F4214AE46A001234BE /* HttpResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseSpec.swift; sourceTree = "<group>"; };
 		840421F6214AE6A9001234BE /* RouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				84DDA53E21516A40006A05AC /* RequestSpec */,
 				84DDA53D21516A37006A05AC /* ResponseSpec */,
 				84DDA53C21516A15006A05AC /* RouterSpec */,
+				586037E27D3E6ACA3F176C30 /* TestData.swift */,
 			);
 			name = SwerverTests;
 			path = Tests/SwerverTests;
@@ -1309,6 +1312,7 @@
 				840421FD2150200C001234BE /* StatusCodeSpec.swift in Sources */,
 				84340454215ADC7C00F50DC6 /* OptionsActionSpec.swift in Sources */,
 				84340444215A75F700F50DC6 /* GetActionSpec.swift in Sources */,
+				586031EC1201C7E497FBE9D0 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
