@@ -4,14 +4,16 @@ import Socket
 public class HttpConnection {
     
     private let httpRequestParser = HttpRequestParser()
-    private let httpRouteProcessor = Router()
+    private let router: Router
     private let httpResponseFormatter = ResponseFormatter()
     
-    public init() {}
+    public init(router: Router) {
+        self.router = router
+    }
     
     public func handle(client: Socket) throws {
         let httpRequest = try parseRequest(clientSocket: client)
-        try client.write(from: httpResponseFormatter.format(httpResponse: httpRouteProcessor.process(request: httpRequest)))
+        try client.write(from: httpResponseFormatter.format(httpResponse: router.process(request: httpRequest)))
     }
     
     private func parseRequest(clientSocket: Socket) throws -> HttpRequest? {
