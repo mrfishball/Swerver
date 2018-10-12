@@ -9,7 +9,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can build a response object with an 200 status code") {
                 let responseToBeTested = responseBuilder
-                                            .withStatusCode(statusCode: .ok)
+                                            .with(statusCode: .ok)
                                             .build()
                 let responseStatusCode = responseToBeTested.statusCode
                 
@@ -19,7 +19,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can build a response object with a content type") {
                 let responseToBeTested = responseBuilder
-                                            .withContentType(contentType: .text)
+                                            .with(contentType: .text)
                                             .build()
 
                 expect(responseToBeTested.get(header: .contentType)).to(equal(ContentType.text.rawValue))
@@ -27,7 +27,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("it can build a response object with a body") {
                 let responseToBeTested = responseBuilder
-                                            .withBody(body: "Hello World!")
+                                            .with(body: "Hello World!")
                                             .build()
                 let responseBody = responseToBeTested.body
                 expect(responseBody).to(equal("Hello World!"))
@@ -36,7 +36,7 @@ class ResponseBuilderSpec: QuickSpec {
             it("can set the content length according to the length of the body") {
                 let body = "Hello World!"
                 let responseToBeTested = responseBuilder
-                    .withBody(body: body)
+                    .with(body: body)
                     .build()
 
                 expect(responseToBeTested.get(header: .contentLength)).to(equal(String(body.count)))
@@ -44,7 +44,7 @@ class ResponseBuilderSpec: QuickSpec {
             
             it("can set the allow header") {
                 let allowedMethodString = "\(RequestMethod.get.rawValue), \(RequestMethod.options.rawValue)"
-                responseBuilder.setHeader(header: .allow, value: allowedMethodString)
+                responseBuilder.set(header: .allow, value: allowedMethodString)
                 let responseToBeTested = responseBuilder
                     .build()
                 expect(responseToBeTested.get(header: .allow)).to(equal(allowedMethodString))

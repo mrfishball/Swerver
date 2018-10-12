@@ -9,22 +9,22 @@ public class ResponseBuilder {
         headers[.contentLength] = String(0)
     }
 
-    public func withStatusCode(statusCode: StatusCode) -> ResponseBuilder {
+    public func with(statusCode: StatusCode) -> ResponseBuilder {
         self.statusCode = statusCode
         return self
     }
     
-    public func withBody(body: String) -> ResponseBuilder {
+    public func with(body: String) -> ResponseBuilder {
         self.body = body
-        return setHeader(header: .contentLength, value: String(body.count))
+        return set(header: .contentLength, value: String(body.count))
     }
 
-    public func withContentType(contentType: ContentType) -> ResponseBuilder {
+    public func with(contentType: ContentType) -> ResponseBuilder {
         headers[.contentType] = contentType.rawValue
         return self
     }
     
-    public func setHeader(header: ResponseHeader, value: String) -> ResponseBuilder {
+    public func set(header: ResponseHeader, value: String) -> ResponseBuilder {
         headers[header] = value
         return self
     }

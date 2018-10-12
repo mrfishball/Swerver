@@ -10,15 +10,15 @@ class HttpResponseSpec: QuickSpec {
             
             it("can equate two response object") {
                 let responseOne = responseBuilder
-                    .withStatusCode(statusCode: .ok)
-                    .withContentType(contentType: .text)
-                    .withBody(body: String())
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .with(body: String())
                     .build()
                 
                 let responseTwo = responseBuilder
-                    .withStatusCode(statusCode: .ok)
-                    .withContentType(contentType: .text)
-                    .withBody(body: String())
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .with(body: String())
                     .build()
                 
                 expect(responseOne).to(equal(responseTwo))
@@ -26,24 +26,24 @@ class HttpResponseSpec: QuickSpec {
             
             it("can differentiate two response object") {
                 let responseOne = responseBuilder
-                    .withStatusCode(statusCode: .ok)
-                    .withContentType(contentType: .text)
-                    .withBody(body: String())
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .with(body: String())
                     .build()
                 
                 let responseTwo = responseBuilder
-                    .withStatusCode(statusCode: .not_found)
-                    .withContentType(contentType: .text)
-                    .withBody(body: String())
+                    .with(statusCode: .not_found)
+                    .with(contentType: .text)
+                    .with(body: String())
                     .build()
                 expect(responseOne).toNot(equal(responseTwo))
             }
             
             it("can retrieve other headers such as the content type of a response") {
                 let response = responseBuilder
-                    .withStatusCode(statusCode: .ok)
-                    .withContentType(contentType: .text)
-                    .withBody(body: String())
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .with(body: String())
                     .build()
                 
                 expect(response.get(header: .contentType)).to(equal(ContentType.text.rawValue))

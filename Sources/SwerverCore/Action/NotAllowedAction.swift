@@ -11,9 +11,9 @@ public class NotAllowedAction: HttpAction {
     
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: .not_allowed)
-            .withContentType(contentType: .text)
-            .setHeader(header: .allow, value: getAllowedMethods())
+            .with(statusCode: .not_allowed)
+            .with(contentType: .text)
+            .set(header: .allow, value: getAllowedMethods())
             .build()
     }
     
