@@ -7,25 +7,46 @@ class RoutesSpec: QuickSpec {
 
     override func spec() {
         describe("A Routes") {
-            var routes = Routes()
-            guard let targetRoute = URL(string: Resource.test_get.rawValue) else {
-                return
+            func buildRoutes() -> Routes {
+                return Routes()
             }
             
-            let aRoute = Route(url: targetRoute, actions: [RequestMethod.get: GetAction(), RequestMethod.head: HeadAction()])
+            func buildRoute() -> Route {
+                return Route(url: TestData.simpleGetUrl(), actions: [RequestMethod.get: GetAction(), RequestMethod.head: HeadAction()])
+            }
             
-            it("add and store a new route") {
-                routes.addRoute(route: aRoute)
+            it("stores a new route") {
+                let routes = buildRoutes()
+                let route = buildRoute()
+                routes.addRoute(route: route)
+                
+                let targetRoute = TestData.simpleGetUrl()
+                
                 expect(routes.routeExist(url: targetRoute)).to(beTrue())
             }
 
-            it("can return an existing route") {
+            it("returns an existing route") {
+                let routes = buildRoutes()
+                let route = buildRoute()
+                routes.addRoute(route: route)
+                
+                let targetRoute = TestData.simpleGetUrl()
+                
                 let expectedRoute = routes.fetchRoute(url: targetRoute)
+                
                 expect(expectedRoute?.url).to(equal(targetRoute))
             }
             
-            it("can return a list of allowed methods of a resource") {
-                expect(routes.allowedMethods(url: targetRoute)).to(equal(["GET", "HEAD", "OPTIONS"]))
+            it("returns a list of allowed methods of a route") {
+                let routes = buildRoutes()
+                let route = buildRoute()
+                routes.addRoute(route: route)
+                
+                let targetRoute = TestData.simpleGetUrl()
+                
+                let listOfAllowedMethod = routes.allowedMethods(url: targetRoute)
+                
+                expect(listOfAllowedMethod).to(equal(["GET", "HEAD", "OPTIONS"]))
             }
         }
     }

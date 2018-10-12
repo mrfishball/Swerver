@@ -1,6 +1,6 @@
 import Foundation
 
-public class ResponseFormatter {
+public class HttpResponseFormatter {
 
     public static let HTTP_VERSION: String = HttpVersion.current.rawValue
     public static let LINE_SEPARATOR: String = "\r\n"
@@ -33,23 +33,23 @@ public class ResponseFormatter {
     private func formatHeader(response: HttpResponse) -> String {
         let formattedHeader = statusLineToHeaderItem(response: response) + allHeaderItems(response: response) + dateTimeToHeaderItem(response: response)
         
-        return formattedHeader + ResponseFormatter.LINE_SEPARATOR
+        return formattedHeader + HttpResponseFormatter.LINE_SEPARATOR
     }
 
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
         let statusCode = response.statusCode
-        let statusLine = ResponseFormatter.HTTP_VERSION + ResponseFormatter.SPACE +
-            statusCode  + ResponseFormatter.SPACE
+        let statusLine = HttpResponseFormatter.HTTP_VERSION + HttpResponseFormatter.SPACE +
+            statusCode  + HttpResponseFormatter.SPACE
         
         if let statusPhrase = StatusCode(rawValue: statusCode)?.getStatusPhrase() {
-            return statusLine + statusPhrase + ResponseFormatter.LINE_SEPARATOR
+            return statusLine + statusPhrase + HttpResponseFormatter.LINE_SEPARATOR
         }
-        return statusLine + ResponseFormatter.LINE_SEPARATOR
+        return statusLine + HttpResponseFormatter.LINE_SEPARATOR
     }
     
     private func dateTimeToHeaderItem(response: HttpResponse) -> String {
-        let formattedDateTime = ResponseFormatter.formatDateTime(response: response)
-        return "Date: \(formattedDateTime)" + ResponseFormatter.LINE_SEPARATOR
+        let formattedDateTime = HttpResponseFormatter.formatDateTime(response: response)
+        return "Date: \(formattedDateTime)" + HttpResponseFormatter.LINE_SEPARATOR
     }
     
     private func allHeaderItems(response: HttpResponse) -> String {
@@ -57,6 +57,6 @@ public class ResponseFormatter {
         for (key, value) in response.headers {
             allHeaderItemsArray.append("\(key.rawValue)\(value)")
         }
-        return allHeaderItemsArray.sorted(by: <).joined(separator: ResponseFormatter.LINE_SEPARATOR) + ResponseFormatter.LINE_SEPARATOR
+        return allHeaderItemsArray.sorted(by: <).joined(separator: HttpResponseFormatter.LINE_SEPARATOR) + HttpResponseFormatter.LINE_SEPARATOR
     }
 }

@@ -5,7 +5,7 @@ public class HttpConnection {
     
     private let httpRequestParser = HttpRequestParser()
     private let router: Router
-    private let httpResponseFormatter = ResponseFormatter()
+    private let httpResponseFormatter = HttpResponseFormatter()
     
     public init(router: Router) {
         self.router = router

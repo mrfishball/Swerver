@@ -1,3 +1,4 @@
+import Foundation
 import Swerver
 
 let port = 5000

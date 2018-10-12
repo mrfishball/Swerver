@@ -1,7 +1,7 @@
 import Foundation
 
 public class Router {
-    private let responseHeaderFormatter = ResponseFormatter()
+    private let responseHeaderFormatter = HttpResponseFormatter()
     private let routes = Routes()
     
     private let notFoundAction = NotFoundAction()
