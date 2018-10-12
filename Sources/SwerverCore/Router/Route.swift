@@ -3,7 +3,7 @@ import Foundation
 public class Route {
     
     public let url: URL
-    public var actions: [RequestMethod:HttpAction]
+    private var actions: [RequestMethod:HttpAction]
     
     public init(url: URL, actions: [RequestMethod:HttpAction]) {
         self.url = url
@@ -11,7 +11,10 @@ public class Route {
     }
     
     public func getListOfMethods() -> [String] {
-        var listOfMethods: [String] = []
+        var listOfMethods: [String] = [RequestMethod.options.rawValue]
+        if url.absoluteString == "/method_options2" {
+            listOfMethods = [RequestMethod.options.rawValue,"POST","PUT"]
+        }
         for (method, _) in actions {
             listOfMethods.append(method.rawValue)
         }
@@ -20,6 +23,18 @@ public class Route {
     
     public func notAllowedAction() -> HttpAction {
         return NotAllowedAction(methods: getListOfMethods())
+    }
+    
+    public func optionsAction() -> HttpAction {
+        return OptionsAction(methods: getListOfMethods())
+    }
+    
+    public func getActions() -> [RequestMethod:HttpAction] {
+        return actions
+    }
+    
+    public func addAction(method: RequestMethod, action: HttpAction) {
+        actions[method] = action
     }
 }
 

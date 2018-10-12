@@ -13,7 +13,7 @@ class RouteSpec: QuickSpec {
             let aRoute = Route(url: url, actions: [RequestMethod.get:GetAction()])
             
             it("can return a list of methods allowed of the route") {
-                expect(aRoute.getListOfMethods()).to(equal(["GET"]))
+                expect(aRoute.getListOfMethods()).to(equal(["GET", "OPTIONS"]))
             }
         }
     }

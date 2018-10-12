@@ -25,7 +25,7 @@ class RoutesSpec: QuickSpec {
             }
             
             it("can return a list of allowed methods of a resource") {
-                expect(routes.allowedMethods(url: targetRoute)).to(equal(["GET", "HEAD"]))
+                expect(routes.allowedMethods(url: targetRoute)).to(equal(["GET", "HEAD", "OPTIONS"]))
             }
         }
     }

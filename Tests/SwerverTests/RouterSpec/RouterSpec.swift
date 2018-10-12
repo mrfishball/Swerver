@@ -104,7 +104,7 @@ class RouterSpec: QuickSpec {
             }
             
             context("when receive an unknown request to an existing resource") {
-                let anUnknownRequest = HttpRequest(method: RequestMethod.options, url: urlTwo)
+                let anUnknownRequest = HttpRequest(method: RequestMethod.get, url: urlTwo)
                 let expectedResponse = router.process(request: anUnknownRequest)
                 
                 it("returns a response with a 405 status code") {
@@ -116,7 +116,7 @@ class RouterSpec: QuickSpec {
                 }
                 
                 it("returns an response with all the allowed methods for the resource in the allow header") {
-                    expect(expectedResponse.get(header: .allow)).to(equal("HEAD"))
+                    expect(expectedResponse.get(header: .allow)).to(equal("HEAD,OPTIONS"))
                 }
                 
                 it("returns an response with an empty body") {

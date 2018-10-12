@@ -18,7 +18,11 @@ public class Router {
             
             if let targetRoute = routes.fetchRoute(url: targetURL) {
                 
-                guard let action = targetRoute.actions[targetMethod] else {
+                if targetMethod == RequestMethod.options {
+                    return targetRoute.optionsAction().execute()
+                }
+                
+                guard let action = targetRoute.getActions()[targetMethod] else {
                     return targetRoute.notAllowedAction().execute()
                 }
                 return action.execute()
@@ -42,10 +46,10 @@ public class Router {
             let routeTwo = Route(url: urlTwo, actions: [RequestMethod.head: HeadAction()])
                 
             let routeThree = Route(url: urlThree, actions: [RequestMethod.head: HeadAction(),
-                                                            RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: urlThree)])
+                                                            RequestMethod.get: GetAction()])
             
             let routeFour = Route(url: urlFour, actions: [RequestMethod.head: HeadAction(),
-                                                            RequestMethod.get: GetAction(), RequestMethod.options: OptionsAction(routes: routes, route: urlFour)])
+                                                            RequestMethod.get: GetAction()])
             
             routes.addRoute(route: routeOne)
             routes.addRoute(route: routeTwo)
