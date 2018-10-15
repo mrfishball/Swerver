@@ -10,39 +10,30 @@ class HttpResponseSpec: QuickSpec {
                 return HttpResponseBuilder()
             }
             
-            func defaultResponseBuilder() -> HttpResponse {
+            func defaultResponseBuilder() -> HttpResponseBuilder {
                 return HttpResponseBuilder()
                     .with(statusCode: .ok)
                     .with(contentType: .text)
                     .set(header: .allow, value: "GET")
                     .with(body: "Hello")
-                    .build()
             }
             
             context("when compares with another response object") {
                 it("is true when attributes match") {
                     var responseBuilder = buildBuilder()
-                    
-                    let responseOne = defaultResponseBuilder()
-                    let responseTwo = responseBuilder
-                        .with(statusCode: .ok)
-                        .with(contentType: .text)
-                        .set(header: .allow, value: "GET")
-                        .with(body: "Hello")
-                        .build()
+                    let responseOne = defaultResponseBuilder().build()
+                    let responseTwo = defaultResponseBuilder().build()
                     
                     expect(responseOne).to(equal(responseTwo))
                 }
                 
                 it("is false when the status code does not match") {
                     var responseBuilder = buildBuilder()
-                    
                     let responseOne = defaultResponseBuilder()
-                    let responseTwo = responseBuilder
+                        .with(statusCode: .ok)
+                        .build()
+                    let responseTwo = defaultResponseBuilder()
                         .with(statusCode: .not_found)
-                        .with(contentType: .text)
-                        .set(header: .allow, value: "GET")
-                        .with(body: "Hello")
                         .build()
                     
                     expect(responseOne).toNot(equal(responseTwo))
@@ -50,10 +41,14 @@ class HttpResponseSpec: QuickSpec {
                 
                 it("is false when the content type does not match") {
                     var responseBuilder = buildBuilder()
-                    
-                    let responseOne = defaultResponseBuilder()
+                    let responseOne = responseBuilder
+                        .with(statusCode: .ok)
+                        .set(header: .allow, value: "GET")
+                        .with(body: "Hello")
+                        .build()
                     let responseTwo = responseBuilder
                         .with(statusCode: .ok)
+                        .with(contentType: .text)
                         .set(header: .allow, value: "GET")
                         .with(body: "Hello")
                         .build()
@@ -63,12 +58,10 @@ class HttpResponseSpec: QuickSpec {
                 
                 it("is false when the body does not match") {
                     var responseBuilder = buildBuilder()
-                    
                     let responseOne = defaultResponseBuilder()
-                    let responseTwo = responseBuilder
-                        .with(statusCode: .ok)
-                        .with(contentType: .text)
-                        .set(header: .allow, value: "GET")
+                        .with(body: " ")
+                        .build()
+                    let responseTwo = defaultResponseBuilder()
                         .with(body: "hello")
                         .build()
                     
@@ -77,13 +70,11 @@ class HttpResponseSpec: QuickSpec {
                 
                 it("is false when the allow header does not match") {
                     var responseBuilder = buildBuilder()
-                    
                     let responseOne = defaultResponseBuilder()
-                    let responseTwo = responseBuilder
-                        .with(statusCode: .ok)
-                        .with(contentType: .text)
+                        .set(header: .allow, value: "GET")
+                        .build()
+                    let responseTwo = defaultResponseBuilder()
                         .set(header: .allow, value: "HEAD")
-                        .with(body: "Hello")
                         .build()
                     
                     expect(responseOne).toNot(equal(responseTwo))
@@ -91,7 +82,7 @@ class HttpResponseSpec: QuickSpec {
             }
             
             it("retrieves the content type of a response") {
-                let response = defaultResponseBuilder()
+                let response = defaultResponseBuilder().build()
                 
                 let expectedContentType = response.get(header: .contentType)
                 
@@ -99,7 +90,7 @@ class HttpResponseSpec: QuickSpec {
             }
             
             it("retrieves the content lenght of a response") {
-                let response = defaultResponseBuilder()
+                let response = defaultResponseBuilder().build()
                 
                 let expectedContentLength = response.get(header: .contentLength)
                 
@@ -107,7 +98,7 @@ class HttpResponseSpec: QuickSpec {
             }
             
             it("retrieves the allow header of a response") {
-                let response = defaultResponseBuilder()
+                let response = defaultResponseBuilder().build()
                 
                 let expectedAllowHeader = response.get(header: .allow)
                 

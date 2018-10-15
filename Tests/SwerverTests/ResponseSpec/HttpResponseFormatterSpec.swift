@@ -22,9 +22,8 @@ class HttpResponseFormatterSpec: QuickSpec {
             
             it("returns a string object") {
                 let formatter = buildFormatter()
-                
                 let response = defaultResponseBuilder()
-                
+
                 let formattedResponse = formatter.format(httpResponse: response)
                 
                 expect(type(of: formattedResponse) == String.self).to(beTrue())
@@ -32,7 +31,6 @@ class HttpResponseFormatterSpec: QuickSpec {
             
             it("formats a response object") {
                 let formatter = buildFormatter()
-                
                 let response = defaultResponseBuilder()
                 
                 let formattedResponse = formatter.format(httpResponse: response)
