@@ -6,21 +6,24 @@ class HeadActionSpec: QuickSpec {
 
     override func spec() {
         describe("A HEAD action") {
-            let headAction = HeadAction()
+            func buildAction() -> HttpAction {
+                return HeadAction()
+            }
 
-            it("can dispatch to response builder to build a response for a successful HEAD request with a 200 status code") {
+            it("returns a response with a 200 status code") {
+                let headAction = buildAction()
+
                 let expectResponse = headAction.execute()
+
                 expect(expectResponse.statusCode).to(equal(StatusCode.ok.rawValue))
             }
             
-            it("can dispatch to response builder to build a response for a successful HEAD request with a content type of text") {
+            it("returns a response with a content type of text") {
+                let headAction = buildAction()
+
                 let expectResponse = headAction.execute()
+
                 expect(expectResponse.get(header: .contentType)).to(equal(ContentType.text.rawValue))
-            }
-            
-            it("can dispatch to response builder to build a response for a successful HEAD request with an empty body") {
-                let expectResponse = headAction.execute()
-                expect(expectResponse.body.count).to(equal(0))
             }
         }
     }

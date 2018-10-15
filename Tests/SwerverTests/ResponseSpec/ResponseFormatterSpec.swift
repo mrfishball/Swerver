@@ -12,10 +12,10 @@ class ResponseFormatterSpec: QuickSpec {
             
             it("formats a Response object into a String object") {
                 let aResponse = responseBuilder
-                                    .withStatusCode(statusCode: .ok)
-                                    .withContentType(contentType: .text)
-                                    .withBody(body: "200 OK")
-                                    .build()
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .with(body: "200 OK")
+                    .build()
 
                 let formattedResponse = formatter.format(httpResponse: aResponse)
                 

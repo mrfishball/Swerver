@@ -6,8 +6,8 @@ public class NotFoundAction: HttpAction {
     
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: .not_found)
-            .withContentType(contentType: .text)
+            .with(statusCode: .not_found)
+            .with(contentType: .text)
             .build()
     }
 }

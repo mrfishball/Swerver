@@ -13,9 +13,9 @@ public class OptionsAction: HttpAction {
     
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: .ok)
-            .withContentType(contentType: .text)
-            .setHeader(header: .allow, value: allowedMethods())
+            .with(statusCode: .ok)
+            .with(contentType: .text)
+            .set(header: .allow, value: allowedMethods())
             .build()
     }
     
