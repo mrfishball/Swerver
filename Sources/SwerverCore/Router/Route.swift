@@ -39,7 +39,6 @@ public class Route {
 }
 
 extension Route: Equatable {
-    
     public static func == (lhs: Route, rhs: Route) -> Bool {
         return lhs.url == rhs.url
     }

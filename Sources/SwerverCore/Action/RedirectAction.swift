@@ -2,7 +2,7 @@ import Foundation
 
 public class RedirectAction: HttpAction {
     
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder = HttpResponseBuilder()
     private let redirectPath: URL
     
     public init(redirectPath: URL) {
@@ -11,8 +11,8 @@ public class RedirectAction: HttpAction {
     
     public func execute() -> HttpResponse {
         return responseBuilder
-            .withStatusCode(statusCode: .moved)
-            .setHeader(header: .location, value: redirectPath.absoluteString)
+            .with(statusCode: .moved)
+            .set(header: .location, value: redirectPath.absoluteString)
             .build()
     }
 }

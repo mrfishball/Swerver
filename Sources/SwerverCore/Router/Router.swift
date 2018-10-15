@@ -42,7 +42,7 @@ public class Router {
             let urlFive = URL(string: Resource.test_redirect.rawValue) {
             
             let routeOne = Route(url: urlOne, actions: [RequestMethod.head: HeadAction(),
-                                                   RequestMethod.get: GetAction()])
+                                                        RequestMethod.get: GetAction()])
             
             let routeTwo = Route(url: urlTwo, actions: [RequestMethod.head: HeadAction()])
                 
@@ -50,7 +50,7 @@ public class Router {
                                                             RequestMethod.get: GetAction()])
             
             let routeFour = Route(url: urlFour, actions: [RequestMethod.head: HeadAction(),
-                                                            RequestMethod.get: GetAction()])
+                                                          RequestMethod.get: GetAction()])
             
             let routeFive = Route(url: urlFive, actions: [RequestMethod.get: RedirectAction(redirectPath: urlOne)])
             

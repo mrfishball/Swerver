@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		586031EC1201C7E497FBE9D0 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586037E27D3E6ACA3F176C30 /* TestData.swift */; };
 		840421F3214ADFC1001234BE /* HttpRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F2214ADFC1001234BE /* HttpRequestSpec.swift */; };
 		840421F5214AE46A001234BE /* HttpResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F4214AE46A001234BE /* HttpResponseSpec.swift */; };
 		840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840421F6214AE6A9001234BE /* RouterSpec.swift */; };
@@ -44,12 +43,14 @@
 		845914122152D1C40036EF19 /* HttpResponseFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914112152D1C40036EF19 /* HttpResponseFormatterSpec.swift */; };
 		845914172154102B0036EF19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845914162154102B0036EF19 /* ContentType.swift */; };
 		845D7DE9216ABF7B00345A6E /* ResponseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D7DE8216ABF7B00345A6E /* ResponseHeader.swift */; };
+		84995588217518A80045CA6D /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA0842174F92B00207F2D /* TestData.swift */; };
 		84ADA073216D356200207F2D /* NotAllowedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA072216D356200207F2D /* NotAllowedAction.swift */; };
 		84ADA075216D35C800207F2D /* NotAllowedActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA074216D35C800207F2D /* NotAllowedActionSpec.swift */; };
 		84ADA077216D364D00207F2D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA076216D364D00207F2D /* Route.swift */; };
 		84ADA079216D36F200207F2D /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA078216D36F200207F2D /* RouteSpec.swift */; };
 		84ADA07D216E994B00207F2D /* RedirectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA07C216E994B00207F2D /* RedirectAction.swift */; };
 		84ADA07F216E9F3E00207F2D /* RedirectActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA07E216E9F3E00207F2D /* RedirectActionSpec.swift */; };
+		84ADA0852174F92B00207F2D /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADA0842174F92B00207F2D /* TestData.swift */; };
 		84D0C3FD214A9BB100304862 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6AC421495B65004ADFF0 /* RequestMethod.swift */; };
 		84D0C3FF214A9DF100304862 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C3FE214A9DF100304862 /* HttpConnection.swift */; };
 		84D0C401214AAEB600304862 /* HttpRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0C400214AAEB600304862 /* HttpRequestParser.swift */; };
@@ -276,6 +277,7 @@
 		84ADA078216D36F200207F2D /* RouteSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		84ADA07C216E994B00207F2D /* RedirectAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectAction.swift; sourceTree = "<group>"; };
 		84ADA07E216E9F3E00207F2D /* RedirectActionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectActionSpec.swift; sourceTree = "<group>"; };
+		84ADA0842174F92B00207F2D /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		84D0C3FE214A9DF100304862 /* HttpConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConnection.swift; sourceTree = "<group>"; };
 		84D0C400214AAEB600304862 /* HttpRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestParser.swift; sourceTree = "<group>"; };
 		84D0C402214AB7A900304862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -533,6 +535,14 @@
 			path = ActionSpec;
 			sourceTree = "<group>";
 		};
+		84ADA0832174F8A100207F2D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				586037E27D3E6ACA3F176C30 /* TestData.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		84DDA53C21516A15006A05AC /* RouterSpec */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,11 +663,11 @@
 		OBJ_13 /* SwerverTests */ = {
 			isa = PBXGroup;
 			children = (
+				84ADA0842174F92B00207F2D /* TestData.swift */,
 				84340440215A75C700F50DC6 /* ActionSpec */,
 				84DDA53E21516A40006A05AC /* RequestSpec */,
 				84DDA53D21516A37006A05AC /* ResponseSpec */,
 				84DDA53C21516A15006A05AC /* RouterSpec */,
-				586037E27D3E6ACA3F176C30 /* TestData.swift */,
 			);
 			name = SwerverTests;
 			path = Tests/SwerverTests;
@@ -766,6 +776,7 @@
 				OBJ_12 /* Tests */,
 				OBJ_16 /* Dependencies */,
 				OBJ_127 /* Products */,
+				84ADA0832174F8A100207F2D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1311,6 +1322,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_275 /* Package.swift in Sources */,
+				84995588217518A80045CA6D /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,12 +1348,12 @@
 				84ECB7C9215BB010009FA1A4 /* RoutesSpec.swift in Sources */,
 				840421FB21501815001234BE /* HttpResponseBuilderSpec.swift in Sources */,
 				845914122152D1C40036EF19 /* HttpResponseFormatterSpec.swift in Sources */,
+				84ADA0852174F92B00207F2D /* TestData.swift in Sources */,
 				840421F7214AE6A9001234BE /* RouterSpec.swift in Sources */,
 				84D0C407214AD27500304862 /* HttpRequestParserSpec.swift in Sources */,
 				840421FD2150200C001234BE /* StatusCodeSpec.swift in Sources */,
 				84340454215ADC7C00F50DC6 /* OptionsActionSpec.swift in Sources */,
 				84340444215A75F700F50DC6 /* GetActionSpec.swift in Sources */,
-				586031EC1201C7E497FBE9D0 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

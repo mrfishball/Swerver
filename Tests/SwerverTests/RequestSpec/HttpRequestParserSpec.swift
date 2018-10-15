@@ -6,7 +6,6 @@ import Foundation
 class HttpRequestParserSpec: QuickSpec {
     override func spec() {
         describe("Parsing the request") {
-
             func buildParser() -> HttpRequestParser {
                 return HttpRequestParser()
             }
@@ -49,7 +48,6 @@ class HttpRequestParserSpec: QuickSpec {
                     expect(parsedRequest).to(beNil())
                 }
             }
-
         }
     }
 }
