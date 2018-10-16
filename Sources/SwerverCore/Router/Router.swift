@@ -6,7 +6,9 @@ public class Router {
     
     private let notFoundAction = NotFoundAction()
 
-    public init() {}
+    public init() {
+        populateRoutes()
+    }
 
     public func process(request: HttpRequest?) -> HttpResponse {
 
@@ -19,7 +21,7 @@ public class Router {
                 if targetMethod == RequestMethod.options {
                     return targetRoute.optionsAction().execute()
                 }
-
+                
                 guard let action = targetRoute.getActions()[targetMethod] else {
                     return targetRoute.notAllowedAction().execute()
                 }
@@ -31,15 +33,28 @@ public class Router {
             return notFoundAction.execute()
         }
     }
-    
-    public func addRoute(method: RequestMethod, url: String, handler: () -> (HttpAction)) {
-        if let path = URL(string: url) {
-            if routes.routeExist(url: path) {
-                let existingRoute = routes.fetchRoute(url: path)
-                existingRoute?.addAction(method: method, action: handler())
-            } else {
-                routes.addRoute(route: Route(url: path, actions: [method: handler()]))
-            }
+
+    private func populateRoutes() {
+        if let urlOne = URL(string: Resource.test_get.rawValue),
+            let urlTwo = URL(string: Resource.test_head.rawValue),
+            let urlThree = URL(string: Resource.test_option.rawValue),
+            let urlFour = URL(string: Resource.test_option_two.rawValue) {
+            
+            let routeOne = Route(url: urlOne, actions: [RequestMethod.head: HeadAction(),
+                                                   RequestMethod.get: GetAction()])
+            
+            let routeTwo = Route(url: urlTwo, actions: [RequestMethod.head: HeadAction()])
+                
+            let routeThree = Route(url: urlThree, actions: [RequestMethod.head: HeadAction(),
+                                                            RequestMethod.get: GetAction()])
+            
+            let routeFour = Route(url: urlFour, actions: [RequestMethod.head: HeadAction(),
+                                                            RequestMethod.get: GetAction()])
+            
+            routes.addRoute(route: routeOne)
+            routes.addRoute(route: routeTwo)
+            routes.addRoute(route: routeThree)
+            routes.addRoute(route: routeFour)
         }
     }
 }
