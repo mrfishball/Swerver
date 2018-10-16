@@ -7,7 +7,7 @@ public final class HttpResponse {
     public let headers: [ResponseHeader:String]
     public let dateTime: Date
 
-    init(builder: ResponseBuilder) {
+    init(builder: HttpResponseBuilder) {
         statusCode = builder.statusCode?.rawValue ?? String()
         body = builder.body
         headers = builder.headers

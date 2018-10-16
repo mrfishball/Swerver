@@ -1,6 +1,6 @@
 public class NotFoundAction: HttpAction {
     
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder = HttpResponseBuilder()
     
     public init() {}
     

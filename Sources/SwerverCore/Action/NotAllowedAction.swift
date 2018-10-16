@@ -2,7 +2,7 @@ import Foundation
 
 public class NotAllowedAction: HttpAction {
     
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder = HttpResponseBuilder()
     private let listOfAllowedMethods: [String]
     
     public init(methods: [String]) {
