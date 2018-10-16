@@ -37,18 +37,26 @@ class RouterSpec: QuickSpec {
                     let router = buildRouter()
                     let targetRoute = TestData.simpleGetUrl()
                     let aGetRequest = HttpRequest(method: RequestMethod.get, url: targetRoute)
-                    
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
+
                     let response = router.process(request: aGetRequest)
                     let expectedStatusCode = response.statusCode
                     
                     expect(expectedStatusCode).to(equal(StatusCode.ok.rawValue))
                 }
-                
+
                 it("returns a response with a content type of text") {
                     let router = buildRouter()
                     let targetRoute = TestData.simpleGetUrl()
                     let aGetRequest = HttpRequest(method: RequestMethod.get, url: targetRoute)
-                    
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
+
                     let response = router.process(request: aGetRequest)
                     let expectedContentType = response.get(header: .contentType)
                     
@@ -61,7 +69,11 @@ class RouterSpec: QuickSpec {
                     let router = buildRouter()
                     let targetRoute = TestData.getWithBodyUrl()
                     let aHeadRequest = HttpRequest(method: RequestMethod.head, url: targetRoute)
-                    
+
+                    router.addRoute(method: .head, url: targetRoute.absoluteString) {
+                        return HeadAction()
+                    }
+
                     let response = router.process(request: aHeadRequest)
                     let expectStatusCode = response.statusCode
                     
@@ -72,7 +84,11 @@ class RouterSpec: QuickSpec {
                     let router = buildRouter()
                     let targetRoute = TestData.getWithBodyUrl()
                     let aHeadRequest = HttpRequest(method: RequestMethod.head, url: targetRoute)
-                    
+
+                    router.addRoute(method: .head, url: targetRoute.absoluteString) {
+                        return HeadAction()
+                    }
+
                     let response = router.process(request: aHeadRequest)
                     let expectContentType = response.get(header: .contentType)
                     
@@ -90,7 +106,7 @@ class RouterSpec: QuickSpec {
                     
                     expect(expectedStatusCode).to(equal(StatusCode.not_found.rawValue))
                 }
-                
+
                 it("returns a response of Not Found status with a content type of text") {
                     let router = buildRouter()
                     let aRogueRequest = HttpRequest(method: RequestMethod.get, url: TestData.notFoundUrl())
@@ -107,29 +123,44 @@ class RouterSpec: QuickSpec {
                     let router = buildRouter()
                     let targetRoute = TestData.methodOptionsUrl()
                     let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: targetRoute)
-                    
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
+
                     let response = router.process(request: anOptionsRequest)
                     let expectedStatusCode = response.statusCode
                     
                     expect(expectedStatusCode).to(equal(StatusCode.ok.rawValue))
                 }
-                
+
                 it("returns a response with a content type of text") {
                     let router = buildRouter()
                     let targetRoute = TestData.methodOptionsUrl()
                     let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: targetRoute)
-                    
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
+
                     let response = router.process(request: anOptionsRequest)
                     let expectedContentType = response.get(header: .contentType)
                     
                     expect(expectedContentType).to(equal(ContentType.text.rawValue))
                 }
-                
+
                 it("returns a response with all the allowed methods for the resource in the allow header") {
                     let router = buildRouter()
                     let targetRoute = TestData.methodOptionsUrl()
                     let anOptionsRequest = HttpRequest(method: RequestMethod.options, url: targetRoute)
-                    
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
+                    router.addRoute(method: .head, url: targetRoute.absoluteString) {
+                        return HeadAction()
+                    }
+
                     let response = router.process(request: anOptionsRequest)
                     let expectedAllowHeader = response.get(header: .allow)
                     
@@ -140,8 +171,12 @@ class RouterSpec: QuickSpec {
             context("receives an unknown request to an existing resource") {
                 it("returns a response with a 405 status code") {
                     let router = buildRouter()
-                    let targetRoute = TestData.getWithBodyUrl()
-                    let anUnknownRequest = HttpRequest(method: RequestMethod.get, url: targetRoute)
+                    let targetRoute = TestData.methodOptionsUrl()
+                    let anUnknownRequest = HttpRequest(method: RequestMethod.head, url: targetRoute)
+
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
                     
                     let response = router.process(request: anUnknownRequest)
                     let expectedStatusCode = response.statusCode
@@ -149,10 +184,14 @@ class RouterSpec: QuickSpec {
                     expect(expectedStatusCode).to(equal(StatusCode.not_allowed.rawValue))
                 }
                 
-                it("returns a response with a content type of text") {
+                it("returns an response with a content type of text") {
                     let router = buildRouter()
-                    let targetRoute = TestData.getWithBodyUrl()
-                    let anUnknownRequest = HttpRequest(method: RequestMethod.get, url: targetRoute)
+                    let targetRoute = TestData.methodOptionsUrl()
+                    let anUnknownRequest = HttpRequest(method: RequestMethod.head, url: targetRoute)
+                    
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
                     
                     let response = router.process(request: anUnknownRequest)
                     let expectedContentType = response.get(header: .contentType)
@@ -160,15 +199,19 @@ class RouterSpec: QuickSpec {
                     expect(expectedContentType).to(equal(ContentType.text.rawValue))
                 }
                 
-                it("returns a response with all the allowed methods for the resource in the allow header") {
+                it("returns an response with all the allowed methods for the resource in the allow header") {
                     let router = buildRouter()
-                    let targetRoute = TestData.getWithBodyUrl()
-                    let anUnknownRequest = HttpRequest(method: RequestMethod.get, url: targetRoute)
+                    let targetRoute = TestData.methodOptionsUrl()
+                    let anUnknownRequest = HttpRequest(method: RequestMethod.head, url: targetRoute)
+                    
+                    router.addRoute(method: .get, url: targetRoute.absoluteString) {
+                        return GetAction()
+                    }
                     
                     let response = router.process(request: anUnknownRequest)
                     let expectedAllowHeader = response.get(header: .allow)
-                    
-                    expect(expectedAllowHeader).to(equal("HEAD,OPTIONS"))
+
+                    expect(expectedAllowHeader).to(equal("GET,OPTIONS"))
                 }
             }
         }
