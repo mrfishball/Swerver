@@ -1,6 +1,6 @@
 public class HeadAction: HttpAction {
 
-    private let responseBuilder = ResponseBuilder()
+    private let responseBuilder = HttpResponseBuilder()
     
     public init() {}
     
