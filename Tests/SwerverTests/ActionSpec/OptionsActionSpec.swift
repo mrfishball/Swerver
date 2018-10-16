@@ -29,7 +29,7 @@ class OptionsActionSpec: QuickSpec {
             
             it("returns a response with the correct 'Allow' header") {
                 let optionsAction = buildAction()
-                
+
                 let okResponse = optionsAction.execute()
                 
                 expect(okResponse.get(header: .allow)).to(equal("GET,OPTIONS"))
