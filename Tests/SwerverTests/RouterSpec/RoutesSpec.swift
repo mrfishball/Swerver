@@ -18,20 +18,20 @@ class RoutesSpec: QuickSpec {
             it("stores a new route") {
                 let routes = buildRoutes()
                 let route = buildRoute()
-                routes.addRoute(route: route)
-                
                 let targetRoute = TestData.simpleGetUrl()
+
+                routes.addRoute(route: route)
+                let targetRouteExist = routes.routeExist(url: targetRoute)
                 
-                expect(routes.routeExist(url: targetRoute)).to(beTrue())
+                expect(targetRouteExist).to(beTrue())
             }
 
             it("returns an existing route") {
                 let routes = buildRoutes()
                 let route = buildRoute()
-                routes.addRoute(route: route)
-                
                 let targetRoute = TestData.simpleGetUrl()
-                
+
+                routes.addRoute(route: route)
                 let expectedRoute = routes.fetchRoute(url: targetRoute)
                 
                 expect(expectedRoute?.url).to(equal(targetRoute))
@@ -40,10 +40,9 @@ class RoutesSpec: QuickSpec {
             it("returns a list of allowed methods of a route") {
                 let routes = buildRoutes()
                 let route = buildRoute()
-                routes.addRoute(route: route)
-                
                 let targetRoute = TestData.simpleGetUrl()
-                
+
+                routes.addRoute(route: route)
                 let listOfAllowedMethod = routes.allowedMethods(url: targetRoute)
                 
                 expect(listOfAllowedMethod).to(equal(["GET", "HEAD", "OPTIONS"]))

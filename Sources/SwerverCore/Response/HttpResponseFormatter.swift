@@ -55,7 +55,7 @@ public class HttpResponseFormatter {
     private func allHeaderItems(response: HttpResponse) -> String {
         var allHeaderItemsArray: [String] = []
         for (key, value) in response.headers {
-            allHeaderItemsArray.append("\(key.rawValue)\(value)")
+            allHeaderItemsArray.append("\(key.rawValue): \(value)")
         }
         return allHeaderItemsArray.sorted(by: <).joined(separator: HttpResponseFormatter.LINE_SEPARATOR) + HttpResponseFormatter.LINE_SEPARATOR
     }

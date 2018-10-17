@@ -38,10 +38,11 @@ public class Router {
         if let urlOne = URL(string: Resource.test_get.rawValue),
             let urlTwo = URL(string: Resource.test_head.rawValue),
             let urlThree = URL(string: Resource.test_option.rawValue),
-            let urlFour = URL(string: Resource.test_option_two.rawValue) {
+            let urlFour = URL(string: Resource.test_option_two.rawValue),
+            let urlFive = URL(string: Resource.test_redirect.rawValue) {
             
             let routeOne = Route(url: urlOne, actions: [RequestMethod.head: HeadAction(),
-                                                   RequestMethod.get: GetAction()])
+                                                        RequestMethod.get: GetAction()])
             
             let routeTwo = Route(url: urlTwo, actions: [RequestMethod.head: HeadAction()])
                 
@@ -49,12 +50,15 @@ public class Router {
                                                             RequestMethod.get: GetAction()])
             
             let routeFour = Route(url: urlFour, actions: [RequestMethod.head: HeadAction(),
-                                                            RequestMethod.get: GetAction()])
+                                                          RequestMethod.get: GetAction()])
+            
+            let routeFive = Route(url: urlFive, actions: [RequestMethod.get: RedirectAction(redirectPath: urlOne)])
             
             routes.addRoute(route: routeOne)
             routes.addRoute(route: routeTwo)
             routes.addRoute(route: routeThree)
             routes.addRoute(route: routeFour)
+            routes.addRoute(route: routeFive)
         }
     }
 }

@@ -5,13 +5,12 @@ import Swerver
 class HttpResponseBuilderSpec: QuickSpec {
     override func spec() {
         describe("A HTTP Response Builder") {
-            func summonBuilder() -> HttpResponseBuilder {
+            func buildBuilder() -> HttpResponseBuilder {
                 return HttpResponseBuilder()
             }
             
             it("builds a response object with an 200 status code") {
-                let responseBuilder = summonBuilder()
-                
+                let responseBuilder = buildBuilder()
                 let responseToBeTested = responseBuilder
                     .with(statusCode: .ok)
                     .build()
@@ -23,8 +22,7 @@ class HttpResponseBuilderSpec: QuickSpec {
             
             
             it("builds a response object with a content type") {
-                let responseBuilder = summonBuilder()
-                
+                let responseBuilder = buildBuilder()
                 let responseToBeTested = responseBuilder
                     .with(contentType: .text)
                     .build()
@@ -35,8 +33,7 @@ class HttpResponseBuilderSpec: QuickSpec {
             }
             
             it("gives a response object a body") {
-                let responseBuilder = summonBuilder()
-                
+                let responseBuilder = buildBuilder()
                 let responseToBeTested = responseBuilder
                     .with(body: "Hello World!")
                     .build()
@@ -47,8 +44,7 @@ class HttpResponseBuilderSpec: QuickSpec {
             }
             
             it("sets the content length according to the length of the body") {
-                let responseBuilder = summonBuilder()
-                
+                let responseBuilder = buildBuilder()
                 let body = "Hello World!"
                 let responseToBeTested = responseBuilder
                     .with(body: body)
@@ -60,8 +56,7 @@ class HttpResponseBuilderSpec: QuickSpec {
             }
             
             it("sets the allow header") {
-                let responseBuilder = summonBuilder()
-                
+                let responseBuilder = buildBuilder()
                 let allowedMethodString = "GET, OPTIONS"
                 let responseToBeTested = responseBuilder
                     .set(header: .allow, value: allowedMethodString)

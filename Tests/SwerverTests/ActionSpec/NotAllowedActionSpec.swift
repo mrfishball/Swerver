@@ -7,7 +7,6 @@ class NotAllowedActionSpec: QuickSpec {
     
     override func spec() {
         describe("A Not Allowed action") {
-
             func buildAction() -> HttpAction {
                 return NotAllowedAction(methods: [RequestMethod.get.rawValue, RequestMethod.head.rawValue])
             }

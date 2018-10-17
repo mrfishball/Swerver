@@ -6,7 +6,6 @@ class NotFoundActionSpec: QuickSpec {
     
     override func spec() {
         describe("A Not Found action") {
-
             func buildAction() -> HttpAction {
                 return NotFoundAction()
             }

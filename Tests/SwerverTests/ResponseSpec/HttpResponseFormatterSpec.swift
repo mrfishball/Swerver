@@ -11,7 +11,7 @@ class HttpResponseFormatterSpec: QuickSpec {
                 return HttpResponseFormatter()
             }
             
-            func defaultResponseBuilder() -> HttpResponse {
+            func buildDefaultResponse() -> HttpResponse {
                 return HttpResponseBuilder()
                     .with(statusCode: .ok)
                     .with(contentType: .text)
@@ -22,7 +22,7 @@ class HttpResponseFormatterSpec: QuickSpec {
             
             it("returns a string object") {
                 let formatter = buildFormatter()
-                let response = defaultResponseBuilder()
+                let response = buildDefaultResponse()
 
                 let formattedResponse = formatter.format(httpResponse: response)
                 
@@ -31,14 +31,13 @@ class HttpResponseFormatterSpec: QuickSpec {
             
             it("formats a response object") {
                 let formatter = buildFormatter()
-                let response = defaultResponseBuilder()
+                let response = buildDefaultResponse()
                 
                 let formattedResponse = formatter.format(httpResponse: response)
                 
                 let statusLine = "HTTP/1.1 200 OK\r\n"
                 let headersLine = "Allow: GET\r\nContent-Length: 5\r\nContent-Type: text/html; charset=UTF-8\r\nDate: \(HttpResponseFormatter.formatDateTime(response: response))\r\n\r\n"
                 let body = "Hello"
-                
                 var result = statusLine + headersLine + body
                 
                 expect(formattedResponse).to(equal(result))
