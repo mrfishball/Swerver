@@ -4,8 +4,6 @@ import Quick
 @testable import SwerverTests
 
 QCKMain([
-    GetActionSpec.self,
-    HeadActionSpec.self,
     NotAllowedActionSpec.self,
     NotFoundActionSpec.self,
     OptionsActionSpec.self,
