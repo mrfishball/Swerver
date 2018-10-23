@@ -11,60 +11,49 @@ class HttpResponseBuilderSpec: QuickSpec {
             
             it("builds a response object with an 200 status code") {
                 let responseBuilder = buildBuilder()
-                let responseToBeTested = responseBuilder
+                let response = responseBuilder
                     .with(statusCode: .ok)
                     .build()
                 
-                let expectedStatusCode = responseToBeTested.statusCode
-                
-                expect(expectedStatusCode).to(equal(StatusCode.ok.rawValue))
+                expect(response.statusCode).to(equal(StatusCode.ok.rawValue))
             }
             
             
             it("builds a response object with a content type") {
                 let responseBuilder = buildBuilder()
-                let responseToBeTested = responseBuilder
+                let response = responseBuilder
                     .with(contentType: .text)
                     .build()
-                
-                let expectedContentType = responseToBeTested.get(header: .contentType)
 
-                expect(expectedContentType).to(equal(ContentType.text.rawValue))
+                expect(response.get(header: .contentType)).to(equal(ContentType.text.rawValue))
             }
             
             it("gives a response object a body") {
                 let responseBuilder = buildBuilder()
-                let responseToBeTested = responseBuilder
+                let response = responseBuilder
                     .with(body: "Hello World!")
                     .build()
                 
-                let expectedBody = responseToBeTested.body
-                
-                expect(expectedBody).to(equal("Hello World!"))
+                expect(response.body).to(equal("Hello World!"))
             }
             
             it("sets the content length according to the length of the body") {
                 let responseBuilder = buildBuilder()
                 let body = "Hello World!"
-                let responseToBeTested = responseBuilder
+                let response = responseBuilder
                     .with(body: body)
                     .build()
                 
-                let expectedContentLength = responseToBeTested.get(header: .contentLength)
-                
-                expect(expectedContentLength).to(equal(String(body.count)))
+                expect(response.get(header: .contentLength)).to(equal(String(body.count)))
             }
             
             it("sets the allow header") {
                 let responseBuilder = buildBuilder()
-                let allowedMethodString = "GET, OPTIONS"
-                let responseToBeTested = responseBuilder
-                    .set(header: .allow, value: allowedMethodString)
+                let response = responseBuilder
+                    .set(header: .allow, value: "GET, OPTIONS")
                     .build()
                 
-                let expectedAllowHeader = responseToBeTested.get(header: .allow)
-                
-                expect(expectedAllowHeader).to(equal(allowedMethodString))
+                expect(response.get(header: .allow)).to(equal("GET, OPTIONS"))
             }
         }
     }

@@ -83,26 +83,20 @@ class HttpResponseSpec: QuickSpec {
             
             it("retrieves the content type of a response") {
                 let response = defaultResponseBuilder().build()
-                
-                let expectedContentType = response.get(header: .contentType)
-                
-                expect(expectedContentType).to(equal(ContentType.text.rawValue))
+
+                expect(response.get(header: .contentType)).to(equal(ContentType.text.rawValue))
             }
             
             it("retrieves the content lenght of a response") {
                 let response = defaultResponseBuilder().build()
                 
-                let expectedContentLength = response.get(header: .contentLength)
-                
-                expect(expectedContentLength).to(equal("5"))
+                expect(response.get(header: .contentLength)).to(equal("5"))
             }
             
             it("retrieves the allow header of a response") {
                 let response = defaultResponseBuilder().build()
                 
-                let expectedAllowHeader = response.get(header: .allow)
-                
-                expect(expectedAllowHeader).to(equal("GET"))
+                expect(response.get(header: .allow)).to(equal("GET"))
             }
         }
     }

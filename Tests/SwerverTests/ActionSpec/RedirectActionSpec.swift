@@ -8,7 +8,7 @@ class RedirectActionSpec: QuickSpec {
     override func spec() {
         describe("A Redirect action") {
             func buildAction() -> HttpAction {
-                return RedirectAction(redirectPath: TestData.redirectURL())
+                return RedirectAction(redirectPath: TestData.validUrlOne())
             }
             
             it("returns a response with a 301 status code") {
