@@ -3,9 +3,9 @@ import Foundation
 public class Route {
     
     public let url: URL
-    private var actions: [RequestMethod:HttpAction]
+    private var actions: [RequestMethod:HttpResponse]
     
-    public init(url: URL, actions: [RequestMethod:HttpAction]) {
+    public init(url: URL, actions: [RequestMethod:HttpResponse]) {
         self.url = url
         self.actions = actions
     }
@@ -29,11 +29,11 @@ public class Route {
         return OptionsAction(methods: getListOfMethods())
     }
     
-    public func getActions() -> [RequestMethod:HttpAction] {
+    public func getActions() -> [RequestMethod:HttpResponse] {
         return actions
     }
     
-    public func addAction(method: RequestMethod, action: HttpAction) {
+    public func addAction(method: RequestMethod, action: HttpResponse) {
         actions[method] = action
     }
 }

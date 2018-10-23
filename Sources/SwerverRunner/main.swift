@@ -6,31 +6,31 @@ let port = 5000
 let router = Router()
 
 router.addRoute(method: .get, url: "/simple_get") {
-    return GetAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .head, url: "/simple_get") {
-    return HeadAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .head, url: "/get_with_body") {
-    return HeadAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .get, url: "/method_options") {
-    return GetAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .head, url: "/method_options") {
-    return HeadAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .get, url: "/method_options2") {
-    return GetAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 router.addRoute(method: .head, url: "/method_options2") {
-    return HeadAction()
+    return HttpResponseBuilder.buildOK()
 }
 
 let server = Swerver(port: port, router: router)

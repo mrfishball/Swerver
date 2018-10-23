@@ -32,4 +32,11 @@ public class HttpResponseBuilder {
     public func build() -> HttpResponse {
         return HttpResponse(builder: self)
     }
+
+    public static func buildOK() -> HttpResponse {
+        return HttpResponseBuilder()
+            .with(statusCode: .ok)
+            .with(contentType: .text)
+            .build()
+    }
 }

@@ -23,7 +23,7 @@ public class Router {
                 guard let action = targetRoute.getActions()[targetMethod] else {
                     return targetRoute.notAllowedAction().execute()
                 }
-                return action.execute()
+                return action
             } else {
                 return notFoundAction.execute()
             }
@@ -32,7 +32,7 @@ public class Router {
         }
     }
 
-    public func addRoute(method: RequestMethod, url: String, handler: () -> (HttpAction)) {
+    public func addRoute(method: RequestMethod, url: String, handler: () -> (HttpResponse)) {
         if let path = URL(string: url) {
             if routes.routeExist(url: path) {
                 let existingRoute = routes.fetchRoute(url: path)
