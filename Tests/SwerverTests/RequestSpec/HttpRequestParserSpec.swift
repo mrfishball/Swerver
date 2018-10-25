@@ -41,9 +41,8 @@ class HttpRequestParserSpec: QuickSpec {
             context("when the request string is invalid") {
                 it("returns nil") {
                     let requestParser = buildParser()
-                    let requestData = "Invalid Request"
 
-                    let parsedRequest = requestParser.parse(request: requestData)
+                    let parsedRequest = requestParser.parse(request: "Invalid Request")
 
                     expect(parsedRequest).to(beNil())
                 }

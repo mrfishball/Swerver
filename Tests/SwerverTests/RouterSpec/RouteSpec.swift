@@ -6,31 +6,40 @@ import Foundation
 class RouteSpec: QuickSpec {
     override func spec() {
         describe("A Route") {
-            func buildRoute() -> Route {
-                return Route(url: TestData.validUrlOne(), actions: [RequestMethod.get:GetAction()])
+            func buildDefaultResponse() -> HttpResponse {
+                return HttpResponseBuilder()
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .build()
             }
 
             it("returns a list of methods allowed of the route") {
-                let route = buildRoute()
-                
-                expect(route.getListOfMethods()).to(equal(["GET", "OPTIONS"]))
+                let route = Route(url: TestData.validUrlOne(),
+                                  actions: [RequestMethod.get: buildDefaultResponse()])
+
+                let actualListOfMethods = route.getListOfMethods()
+
+                expect(actualListOfMethods).to(equal(["GET", "OPTIONS"]))
             }
 
-            context("adding a new method action pair to an existing route") {
-                it("increases the total number of pair") {
-                    let route = buildRoute()
+            it("returns available responses for the route") {
+                let route = Route(url: TestData.validUrlOne(),
+                                  actions: [RequestMethod.get: buildDefaultResponse()])
 
-                    route.addAction(method: .head, action: HeadAction())
-                    let actualListOfActions = route.getActions()
+                route.addAction(method: .head, action: buildDefaultResponse())
+                let actualActions = route.getActions()
+                let expectedListOfActions = [RequestMethod.get: buildDefaultResponse(),
+                                             RequestMethod.head: buildDefaultResponse()]
 
-                    expect(actualListOfActions.count).to(equal(2))
-                }
+                expect(actualActions).to(equal(expectedListOfActions))
             }
 
             context("when compares to another route") {
                 it("is true if the url matches") {
-                    let routeOne = Route(url: TestData.validUrlOne(), actions: [RequestMethod.get:GetAction()])
-                    let routeTwo = Route(url: TestData.validUrlOne(), actions: [RequestMethod.head:HeadAction()])
+                    let routeOne = Route(url: TestData.validUrlOne(),
+                                         actions: [RequestMethod.get: buildDefaultResponse()])
+                    let routeTwo = Route(url: TestData.validUrlOne(),
+                                         actions: [RequestMethod.head: buildDefaultResponse()])
                     
                     expect(routeTwo).to(equal(routeOne))
                 }

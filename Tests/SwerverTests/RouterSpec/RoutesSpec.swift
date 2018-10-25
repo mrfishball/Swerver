@@ -12,38 +12,53 @@ class RoutesSpec: QuickSpec {
             }
             
             func buildRoute() -> Route {
-                return Route(url: TestData.validUrlOne(), actions: [RequestMethod.get: GetAction(), RequestMethod.head: HeadAction()])
+                let defaultResponse = HttpResponseBuilder()
+                    .with(statusCode: .ok)
+                    .with(contentType: .text)
+                    .build()
+
+                return Route(url: TestData.validUrlOne(), actions: [RequestMethod.get: defaultResponse, RequestMethod.head: defaultResponse])
             }
             
             it("stores a new route") {
                 let routes = buildRoutes()
                 let route = buildRoute()
-                let targetRoute = TestData.validUrlOne()
 
                 routes.addRoute(route: route)
-                let targetRouteExist = routes.routeExist(url: targetRoute)
+                let targetRouteExist = routes.routeExist(url: TestData.validUrlOne())
                 
                 expect(targetRouteExist).to(beTrue())
             }
 
-            it("returns an existing route") {
-                let routes = buildRoutes()
-                let route = buildRoute()
-                let targetRoute = TestData.validUrlOne()
+            context("when fetching a route") {
+                it("returns the route if it exist") {
+                    let routes = buildRoutes()
+                    let route = buildRoute()
+                    let targetRoute = TestData.validUrlOne()
 
-                routes.addRoute(route: route)
-                let actualRoute = routes.fetchRoute(url: targetRoute)
-                
-                expect(actualRoute?.url).to(equal(targetRoute))
+                    routes.addRoute(route: route)
+                    let actualRoute = routes.fetchRoute(url: targetRoute)
+
+                    expect(actualRoute?.url).to(equal(targetRoute))
+                }
+
+                it("returns nil if the route doesn't exist") {
+                    let routes = buildRoutes()
+                    let route = buildRoute()
+
+                    routes.addRoute(route: route)
+                    let routeToTest = routes.fetchRoute(url: TestData.validUrlTwo())
+
+                    expect(routeToTest).to(beNil())
+                }
             }
             
             it("returns a list of allowed methods of a route") {
                 let routes = buildRoutes()
                 let route = buildRoute()
-                let targetRoute = TestData.validUrlOne()
 
                 routes.addRoute(route: route)
-                let listOfAllowedMethod = routes.allowedMethods(url: targetRoute)
+                let listOfAllowedMethod = routes.allowedMethods(url: TestData.validUrlOne())
                 
                 expect(listOfAllowedMethod).to(equal(["GET", "HEAD", "OPTIONS"]))
             }
