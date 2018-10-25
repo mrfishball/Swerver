@@ -15,7 +15,7 @@ class HttpResponseBuilderSpec: QuickSpec {
                     .with(statusCode: .ok)
                     .build()
                 
-                expect(response.statusCode).to(equal(StatusCode.ok.rawValue))
+                expect(response.statusCode).to(equal(StatusCode.ok))
             }
             
             

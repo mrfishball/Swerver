@@ -2,13 +2,13 @@ import Foundation
 
 public final class HttpResponse {
 
-    public let statusCode: String
+    public let statusCode: StatusCode?
     public let body: String
     public let headers: [ResponseHeader:String]
     public let dateTime: Date
 
     init(builder: HttpResponseBuilder) {
-        statusCode = builder.statusCode?.rawValue ?? String()
+        statusCode = builder.statusCode
         body = builder.body
         headers = builder.headers
         dateTime = Date()

@@ -44,9 +44,9 @@ public class HttpResponseFormatter {
     private func statusLineToHeaderItem(response: HttpResponse) -> String {
         let statusCode = response.statusCode
         let statusLine = HttpResponseFormatter.HTTP_VERSION + HttpResponseFormatter.SPACE +
-            statusCode  + HttpResponseFormatter.SPACE
+            (statusCode?.rawValue ?? "") + HttpResponseFormatter.SPACE
         
-        if let statusPhrase = StatusCode(rawValue: statusCode)?.getStatusPhrase() {
+        if let statusPhrase = statusCode?.getStatusPhrase() {
             return statusLine + statusPhrase + HttpResponseFormatter.LINE_SEPARATOR
         }
         return statusLine + HttpResponseFormatter.LINE_SEPARATOR

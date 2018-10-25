@@ -15,7 +15,7 @@ class NotFoundActionSpec: QuickSpec {
 
                 let notFoundResponse = notFoundAction.execute()
 
-                expect(notFoundResponse.statusCode).to(equal(StatusCode.not_found.rawValue))
+                expect(notFoundResponse.statusCode).to(equal(StatusCode.not_found))
             }
             
             it("returns a response with a content type of text") {
