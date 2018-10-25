@@ -11,8 +11,9 @@ public class HttpConnection {
         self.router = router
     }
     
-    public func handle(client: Socket) throws {
+    public func handle(client: Socket, host: String) throws {
         let httpRequest = try parseRequest(clientSocket: client)
+        httpResponseFormatter.setHost(host: host)
         try client.write(from: httpResponseFormatter.format(httpResponse: router.process(request: httpRequest)))
     }
     
