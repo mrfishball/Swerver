@@ -33,6 +33,13 @@ router.addRoute(method: .head, url: "/method_options2") {
     return HttpResponseBuilder.buildOK()
 }
 
+router.addRoute(method: .get, url: "/redirect") {
+    return HttpResponseBuilder()
+        .with(statusCode: .moved)
+        .set(header: .location, value: "/simple_get")
+        .build()
+}
+
 let server = Swerver(port: port, router: router)
 
 print("Dummy Server")

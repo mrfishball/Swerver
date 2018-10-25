@@ -34,8 +34,9 @@ public class Swerver {
     
     private func newConnection(socket: Socket) throws {
         let connectedSocket = try socket.acceptClientConnection()
+        let host = "http://\(socket.remoteHostname):\(port)"
         logger.info("Connected to client: \(connectedSocket.remoteHostname)")
-        let _ = try httpConnection.handle(client: connectedSocket)
+        let _ = try httpConnection.handle(client: connectedSocket, host: host)
         connectedSocket.close()
     }
 }

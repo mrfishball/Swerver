@@ -5,6 +5,7 @@ public class HttpResponseFormatter {
     public static let HTTP_VERSION: String = HttpVersion.current.rawValue
     public static let LINE_SEPARATOR: String = "\r\n"
     public static let SPACE: String = " "
+    private var host: String = String()
 
     public init() {}
 
@@ -14,6 +15,10 @@ public class HttpResponseFormatter {
             return formattedHeader + httpResponse.body
         }
         return formattedHeader
+    }
+
+    public func setHost(host: String) {
+        self.host = host
     }
 
     public static func formatDateTime(response: HttpResponse) -> String {
@@ -47,16 +52,20 @@ public class HttpResponseFormatter {
         return statusLine + HttpResponseFormatter.LINE_SEPARATOR
     }
     
-    private func dateTimeToHeaderItem(response: HttpResponse) -> String {
-        let formattedDateTime = HttpResponseFormatter.formatDateTime(response: response)
-        return "Date: \(formattedDateTime)" + HttpResponseFormatter.LINE_SEPARATOR
-    }
-    
     private func allHeaderItems(response: HttpResponse) -> String {
         var allHeaderItemsArray: [String] = []
         for (key, value) in response.headers {
-            allHeaderItemsArray.append("\(key.rawValue): \(value)")
+            if key == ResponseHeader.location {
+                allHeaderItemsArray.append("\(key.rawValue): \(host)\(value)")
+            } else {
+                allHeaderItemsArray.append("\(key.rawValue): \(value)")
+            }
         }
         return allHeaderItemsArray.sorted(by: <).joined(separator: HttpResponseFormatter.LINE_SEPARATOR) + HttpResponseFormatter.LINE_SEPARATOR
+    }
+
+    private func dateTimeToHeaderItem(response: HttpResponse) -> String {
+        let formattedDateTime = HttpResponseFormatter.formatDateTime(response: response)
+        return "Date: \(formattedDateTime)" + HttpResponseFormatter.LINE_SEPARATOR
     }
 }

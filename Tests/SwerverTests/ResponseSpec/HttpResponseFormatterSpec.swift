@@ -19,7 +19,14 @@ class HttpResponseFormatterSpec: QuickSpec {
                     .with(body: "Hello")
                     .build()
             }
-            
+
+            func buildRedirectResponse() -> HttpResponse {
+                return HttpResponseBuilder()
+                    .with(statusCode: .moved)
+                    .set(header: .location, value: TestData.validUrlTwo().absoluteString)
+                    .build()
+            }
+
             it("returns a string object") {
                 let formatter = buildFormatter()
                 let response = buildDefaultResponse()
@@ -41,6 +48,24 @@ class HttpResponseFormatterSpec: QuickSpec {
                 var result = statusLine + headersLine + body
                 
                 expect(formattedResponse).to(equal(result))
+            }
+
+            context("when response object has a location header") {
+                it("formats the location header to include the host's URI") {
+                    let formatter = buildFormatter()
+                    let response = buildRedirectResponse()
+                    let host = "http://localhost:5000"
+
+                    formatter.setHost(host: host)
+                    let formattedResponse = formatter.format(httpResponse: response)
+
+                    let statusLine = "HTTP/1.1 301 Moved Permanently\r\n"
+                    let headersLine = "Content-Length: 0\r\nLocation: \(host)\(TestData.validUrlTwo().absoluteString)\r\nDate: \(HttpResponseFormatter.formatDateTime(response: response))\r\n\r\n"
+
+                    var result = statusLine + headersLine
+
+                    expect(formattedResponse).to(equal(result))
+                }
             }
         }
     }
