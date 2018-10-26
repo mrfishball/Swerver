@@ -4,7 +4,7 @@
 
 A HTTP Server in Swift.
 
-Public URL: [http://54.212.100.171:5000](http://54.212.100.171/5000)
+Public URL: [http://54.212.100.171:5000](http://54.212.100.171:5000)
 
 ## Prerequisites
 
