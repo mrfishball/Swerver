@@ -6,14 +6,15 @@ A HTTP Server in Swift.
 
 ## Prerequisites
 
-- Swift 4 or above
+- Swift 4 (For Linux only. If you're on OS X, Swift is bundled with Xcode)
+
+- Latest Xcode (For OSX only)
 
 - Any modern web browser / Postman / Paw or curl commands
 
 - Terminal
 
-- Latest Xcode (Development Only)
-
+- Ruby (For running acceptance tests)
 
 ## Set Up (For development and testing)
 
@@ -35,55 +36,7 @@ To be able to open and edit in Xcode, in the root of the project directory, run:
 $ swift package generate-xcodeproj
 ```
 
-## Compiling and testing in Docker
-
-To Build a Linux environment with Swift, CD in the project directory and run:
-
-```sh
-docker build -t swerver:latest .
-```
-
-Docker will test and build the project into a docker image.
-
-## Acceptance Tests (Spinach)
-
-CD into the submodule directory and run the desired test modules. For example to test the GET request handling:
-
-```sh
-bundle exec spinach --tags @simple-get
-```
-
-## Running Swerver in the docker container
-
-After successfully building a docker image, run in the terminal:
-
-```sh
-docker run -P swerver:latest
-```
-
-then, open a new tab within the terminal and run:
-
-```sh
-docker container ls
-```
-
-this will list out all the containers currently running on your local machine. Like this:
-
-```sh
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
-d90949c7ce59        swerver:latest      ".build/debug/Swerve…"   4 seconds ago       Up 3 seconds        0.0.0.0:32769->5050/tcp   quirky_banach
-```
-
-Swerver is set to run on port 5000 by default. Under the 'PORTS' session, copy: 
-
-```sh
-0.0.0.0:32769
-```
-
-that is the URL to connect to Swerver.
- 
-
-## Compiling and testing with the Swift Package Manager
+## Compiling, testing and running Swerver with the Swift Package Manager
 
 
 To build, run:
@@ -103,6 +56,41 @@ Finally to run:
 ```sh
 $ swift run
 ```
+
+## Acceptance Tests (Spinach)
+
+Inside the submodule directory (http_server_spec) run:
+
+```sh
+bundle install
+```
+
+then run:
+
+```sh
+bundle exec spinach --tags ~@simple-post
+```
+
+to run all relevant tests
+
+## Running and testing Swerver in the docker container
+
+To Build a Linux environment with Swift, cd into the project directory and run:
+
+```sh
+docker build -t swerver:latest .
+```
+
+Docker will test and build the project into a docker image.
+
+After successfully building a docker image, run in the terminal:
+
+```sh
+docker run -p 5000:5000 swerver:latest
+```
+
+Swerver(docker) will now be running. Point to localhost:5000 to access it.
+
 
 ## Usage
 
