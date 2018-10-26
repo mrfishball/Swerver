@@ -16,7 +16,7 @@ A HTTP Server in Swift.
 
 - Ruby (For running acceptance tests)
 
-## Set Up (For development and testing)
+## Set Up
 
 Clone or fork this repo:
 
@@ -34,6 +34,27 @@ To be able to open and edit in Xcode, in the root of the project directory, run:
 
 ```sh
 $ swift package generate-xcodeproj
+```
+
+## Running and testing Swerver in Xcode (Shortcut Keys)
+
+To run (Will trigger acceptance tests to run in the terminal as well):
+
+```sh
+Command + R
+```
+
+
+To unit test:
+
+```sh
+Command + U
+```
+
+To stop Swerver:
+
+```sh
+Command + .
 ```
 
 ## Compiling, testing and running Swerver with the Swift Package Manager
@@ -57,7 +78,7 @@ Finally to run:
 $ swift run
 ```
 
-## Acceptance Tests (Spinach)
+## Acceptance Tests (Only if you are not using Xcode. See above for more detail on running in Xcode)
 
 Inside the submodule directory (http_server_spec) run:
 
