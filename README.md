@@ -4,6 +4,8 @@
 
 A HTTP Server in Swift.
 
+Public URL: [http://54.212.100.171:5000](http://54.212.100.171/5000)
+
 ## Prerequisites
 
 - Swift 4 (For Linux only. If you're on OS X, Swift is bundled with Xcode)
@@ -116,6 +118,15 @@ docker run -p 5000:5000 swerver:latest
 
 Swerver(docker) will now be running. Point to localhost:5000 to access it.
 
+## Deploying to AWS ECS (Requires AWS account and Docker)
+
+[Docker](https://www.docker.com)
+
+[Setting Up with Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/get-set-up-for-amazon-ecs.html)
+
+[Getting started with Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted_EC2.html)
+
+For example deploy procedure, see [Scripts/deploy.sh](https://github.com/mrfishball/Swerver/blob/master/Scripts/deploy.sh) 
 
 ## Usage
 
