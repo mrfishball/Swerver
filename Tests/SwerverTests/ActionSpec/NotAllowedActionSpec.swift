@@ -16,7 +16,7 @@ class NotAllowedActionSpec: QuickSpec {
 
                 let okResponse = notAllowedAction.execute()
 
-                expect(okResponse.statusCode).to(equal(StatusCode.not_allowed.rawValue))
+                expect(okResponse.statusCode).to(equal(StatusCode.notAllowed))
             }
             
             it("returns a response with a content type of text") {

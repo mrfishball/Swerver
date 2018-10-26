@@ -16,7 +16,7 @@ class OptionsActionSpec: QuickSpec {
                 
                 let okResponse = optionsAction.execute()
                 
-                expect(okResponse.statusCode).to(equal(StatusCode.ok.rawValue))
+                expect(okResponse.statusCode).to(equal(StatusCode.ok))
             }
             
             it("returns a response with content type text") {

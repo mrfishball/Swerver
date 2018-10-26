@@ -10,15 +10,13 @@ public class Swerver {
     private let port: Int
     private var listenSocket: Socket?
     private var continueListening = true
-    private let router: Router
     
     private let httpConnection: HttpConnection
     private let console = ConsoleDestination()
     
-    public init(port: Int, router: Router) {
+    public init(port: Int, httpConnection: HttpConnection) {
         self.port = port
-        self.router = router
-        httpConnection = HttpConnection(router: router)
+        self.httpConnection = httpConnection
         logger.addDestination(console)
     }
     

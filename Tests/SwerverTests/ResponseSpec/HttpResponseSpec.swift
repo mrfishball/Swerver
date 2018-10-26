@@ -20,7 +20,6 @@ class HttpResponseSpec: QuickSpec {
             
             context("when compares with another response object") {
                 it("is true when attributes match") {
-                    var responseBuilder = buildBuilder()
                     let responseOne = defaultResponseBuilder().build()
                     let responseTwo = defaultResponseBuilder().build()
                     
@@ -28,19 +27,18 @@ class HttpResponseSpec: QuickSpec {
                 }
                 
                 it("is false when the status code does not match") {
-                    var responseBuilder = buildBuilder()
                     let responseOne = defaultResponseBuilder()
                         .with(statusCode: .ok)
                         .build()
                     let responseTwo = defaultResponseBuilder()
-                        .with(statusCode: .not_found)
+                        .with(statusCode: .notFound)
                         .build()
                     
                     expect(responseOne).toNot(equal(responseTwo))
                 }
                 
                 it("is false when the content type does not match") {
-                    var responseBuilder = buildBuilder()
+                    let responseBuilder = buildBuilder()
                     let responseOne = responseBuilder
                         .with(statusCode: .ok)
                         .set(header: .allow, value: "GET")
@@ -57,7 +55,6 @@ class HttpResponseSpec: QuickSpec {
                 }
                 
                 it("is false when the body does not match") {
-                    var responseBuilder = buildBuilder()
                     let responseOne = defaultResponseBuilder()
                         .with(body: " ")
                         .build()
@@ -69,7 +66,6 @@ class HttpResponseSpec: QuickSpec {
                 }
                 
                 it("is false when the allow header does not match") {
-                    var responseBuilder = buildBuilder()
                     let responseOne = defaultResponseBuilder()
                         .set(header: .allow, value: "GET")
                         .build()

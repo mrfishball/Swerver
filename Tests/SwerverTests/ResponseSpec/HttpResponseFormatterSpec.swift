@@ -45,7 +45,7 @@ class HttpResponseFormatterSpec: QuickSpec {
                 let statusLine = "HTTP/1.1 200 OK\r\n"
                 let headersLine = "Allow: GET\r\nContent-Length: 5\r\nContent-Type: text/html; charset=UTF-8\r\nDate: \(HttpResponseFormatter.formatDateTime(response: response))\r\n\r\n"
                 let body = "Hello"
-                var result = statusLine + headersLine + body
+                let result = statusLine + headersLine + body
                 
                 expect(formattedResponse).to(equal(result))
             }
@@ -62,7 +62,7 @@ class HttpResponseFormatterSpec: QuickSpec {
                     let statusLine = "HTTP/1.1 301 Moved Permanently\r\n"
                     let headersLine = "Content-Length: 0\r\nLocation: \(host)\(TestData.validUrlTwo().absoluteString)\r\nDate: \(HttpResponseFormatter.formatDateTime(response: response))\r\n\r\n"
 
-                    var result = statusLine + headersLine
+                    let result = statusLine + headersLine
 
                     expect(formattedResponse).to(equal(result))
                 }
