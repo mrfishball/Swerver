@@ -33,7 +33,7 @@ class HttpResponseSpec: QuickSpec {
                         .with(statusCode: .ok)
                         .build()
                     let responseTwo = defaultResponseBuilder()
-                        .with(statusCode: .not_found)
+                        .with(statusCode: .notFound)
                         .build()
                     
                     expect(responseOne).toNot(equal(responseTwo))

@@ -24,7 +24,7 @@ class RouterSpec: QuickSpec {
                     
                     let response = router.process(request: anInvalidRequest)
                     
-                    expect(response.statusCode).to(equal(StatusCode.not_found))
+                    expect(response.statusCode).to(equal(StatusCode.notFound))
                 }
                 
                 it("returns a response with a content type of text") {
@@ -44,7 +44,7 @@ class RouterSpec: QuickSpec {
                     
                     let response = router.process(request: aRogueRequest)
                     
-                    expect(response.statusCode).to(equal(StatusCode.not_found))
+                    expect(response.statusCode).to(equal(StatusCode.notFound))
                 }
 
                 it("returns a response of Not Found status with a content type of text") {
@@ -98,7 +98,7 @@ class RouterSpec: QuickSpec {
                     addARoute(method: .get, router: router)
                     let response = router.process(request: anUnknownRequest)
                     
-                    expect(response.statusCode).to(equal(StatusCode.not_allowed))
+                    expect(response.statusCode).to(equal(StatusCode.notAllowed))
                 }
                 
                 it("returns a response with a content type of text") {
