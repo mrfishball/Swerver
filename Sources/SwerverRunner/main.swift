@@ -1,8 +1,6 @@
 import Foundation
 import Swerver
 
-let port = 5000
-
 let router = Router()
 
 router.addRoute(method: .get, url: "/simple_get") {
@@ -40,10 +38,16 @@ router.addRoute(method: .get, url: "/redirect") {
         .build()
 }
 
-let server = Swerver(port: port, router: router)
+private func runSwerver(port: Int) throws {
+    let httpResponseFormatter = HttpResponseFormatter()
+    let httpRequestParser = HttpRequestParser()
+    let httpConnection = HttpConnection(router: router,
+                                        httpResponseFormatter: httpResponseFormatter,
+                                        httpRequestParser: httpRequestParser)
 
-print("Dummy Server")
-print("Connect with a browser by enter the URL 'localhost:\(port)'")
-print("Connect with a command line window by entering 'telnet localhost \(port)'")
+    let server = Swerver(port: port, httpConnection: httpConnection)
 
-try server.start()
+    try server.start()
+}
+
+try runSwerver(port: 5000)

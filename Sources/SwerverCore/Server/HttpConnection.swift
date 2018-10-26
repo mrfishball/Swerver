@@ -3,12 +3,17 @@ import Socket
 
 public class HttpConnection {
     
-    private let httpRequestParser = HttpRequestParser()
+    private let httpRequestParser: HttpRequestParser
+    private let httpResponseFormatter: HttpResponseFormatter
     private let router: Router
-    private let httpResponseFormatter = HttpResponseFormatter()
     
-    public init(router: Router) {
+    public init(router: Router,
+                httpResponseFormatter: HttpResponseFormatter,
+                httpRequestParser: HttpRequestParser) {
+
         self.router = router
+        self.httpRequestParser = httpRequestParser
+        self.httpResponseFormatter = httpResponseFormatter
     }
     
     public func handle(client: Socket, host: String) throws {
