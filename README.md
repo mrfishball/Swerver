@@ -38,7 +38,11 @@ $ swift package generate-xcodeproj
 
 ## Running and testing Swerver in Xcode (Shortcut Keys)
 
-To run (Will trigger acceptance tests to run in the terminal as well):
+In Xcode, go to 'Product', then 'Scheme' and make sure there's a checkmark next to Swerver-Package, then click on 'Edit Scheme...'.
+Now a window will pop up and on the left menu bar, select 'Run' then next to 'Executable' on the right plane select 'SwerverRunner'.
+Hit close. Follow the instruction below to run Swerver.
+
+To run:
 
 ```sh
 Command + R
